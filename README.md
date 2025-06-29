@@ -1,5 +1,5 @@
 [![GitHub stars](https://img.shields.io/github/stars/Fasamii/sobsob.nvim?style=flat-square&logo=github)](https://github.com/Fasamii/sobsob.nvim/stargazers)
-[![License](https://img.shields.io/github/license/Fasamii/sobsob.nvim?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/github/license/Fasamii/sobsob.nvim?style=flat-square)](LICENSE)
 # SobSob
 A wildcharm inspired color scheme for nvim
 ## Examples
