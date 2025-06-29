@@ -1,5 +1,5 @@
 ![whoops](https://img.shields.io/github/stars/Fasamii/sobsob.nvim?style=flat-square)
-![whoops](https://img.shields.io/github/license/Fasamii/sobsob.nvim?style=flat-square)
+[![License](https://img.shields.io/github/license/Fasamii/sobsob.nvim?style=for-the-badge)](LICENSE)
 # SobSob
 A wildcharm inspired color scheme for nvim
 ## Examples
