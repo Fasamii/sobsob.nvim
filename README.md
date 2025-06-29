@@ -2,10 +2,10 @@
 A wildcharm inspired color scheme for nvim
 ## Examples
 ![Rust Example](examples/Rust.png)
-![Js-Ts Example](examples/Js-Ts.png)
+![Js-Ts Example](examples/Js.png)
 ![C Example](examples/C.png)
 ![Hypr Example](examples/Hypr.png)
-## Installing
+## Installation 
 ### For lazy
 ```lua
 require("lazy").setup({
@@ -15,7 +15,7 @@ require("lazy").setup({
     opts = {},
 })
 ```
-### Configuration
+## Configuration
 you can overwrite color pallet:
 ```lua
 opts = {
