@@ -59,4 +59,4 @@ opts = {
 - [x] gitsigns
 - [x] which-key
 - [x] nvim-dap-view
-- [x] lualine (you have to set custom hl groups in lualine config)
+- [x] lualine (you have to set custom hl groups in lualine config(LL_I_A, LL_I_B etc...))
