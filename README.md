@@ -13,7 +13,7 @@ A wildcharm inspired color scheme for nvim
 </details>
 
 ## Installation 
-### For lazy
+### lazy.nvim (Recommended)
 ```lua
 require("lazy").setup({
     "Fasamii/sobsob.nvim",
@@ -22,8 +22,21 @@ require("lazy").setup({
     opts = {},
 })
 ```
+### Vim-plug
+```lua
+Plug 'Fasamii/sobsob.nvim'
+```
+### Packer
+```lua
+use {
+    'Fasamii/sobsob.nvim',
+    config = function()
+        vim.cmd.colorscheme("sobsob")
+    end
+}
+```
 ## Configuration
-you can overwrite color pallet:
+### You can override specific colors in the palette
 ```lua
 opts = {
     cp = {
@@ -32,7 +45,7 @@ opts = {
 }
 
 ```
-or overwrite highlight groups:
+### Or specific highlight groups
 ```lua
 opts = {
     hi = {
@@ -40,3 +53,10 @@ opts = {
     }
 }
 ```
+# Supported plugins
+- [x] treesitter
+- [x] render-markdown
+- [x] gitsigns
+- [x] which-key
+- [x] nvim-dap-view
+- [x] lualine (you have to set custom hl groups in lualine config)
