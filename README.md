@@ -60,3 +60,12 @@ opts = {
 - [x] which-key
 - [x] nvim-dap-view
 - [x] lualine (you have to set custom hl groups in lualine config(LL_I_A, LL_I_B etc...))
+
+---
+
+<div align="center">
+
+⭐ Star this repo if you like SobSob! ⭐
+[Report Bug](https://github.com/Fasamii/sobsob.nvim/issues) • [Request Feature](https://github.com/Fasamii/sobsob.nvim/issues)
+
+</div>
