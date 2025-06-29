@@ -1,10 +1,13 @@
 # SobSob
 A wildcharm inspired color scheme for nvim
 ## Examples
+<details>
 ![Rust Example](examples/Rust.png)
+<summary>more examples</summary>
 ![Js-Ts Example](examples/Js.png)
 ![C Example](examples/C.png)
 ![Hypr Example](examples/Hypr.png)
+</details>
 ## Installation 
 ### For lazy
 ```lua
