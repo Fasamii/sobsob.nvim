@@ -1,6 +1,8 @@
 local M = {};
 
 function M.setup(opts)
+	opts = opts or {};
+
 	local cp = require("sobsob.colors");
 	local hi_foo = require("sobsob.highlights");
 
