@@ -1,3 +1,4 @@
+(whoops)[https://img.shields.io/github/stars/Fasamii/sobsob.nvim?style=flat-square] (whoops)[https://img.shields.io/github/license/Fasamii/sobsob.nvim?style=flat-square]
 # SobSob
 A wildcharm inspired color scheme for nvim
 ## Examples
@@ -65,7 +66,7 @@ opts = {
 
 <div align="center">
 
-⭐ Star this repo if you like SobSob! ⭐
+⭐ Star this repo if you like SobSob❗ ⭐
 [Report Bug](https://github.com/Fasamii/sobsob.nvim/issues) • [Request Feature](https://github.com/Fasamii/sobsob.nvim/issues)
 
 </div>
