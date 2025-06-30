@@ -1,15 +1,96 @@
 return function(cp)
 	return {
-		-- Basic editor highlights
+		---------------
+		---- Basic ----
+		---------------
 		Normal = { fg = cp.white, bg = cp.bg },
 		ColorColumn = { bg = cp.black_shadow },
 		CursorLine = { bg = cp.black },
 		CursorLineNr = { fg = cp.purple, bg = cp.bg, bold = true },
 		LineNr = { fg = cp.white_dark, bg = cp.bg },
-		Visual = { bg = cp.selection },
-		Search = { bg = cp.search },
-		IncSearch = { bg = cp.black_dimm, fg = cp.yellow },
-		MatchParen = { fg = cp.black_dark, bold = true },
+
+		Visual = { bg = cp.selection, bold = true }, -- FIX: when using with Search functionality the part of visual selection that is also Search selection has visual bg and search fg which makes it a little unreadable
+
+		Search = { bg = cp.selection, fg = cp.search, bold = true },
+		CurSearch = { bg = cp.search, fg = cp.bg_solid, bold = true },
+		IncSearch = { bg = cp.search, fg = cp.bg_solid, bold = true },
+
+		Substitute = { bg = cp.red }, -- TODO: check what is that for
+		MatchParen = { fg = cp.yellow, bold = true },
+		-----------------
+		-- status line --
+		-----------------
+		-- nvim
+		StatusLine = { bg = cp.black_dark, fg = cp.white },
+		StatusLineNc = { bg = cp.black, fg = cp.white },
+		TabLineFill = { bg = cp.black_dark },
+		TabLineSel = { bg = cp.black_dimm, fg = cp.magneta, bold = true },
+		TabLine = { bg = cp.black_dark, fg = cp.violet },
+		-- lualine
+		-- TODO: make lualine work without overwriting it groups
+		-- For a reference:
+		--return {
+		--   normal = {
+		--     a = {bg = colors.gray, fg = colors.black, gui = 'bold'},
+		--     b = {bg = colors.lightgray, fg = colors.white},
+		--     c = {bg = colors.darkgray, fg = colors.gray}
+		--   },
+		--   insert = {
+		--     a = {bg = colors.blue, fg = colors.black, gui = 'bold'},
+		--     b = {bg = colors.lightgray, fg = colors.white},
+		--     c = {bg = colors.lightgray, fg = colors.white}
+		--   },
+		--   visual = {
+		--     a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
+		--     b = {bg = colors.lightgray, fg = colors.white},
+		--     c = {bg = colors.inactivegray, fg = colors.black}
+		--   },
+		--   replace = {
+		--     a = {bg = colors.red, fg = colors.black, gui = 'bold'},
+		--     b = {bg = colors.lightgray, fg = colors.white},
+		--     c = {bg = colors.black, fg = colors.white}
+		--   },
+		--   command = {
+		--     a = {bg = colors.green, fg = colors.black, gui = 'bold'},
+		--     b = {bg = colors.lightgray, fg = colors.white},
+		--     c = {bg = colors.inactivegray, fg = colors.black}
+		--   },
+		--   inactive = {
+		--     a = {bg = colors.darkgray, fg = colors.gray, gui = 'bold'},
+		--     b = {bg = colors.darkgray, fg = colors.gray},
+		--     c = {bg = colors.darkgray, fg = colors.gray}
+		--   }
+		-- }
+		-- require('lualine').setup {options = {theme = gruvbox}}
+		LL_N_A = { bg = cp.blue, fg = cp.bg_solid, bold = true },
+		LL_N_B = { fg = cp.violet, bold = true },
+		LL_N_C = { fg = cp.violet, bold = true },
+
+		LL_I_A = { bg = cp.green, fg = cp.bg_solid, bold = true },
+		LL_I_B = { fg = cp.violet, bold = true },
+		LL_I_C = { fg = cp.violet, bold = true },
+
+		LL_V_A = { bg = cp.yellow, fg = cp.bg_solid, bold = true },
+		LL_V_B = { fg = cp.violet, bold = true },
+		LL_V_C = { fg = cp.violet, bold = true },
+
+		LL_R_A = { bg = cp.pink, fg = cp.bg_solid, bold = true },
+		LL_R_B = { fg = cp.violet, bold = true },
+		LL_R_C = { fg = cp.violet, bold = true },
+
+		LL_C_A = { bg = cp.violet, fg = cp.bg_solid, bold = true },
+		LL_C_B = { fg = cp.violet, bold = true },
+		LL_C_C = { fg = cp.violet, bold = true },
+
+		LL_X_A = { bg = cp.purple, fg = cp.bg_solid, bold = true },
+		LL_X_B = { fg = cp.violet, bold = true },
+		LL_X_C = { fg = cp.violet, bold = true },
+		-----------------------
+		-- status line (END) --
+		-----------------------
+		---------------------
+		---- Basic (END) ----
+		---------------------
 		----------------
 		---- syntax ----
 		----------------
@@ -20,23 +101,6 @@ return function(cp)
 		Comment = { fg = cp.white_dark },
 		PreCondit = { fg = cp.orange },
 		SpecialChar = { fg = cp.violet },
-		["@text"] = { fg = cp.white },                   -- Non-structured text
-		["@text.strong"] = { fg = cp.white, bold = true }, -- Bold text
-		["@text.emphasis"] = { fg = cp.white },          -- Emphasized text
-		["@text.underline"] = { fg = cp.white, underline = true }, -- Underlined text
-		["@text.strike"] = { fg = cp.white, strikethrough = true }, -- Strikethrough text
-		["@text.title"] = { fg = cp.white, bold = true }, -- Titles
-		["@text.literal"] = { fg = cp.white },           -- Literal or verbatim text
-		["@text.uri"] = { fg = cp.cyan, underline = true }, -- URIs (URLs, file paths, etc.)
-		["@text.math"] = { fg = cp.cyan },               -- Math environments
-		["@text.reference"] = { fg = cp.white },         -- References
-		["@text.environment"] = { fg = cp.white },       -- Text environments
-		["@text.environment.name"] = { fg = cp.white },  -- Text environment names
-		["@text.note"] = { fg = cp.white_dimm },         -- Notes
-		["@text.warning"] = { fg = cp.warning },         -- Warnings
-		["@text.danger"] = { fg = cp.error },            -- Danger alerts
-		["@text.diff.add"] = { fg = cp.util_lv1 },       -- Added text (for diffs)
-		["@text.diff.delete"] = { fg = cp.util_lv3 },    -- Deleted text (for diffs)
 		-- Function
 		Function = { fg = cp.purple, bold = true },
 		Label = { fg = cp.magneta },
@@ -66,11 +130,30 @@ return function(cp)
 		Operator = { fg = cp.cyan },
 		-- Delimiter
 		Delimiter = { fg = cp.violet },
-		MatchParen = { fg = cp.yellow, bold = true }, -- FIXME: duplicate
+		--------------------
+		-- fallback (END) --
+		--------------------
 		----------------
 		-- Treesitter --
 		----------------
 		-- Text
+		["@text"] = { fg = cp.white },                    -- Non-structured text
+		["@text.strong"] = { fg = cp.white, bold = true }, -- Bold text
+		["@text.emphasis"] = { fg = cp.white },           -- Emphasized text
+		["@text.underline"] = { fg = cp.white, underline = true }, -- Underlined text
+		["@text.strike"] = { fg = cp.white, strikethrough = true }, -- Strikethrough text
+		["@text.title"] = { fg = cp.white, bold = true }, -- Titles
+		["@text.literal"] = { fg = cp.white },            -- Literal or verbatim text
+		["@text.uri"] = { fg = cp.cyan, underline = true }, -- URIs (URLs, file paths, etc.)
+		["@text.math"] = { fg = cp.cyan },                -- Math environments
+		["@text.reference"] = { fg = cp.white },          -- References
+		["@text.environment"] = { fg = cp.white },        -- Text environments
+		["@text.environment.name"] = { fg = cp.white },   -- Text environment names
+		["@text.note"] = { fg = cp.white_dimm },          -- Notes
+		["@text.warning"] = { fg = cp.warning },          -- Warnings
+		["@text.danger"] = { fg = cp.error },             -- Danger alerts
+		["@text.diff.add"] = { fg = cp.util_lv1 },        -- Added text (for diffs)
+		["@text.diff.delete"] = { fg = cp.util_lv3 },     -- Deleted text (for diffs)
 		["@comment"] = { fg = cp.white_dark },
 		["@comment.documentation"] = { fg = cp.white_dimm },
 		["@special.comment"] = { fg = cp.white_dark, bold = true },
@@ -134,9 +217,86 @@ return function(cp)
 		["@punctuation.special"] = { fg = cp.violet }, -- Special punctuation
 		-- Operator
 		["@operator"] = { fg = cp.magneta, bold = true }, --TODO: consider other color for operator
-		----------------
-		--- Markdown ---
-		----------------
+		----------------------
+		-- Treesitter (END) --
+		----------------------
+		----------------------
+		---- syntax (END) ----
+		----------------------
+		------------------
+		---- spelling ----
+		------------------
+		SpellBad = { undercurl = true, sp = cp.error, bold = true },
+		SpellCap = { undercurl = true, sp = cp.warning },
+		SpellRare = { bold = true },
+		SpellLocal = {},
+		------------------------
+		---- spelling (END) ----
+		------------------------
+		---------------------
+		---- Diagnostics ----
+		---------------------
+		DiagnosticError = { fg = cp.error },
+		ErrorMsg = { fg = cp.error },
+		Error = { fg = cp.error },
+
+		DiagnosticWarn = { fg = cp.warn },
+		WarningMsg = { fg = cp.warn },
+		Warn = { fg = cp.warn },
+
+		DiagnosticInfo = { fg = cp.info },
+		Info = { fg = cp.info },
+		-----------------------------
+		----- Diagnostics (END) -----
+		-----------------------------
+		-------------
+		---- git ----
+		-------------
+		GitAdd = { fg = cp.git_add, bold = true },
+		GitDel = { fg = cp.git_del, bold = true },
+		GitMod = { fg = cp.git_mod, bold = true },
+		-- blame
+		GitSignsCurrentLineBlame = { fg = cp.black },
+		-- Signs
+		GitSignsAdd = { bg = cp.git_add, fg = cp.bg_solid, bold = true },
+		GitSignsDelete = { bg = cp.git_del, fg = cp.bg_solid, bold = true },
+		GitSignsChange = { bg = cp.git_mod, fg = cp.bg_solid, bold = true },
+		-- Staged Signs
+		GitSignsStagedAdd = { bg = cp.black_shadow, fg = cp.white_dark },
+		GitSignsStagedChange = { bg = cp.black_shadow, fg = cp.white_dark },
+		GitSignsStagedDelete = { bg = cp.black_shadow, fg = cp.white_dark },
+		-------------------
+		---- git (END) ----
+		-------------------
+		-------------------
+		---- which-key ----
+		-------------------
+		WhichKey = { fg = cp.magneta, bold = true },
+		-- WhichKeyBorder = { bg = cp.red },
+		WhichKeyDesc = { fg = cp.purple },
+		WhichKeyGroup = { fg = cp.cyan },
+		-- WhichKeyIconGrey = { bg = cp.red },
+		-- WhichKeyTitle = { bg = cp.red },
+		WhichKeyNormal = { bg = cp.black_shadow },
+		-------------------------
+		---- which-key (END) ----
+		-------------------------
+		-------------------
+		---- Telescope ----
+		-------------------
+		-------------------------
+		TelescopeBorder = { fg = cp.purple },
+		TelescopeTitle = { fg = cp.magneta },
+		TelescopeNormal = { bg = nil },
+		TelescopeMatching = { bg = cp.violet, fg = cp.bg_solid },
+		TelescopeSelection = { fg = cp.magneta },
+		TelescopePreviewLine = { bg = cp.util_lv4_dimm, bold = true },
+		-------------------------
+		---- Telescope (END) ----
+		-------------------------
+		------------------
+		---- Markdown ----
+		------------------
 		-- Heading
 		RenderMarkdownH1 = { fg = cp.white, bold = true },
 		RenderMarkdownH1Bg = { bg = cp.util_lv1_dimm, fg = cp.bg_solid, bold = true },
@@ -183,123 +343,12 @@ return function(cp)
 		RenderMarkdownMath = { fg = cp.cyan },
 		-- Callouts
 		RenderMarkdownSuccess = { fg = cp.green },
-		--------------
-		-- spelling --
-		--------------
-		SpellBad = { undercurl = true, sp = cp.error, bold = true },
-		SpellCap = { undercurl = true, sp = cp.warning },
-		SpellRare = { bold = true }, --TODO: consider treating it the same as SpellBad
-		SpellLocal = {},
-		-----------------
-		-- Diagnostics --
-		-----------------
-		DiagnosticError = { fg = cp.error },
-		ErrorMsg = { fg = cp.error },
-		Error = { fg = cp.error },
-
-		DiagnosticWarn = { fg = cp.warn },
-		WarningMsg = { fg = cp.warn },
-		Warn = { fg = cp.warn },
-
-		DiagnosticInfo = { fg = cp.info },
-		Info = { fg = cp.info },
-		---------
-		-- git --
-		---------
-		GitAdd = { fg = cp.git_add, bold = true },
-		GitDel = { fg = cp.git_del, bold = true },
-		GitMod = { fg = cp.git_mod, bold = true },
-		-- blame
-		GitSignsCurrentLineBlame = { fg = cp.black },
-		-- Signs
-		GitSignsAdd = { bg = cp.git_add, fg = cp.bg_solid, bold = true },
-		GitSignsDelete = { bg = cp.git_del, fg = cp.bg_solid, bold = true },
-		GitSignsChange = { bg = cp.git_mod, fg = cp.bg_solid, bold = true },
-		-- Staged Signs
-		GitSignsStagedAdd = { bg = cp.black_shadow, fg = cp.white_dark },
-		GitSignsStagedChange = { bg = cp.black_shadow, fg = cp.white_dark },
-		GitSignsStagedDelete = { bg = cp.black_shadow, fg = cp.white_dark },
-		-----------------
-		-- status line --
-		-----------------
-		-- nvim builtin
-		StatusLine = { bg = cp.black_dark, fg = cp.white },
-		StatusLineNc = { bg = cp.black, fg = cp.white },
-		TabLineFill = { bg = cp.black_dark },
-		TabLineSel = { bg = cp.black_dimm, fg = cp.magneta, bold = true },
-		TabLine = { bg = cp.black_dark, fg = cp.violet },
-		-- TODO: make lualine work without overwriting it groups
-		-- For a reference:
-		--return {
-		--   normal = {
-		--     a = {bg = colors.gray, fg = colors.black, gui = 'bold'},
-		--     b = {bg = colors.lightgray, fg = colors.white},
-		--     c = {bg = colors.darkgray, fg = colors.gray}
-		--   },
-		--   insert = {
-		--     a = {bg = colors.blue, fg = colors.black, gui = 'bold'},
-		--     b = {bg = colors.lightgray, fg = colors.white},
-		--     c = {bg = colors.lightgray, fg = colors.white}
-		--   },
-		--   visual = {
-		--     a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
-		--     b = {bg = colors.lightgray, fg = colors.white},
-		--     c = {bg = colors.inactivegray, fg = colors.black}
-		--   },
-		--   replace = {
-		--     a = {bg = colors.red, fg = colors.black, gui = 'bold'},
-		--     b = {bg = colors.lightgray, fg = colors.white},
-		--     c = {bg = colors.black, fg = colors.white}
-		--   },
-		--   command = {
-		--     a = {bg = colors.green, fg = colors.black, gui = 'bold'},
-		--     b = {bg = colors.lightgray, fg = colors.white},
-		--     c = {bg = colors.inactivegray, fg = colors.black}
-		--   },
-		--   inactive = {
-		--     a = {bg = colors.darkgray, fg = colors.gray, gui = 'bold'},
-		--     b = {bg = colors.darkgray, fg = colors.gray},
-		--     c = {bg = colors.darkgray, fg = colors.gray}
-		--   }
-		-- }
-		-- require('lualine').setup {options = {theme = gruvbox}}
-		-- lualine
-		LL_N_A = { bg = cp.blue, fg = cp.bg_solid, bold = true },
-		LL_N_B = { fg = cp.violet, bold = true },
-		LL_N_C = { fg = cp.violet, bold = true },
-
-		LL_I_A = { bg = cp.green, fg = cp.bg_solid, bold = true },
-		LL_I_B = { fg = cp.violet, bold = true },
-		LL_I_C = { fg = cp.violet, bold = true },
-
-		LL_V_A = { bg = cp.yellow, fg = cp.bg_solid, bold = true },
-		LL_V_B = { fg = cp.violet, bold = true },
-		LL_V_C = { fg = cp.violet, bold = true },
-
-		LL_R_A = { bg = cp.pink, fg = cp.bg_solid, bold = true },
-		LL_R_B = { fg = cp.violet, bold = true },
-		LL_R_C = { fg = cp.violet, bold = true },
-
-		LL_C_A = { bg = cp.violet, fg = cp.bg_solid, bold = true },
-		LL_C_B = { fg = cp.violet, bold = true },
-		LL_C_C = { fg = cp.violet, bold = true },
-
-		LL_X_A = { bg = cp.purple, fg = cp.bg_solid, bold = true },
-		LL_X_B = { fg = cp.violet, bold = true },
-		LL_X_C = { fg = cp.violet, bold = true },
-		---------------
-		-- which-key --
-		---------------
-		WhichKey = { fg = cp.magneta, bold = true },
-		-- WhichKeyBorder = { bg = cp.red },
-		WhichKeyDesc = { fg = cp.purple },
-		WhichKeyGroup = { fg = cp.cyan },
-		-- WhichKeyIconGrey = { bg = cp.red },
-		-- WhichKeyTitle = { bg = cp.red },
-		WhichKeyNormal = { bg = cp.black_shadow },
-		-----------------
-		-- NvimDapView --
-		-----------------
+		------------------------
+		---- Markdown (END) ----
+		------------------------
+		---------------------
+		---- NvimDapView ----
+		---------------------
 		-- TODO: check what these are
 		-- TODO: check highlight groups for nvim-dap define these and potentially link here instead of redefining
 		-- TEST: check if that hi groups are being applied
@@ -333,5 +382,8 @@ return function(cp)
 		NvimDapViewWatchError = { fg = cp.ping },
 		NvimDapViewWatchExpr = { fg = cp.ping },
 		NvimDapViewWatchUpdated = { fg = cp.ping },
+		---------------------------
+		---- NvimDapView (END) ----
+		---------------------------
 	};
 end

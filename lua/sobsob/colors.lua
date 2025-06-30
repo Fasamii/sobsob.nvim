@@ -35,15 +35,13 @@ return {
 	util_lv6      = "#3a6de3",
 	util_lv6_dimm = "#2d56a8",
 
+	selection = "#2d1a3d", 
+	search = "#b3e6e6",        
+
 	error         = "#ff4081",
 	warning       = "#ffaf00",
 	info          = "#00b3e5",
 	hint          = "#00d75f",
-
-	border        = "#464647",
-	selection     = "#264f78",
-	search        = "#613214",
-	match_paren   = "#007acc",
 
 	git_add       = "#1f6243",
 	git_del       = "#943d3d",
