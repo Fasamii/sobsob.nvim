@@ -11,6 +11,7 @@ A wildcharm inspired color scheme for nvim
 ![Js-Ts Example](examples/Js.png)
 ![C Example](examples/C.png)
 ![Hypr Example](examples/Hypr.png)
+![Telescope](examples/Telescope.png)
 
 </details>
 
