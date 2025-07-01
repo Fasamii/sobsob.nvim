@@ -288,7 +288,7 @@ return function(cp)
 		-------------------
 		-------------------------
 		TelescopeNormal = { bg = nil },
-		TelescopeBorder = { fg = cp.white },
+		TelescopeBorder = { fg = cp.white_dark },
 		TelescopeTitle = { fg = cp.white },
 
 		TelescopePromptNormal = { fg = cp.purple},
