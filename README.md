@@ -56,12 +56,14 @@ opts = {
 }
 ```
 # Supported plugins
-- [x] treesitter
-- [x] render-markdown
-- [x] gitsigns
-- [x] which-key
-- [x] nvim-dap-view
-- [x] lualine (you have to set custom hl groups in lualine config(LL_I_A, LL_I_B etc...))
+- [x] Treesitter
+- [x] Telescope
+- [x] Render-markdown
+- [x] Gitsigns
+- [x] Which-key
+- [x] Nvim-dap-view
+- [-] Lualine (you have to set custom hl groups in lualine config(LL_I_A, LL_I_B etc...)) (working
+on it)
 
 ---
 

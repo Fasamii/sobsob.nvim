@@ -166,6 +166,8 @@ return function(cp)
 		["@keyword.return"] = { fg = cp.cyan },
 		["@conditional"] = { fg = cp.cyan },
 		["@repeat"] = { fg = cp.cyan },
+		["@tag.builtin"] = { fg = cp.purple },
+		-- ["@tag"] = { fg = cp.violet }, -- TODO: figure out how to affect only the practices of html tag
 		-- Statement
 		["@debug"] = { fg = cp.ornage },
 		["@statment"] = { fg = cp.violet },
@@ -285,12 +287,16 @@ return function(cp)
 		---- Telescope ----
 		-------------------
 		-------------------------
-		TelescopeBorder = { fg = cp.purple },
-		TelescopeTitle = { fg = cp.magneta },
 		TelescopeNormal = { bg = nil },
-		TelescopeMatching = { bg = cp.violet, fg = cp.bg_solid },
-		TelescopeSelection = { fg = cp.magneta },
-		TelescopePreviewLine = { bg = cp.util_lv4_dimm, bold = true },
+		TelescopeBorder = { fg = cp.white },
+		TelescopeTitle = { fg = cp.white },
+
+		TelescopePromptNormal = { fg = cp.purple},
+		TelescopePromptCounter = { fg = cp.purple},
+
+		TelescopeSelection = { fg = cp.magneta, bold = true },
+		TelescopeMatching = { bg = cp.selection, bold = true },
+		TelescopePreviewLine = { bg = cp.search, fg = cp.bg_solid, bold = true },
 		-------------------------
 		---- Telescope (END) ----
 		-------------------------
