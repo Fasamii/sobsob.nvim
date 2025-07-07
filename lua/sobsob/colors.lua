@@ -35,8 +35,8 @@ return {
 	util_lv6      = "#3a6de3",
 	util_lv6_dimm = "#2d56a8",
 
-	selection = "#2d1a3d", 
-	search = "#b3e6e6",        
+	selection     = "#2d1a3d",
+	search        = "#b3e6e6",
 
 	error         = "#ff4081",
 	warning       = "#ffaf00",
@@ -46,4 +46,8 @@ return {
 	git_add       = "#1f6243",
 	git_del       = "#943d3d",
 	git_mod       = "#8a6a1e",
+
+	git_add_dimm  = "#162e1a",
+	git_del_dimm  = "#3b1f1f",
+	git_mod_dimm  = "#3b2f18",
 };

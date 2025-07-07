@@ -15,7 +15,7 @@ return function(cp)
 		CurSearch = { bg = cp.search, fg = cp.bg_solid, bold = true },
 		IncSearch = { bg = cp.search, fg = cp.bg_solid, bold = true },
 
-		Substitute = { bg = cp.red }, -- TODO: check what is that for
+		Substitute = { bg = cp.search, fg = cp.bg_solid }, -- TODO: check what is that for
 		MatchParen = { fg = cp.yellow, bold = true },
 		-----------------
 		-- status line --
@@ -260,9 +260,9 @@ return function(cp)
 		-- blame
 		GitSignsCurrentLineBlame = { fg = cp.black },
 		-- Signs
-		GitSignsAdd = { bg = cp.git_add, fg = cp.bg_solid, bold = true },
-		GitSignsDelete = { bg = cp.git_del, fg = cp.bg_solid, bold = true },
-		GitSignsChange = { bg = cp.git_mod, fg = cp.bg_solid, bold = true },
+		GitSignsAdd = { bg = cp.git_add_dimm, fg = cp.bg_solid, bold = true },
+		GitSignsDelete = { bg = cp.git_del_dimm, fg = cp.bg_solid, bold = true },
+		GitSignsChange = { bg = cp.git_mod_dimm, fg = cp.bg_solid, bold = true },
 		-- Staged Signs
 		GitSignsStagedAdd = { bg = cp.black_shadow, fg = cp.white_dark },
 		GitSignsStagedChange = { bg = cp.black_shadow, fg = cp.white_dark },
