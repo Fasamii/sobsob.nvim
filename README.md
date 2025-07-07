@@ -56,7 +56,7 @@ opts = {
     }
 }
 ```
-keep in mind that overrides for specific languages have to be directly in opts table and start
+keep in mind that tables that contains overrides for specific languages have to be directly in opts table and start
 with dot prefix
 
 To check all defined highlight groups read [highlights.lua](https://github.com/Fasamii/sobsob.nvim/blob/main/lua/sobsob/highlights.lua) file
