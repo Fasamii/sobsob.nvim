@@ -47,7 +47,7 @@ opts = {
     }
 }
 ```
-To check highlights read [highlights.lua](https://gitnub.com/Fasamii/sobsob.nvim/blob/main/lua/sobsob/highlights.lua) file
+To check highlights read [highlights.lua](https://github.com/Fasamii/sobsob.nvim/blob/main/sobsob/highlights.lua) file
 ### Or you can override specific colors in the palette
 ```lua
 opts = {
