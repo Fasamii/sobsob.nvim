@@ -7,4 +7,4 @@ endif
 
 let g:colors_name = "sobsob"
 
-lua require("sobsob").setup()
+lua require("sobsob").reload()

@@ -1,7 +1,7 @@
 return function(cp)
 	return {
-		[".html"] = {
-			Normal = {bg = cp.pink}
+		[".javascript"] = {
+			Normal = { fg = "#000000", bg = "#ffffff" },
 		}
 	}
 end

@@ -1,7 +1,10 @@
 local M = {};
 
+local saved_opts = nil;
+
 function M.setup(opts)
 	opts = opts or {};
+	saved_opts = opts;
 
 	local cp = require("sobsob.colors");
 	if opts.cp ~= nil and type(opts.cp) == "table" then
@@ -25,8 +28,6 @@ function M.setup(opts)
 					if lang_spec_hl[filed] == nil then
 						lang_spec_hl[filed] = {};
 					end
-					vim.print(filed);
-					vim.print(group);
 					lang_spec_hl[filed][group] = theme;
 				end
 			else
@@ -51,6 +52,16 @@ function M.setup(opts)
 				end
 			end
 		});
+	end
+end
+
+function M.reload()
+	if saved_opts then
+		M.setup(saved_opts);
+	else
+		M.setup();
+		-- TODO: make error logging
+		print("The saved options arent saved (they should be at that point)");
 	end
 end
 
