@@ -56,8 +56,8 @@ opts = {
     }
 }
 ```
-if you don't like some specific colors in all highlights just change it via cp = { <color> =
-<your color> } and don't bother to change all highlight groups
+if you don't like some specific colors in all highlights just change it via cp = { [color] =
+[your color] } and don't bother to change all highlight groups
 # Supported plugins
 - [x] Treesitter
 - [x] Telescope
@@ -66,7 +66,7 @@ if you don't like some specific colors in all highlights just change it via cp =
 - [x] Which-key
 - [x] Nvim-dap-view
 - [ ] Lualine (you have to set custom hl groups in lualine config(LL_I_A, LL_I_B etc...)) (but hi
-groups for lualine are done)
+groups for lualine are defined)
 
 ---
 
