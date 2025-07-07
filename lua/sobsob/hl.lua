@@ -17,6 +17,17 @@ return function(cp)
 
 		Substitute = { bg = cp.search, fg = cp.bg_solid }, -- TODO: check what is that for
 		MatchParen = { fg = cp.yellow, bold = true },
+		-- Popup Menu -- TODO: check what that is
+		Pmenu = { fg = cp.white, bg = cp.bg_dark },
+		PmenuSel = { fg = cp.bg, bg = cp.purple },
+		PmenuSbar = { bg = cp.bg_darker },
+		PmenuThumb = { bg = cp.gray },
+		-- Folding -- TODO: check what that is and configure
+		Folded = { fg = cp.gray, bg = cp.bg_dark },
+		FoldColumn = { fg = cp.gray, bg = cp.bg },
+		-- Splits & Windows -- TODO: configure that
+		VertSplit = { fg = cp.gray },
+		WinSeparator = { fg = cp.gray }, -- Neovim 0.7+
 		-----------------
 		-- status line --
 		-----------------
@@ -24,7 +35,7 @@ return function(cp)
 		StatusLine = { bg = cp.black_dark, fg = cp.white },
 		StatusLineNc = { bg = cp.black, fg = cp.white },
 		TabLineFill = { bg = cp.black_dark },
-		TabLineSel = { bg = cp.black_dimm, fg = cp.magneta, bold = true },
+		TabLineSel = { bg = cp.black_dimm, fg = cp.magenta, bold = true },
 		TabLine = { bg = cp.black_dark, fg = cp.violet },
 		-- lualine
 		-- TODO: make lualine work without overwriting it groups
@@ -101,21 +112,24 @@ return function(cp)
 		Comment = { fg = cp.white_dark },
 		PreCondit = { fg = cp.orange },
 		SpecialChar = { fg = cp.violet },
+		Variable = { fg = cp.purple },
+		Property = { fg = cp.violet },
 		-- Function
 		Function = { fg = cp.purple, bold = true },
-		Label = { fg = cp.magneta },
+		Label = { fg = cp.magenta },
 		-- Keyword
 		Keyword = { fg = cp.cyan },
-		Statment = { fg = cp.cyan },
+		Statement = { fg = cp.violet },
 		Conditional = { fg = cp.cyan },
 		Repeat = { fg = cp.cyan },
+		Tag = { fg = cp.violet },
 		Exception = { fg = cp.cyan },
 		-- Identifier
-		Identifier = { fg = cp.purple },
+		Identifier = { fg = cp.violet },
 		-- Statement
-		Macro = { fg = cp.magneta },
-		Define = { fg = cp.magneta },
-		Include = { fg = cp.magneta },
+		Macro = { fg = cp.magenta },
+		Define = { fg = cp.cyan }, -- TODO: change
+		Include = { fg = cp.cyan }, -- TODO: change
 		-- Type
 		Type = { fg = cp.yellow },
 		Constant = { fg = cp.yellow, bold = true },
@@ -130,98 +144,116 @@ return function(cp)
 		Operator = { fg = cp.cyan },
 		-- Delimiter
 		Delimiter = { fg = cp.violet },
+		-- idk
+		Attribute = { bg = cp.red },
+
+		-- Reversed HTML highlighting
+		htmlTag = { fg = cp.violet }, -- < and > brackets
+		htmlTagName = { fg = cp.purple }, -- html, head, body, title
+		htmlArg = { fg = cp.yellow }, -- class, id, src attributes
+		htmlEqual = { fg = cp.magenta }, -- = sign
+		htmlString = { fg = cp.green }, -- "string values"
+		-- Additional HTML elements
+		htmlSpecialChar = { fg = cp.violet }, -- &nbsp; &amp; etc.
+		htmlComment = { fg = cp.gray }, -- HTML comments
+		htmlCommentPart = { fg = cp.gray }, -- Comment content
 		--------------------
 		-- fallback (END) --
 		--------------------
-		----------------
-		-- Treesitter --
-		----------------
-		-- Text
-		["@text"] = { fg = cp.white },                    -- Non-structured text
-		["@text.strong"] = { fg = cp.white, bold = true }, -- Bold text
-		["@text.emphasis"] = { fg = cp.white },           -- Emphasized text
-		["@text.underline"] = { fg = cp.white, underline = true }, -- Underlined text
-		["@text.strike"] = { fg = cp.white, strikethrough = true }, -- Strikethrough text
-		["@text.title"] = { fg = cp.white, bold = true }, -- Titles
-		["@text.literal"] = { fg = cp.white },            -- Literal or verbatim text
-		["@text.uri"] = { fg = cp.cyan, underline = true }, -- URIs (URLs, file paths, etc.)
-		["@text.math"] = { fg = cp.cyan },                -- Math environments
-		["@text.reference"] = { fg = cp.white },          -- References
-		["@text.environment"] = { fg = cp.white },        -- Text environments
-		["@text.environment.name"] = { fg = cp.white },   -- Text environment names
-		["@text.note"] = { fg = cp.white_dimm },          -- Notes
-		["@text.warning"] = { fg = cp.warning },          -- Warnings
-		["@text.danger"] = { fg = cp.error },             -- Danger alerts
-		["@text.diff.add"] = { fg = cp.util_lv1 },        -- Added text (for diffs)
-		["@text.diff.delete"] = { fg = cp.util_lv3 },     -- Deleted text (for diffs)
-		["@comment"] = { fg = cp.white_dark },
-		["@comment.documentation"] = { fg = cp.white_dimm },
-		["@special.comment"] = { fg = cp.white_dark, bold = true },
-		["@comment.error"] = { fg = cp.error },
-		["@preproc"] = { fg = cp.orange },
-		-- Keyword
-		["@keyword"] = { fg = cp.cyan },
-		["@keyword.function"] = { fg = cp.cyan },
-		["@keyword.operator"] = { fg = cp.cyan },
-		["@keyword.return"] = { fg = cp.cyan },
-		["@conditional"] = { fg = cp.cyan },
-		["@repeat"] = { fg = cp.cyan },
-		["@tag.builtin"] = { fg = cp.purple },
-		-- ["@tag"] = { fg = cp.violet }, -- TODO: figure out how to affect only the practices of html tag
-		-- Statement
-		["@debug"] = { fg = cp.ornage },
-		["@statment"] = { fg = cp.violet },
-		["@include"] = { fg = cp.magneta },
-		["@define"] = { fg = cp.magneta },
-		["@macro"] = { fg = cp.magneta },
-		-- Identifier
-		["@identifier"] = { fg = cp.purple },
-		["@property"] = { fg = cp.purple },
-		["@variable"] = { fg = cp.purple },
-		["@variable.builtin"] = { fg = cp.purple, bold = true },
-		["@variable.property"] = { fg = cp.purple },
-		["@variable.parameter"] = { fg = cp.purple },
-		["@variable.function"] = { fg = cp.purple, bold = true },
-		-- Function
-		["@function"] = { fg = cp.purple, bold = true },
-		["@function.call"] = { fg = cp.purple, bold = true },
-		["@parameter"] = { fg = cp.purple },
-		["@method.call"] = { bg = cp.purple, bold = true },
-		["@method"] = { fg = cp.purple, bold = true },
-		["@constructor"] = { fg = cp.pink, bold = true },
-		["@label"] = { fg = cp.purple, bold = true },
-		-- Type
-		["@type"] = { fg = cp.yellow },
-		["@type.builtin"] = { fg = cp.yellow },
-		["@type.qualifier"] = { fg = cp.yellow },
-		["@type.definition"] = { fg = cp.red },
-		["@storageclass"] = { fg = cp.yellow },
-		["@namespace"] = { fg = cp.yellow },
-		["@constant"] = { fg = cp.yellow, bold = true },
-		["@constant.builtin"] = { fg = cp.yellow, bold = true },
-		["@constant.macro"] = { fg = cp.magneta },
-		-- Lsp Type
-		["@lsp.type.structure"] = { fg = cp.yellow, bold = true },
-		-- Literal
-		["@null"] = { fg = cp.red },
-		["@string"] = { fg = cp.green },
-		["@string.regex"] = { fg = cp.magneta },
-		["@string.escape"] = { fg = cp.magneta },
-		["@string.special"] = { fg = cp.magneta },
-		["@character"] = { fg = cp.green },
-		["@character.special"] = { fg = cp.red },
-		["@number"] = { fg = cp.red },
-		["@boolean"] = { fg = cp.red },
-		["@float"] = { fg = cp.red },
-		-- Punctuation
-		["@punctuation.bracket"] = { fg = cp.violet }, -- Brackets, braces, parentheses
-		["@punctuation.delimiter"] = { fg = cp.violet }, -- Delimiters (commas, colons, ...)
-		["@punctuation.special"] = { fg = cp.violet }, -- Special punctuation
-		-- Operator
-		["@operator"] = { fg = cp.magneta, bold = true }, --TODO: consider other color for operator
-		----------------------
-		-- Treesitter (END) --
-		----------------------
+		-- ----------------
+		-- -- Treesitter --
+		-- ----------------
+		-- -- Text
+		-- ["@text"] = { fg = cp.white },                    -- Non-structured text
+		-- ["@text.strong"] = { fg = cp.white, bold = true }, -- Bold text
+		-- ["@text.emphasis"] = { fg = cp.white },           -- Emphasized text
+		-- ["@text.underline"] = { fg = cp.white, underline = true }, -- Underlined text
+		-- ["@text.strike"] = { fg = cp.white, strikethrough = true }, -- Strikethrough text
+		-- ["@text.title"] = { fg = cp.white, bold = true }, -- Titles
+		-- ["@text.literal"] = { fg = cp.white },            -- Literal or verbatim text
+		-- ["@text.uri"] = { fg = cp.cyan, underline = true }, -- URIs (URLs, file paths, etc.)
+		-- ["@text.math"] = { fg = cp.cyan },                -- Math environments
+		-- ["@text.reference"] = { fg = cp.white },          -- References
+		-- ["@text.environment"] = { fg = cp.white },        -- Text environments
+		-- ["@text.environment.name"] = { fg = cp.white },   -- Text environment names
+		-- ["@text.note"] = { fg = cp.white_dimm },          -- Notes
+		-- ["@text.warning"] = { fg = cp.warning },          -- Warnings
+		-- ["@text.danger"] = { fg = cp.error },             -- Danger alerts
+		-- ["@text.diff.add"] = { fg = cp.util_lv1 },        -- Added text (for diffs)
+		-- ["@text.diff.delete"] = { fg = cp.util_lv3 },     -- Deleted text (for diffs)
+		-- ["@comment"] = { fg = cp.white_dark },
+		-- ["@comment.documentation"] = { fg = cp.white_dimm },
+		-- ["@special.comment"] = { fg = cp.white_dark, bold = true },
+		-- ["@comment.error"] = { fg = cp.error },
+		-- ["@preproc"] = { fg = cp.orange },
+		-- -- Keyword
+		-- ["@keyword"] = { fg = cp.cyan },
+		-- ["@keyword.function"] = { fg = cp.cyan },
+		-- ["@keyword.operator"] = { fg = cp.cyan },
+		-- ["@keyword.return"] = { fg = cp.cyan },
+		-- ["@conditional"] = { fg = cp.cyan },
+		-- ["@repeat"] = { fg = cp.cyan },
+		-- ["@tag.builtin"] = { fg = cp.purple },
+		-- ["@tag"] = { fg = cp.purple}, -- TODO: figure out how to affect only the practices of html tag
+		-- ["@tag.delimiter"] = { fg = cp.purple }, -- < >
+		-- ["@tag"] = { fg = cp.violet },          -- tag names
+		-- ["@tag.attribute"] = { fg = cp.yellow }, -- attributes
+		-- ["@operator"] = { fg = cp.magenta },     -- = sign
+		-- ["@string"] = { fg = cp.green },         -- strings
+		-- -- Statement
+		-- ["@debug"] = { fg = cp.ornage },
+		-- ["@statment"] = { fg = cp.violet },
+		-- ["@include"] = { fg = cp.magenta },
+		-- ["@define"] = { fg = cp.magenta },
+		-- ["@macro"] = { fg = cp.magenta },
+		-- -- Identifier
+		-- ["@identifier"] = { fg = cp.purple },
+		-- ["@property"] = { fg = cp.purple },
+		-- ["@variable"] = { fg = cp.purple },
+		-- ["@variable.builtin"] = { fg = cp.purple, bold = true },
+		-- ["@variable.property"] = { fg = cp.purple },
+		-- ["@variable.parameter"] = { fg = cp.purple },
+		-- ["@variable.function"] = { fg = cp.purple, bold = true },
+		-- -- Function
+		-- ["@function"] = { fg = cp.purple, bold = true },
+		-- ["@function.call"] = { fg = cp.purple, bold = true },
+		-- ["@parameter"] = { fg = cp.purple },
+		-- ["@method.call"] = { bg = cp.purple, bold = true },
+		-- ["@method"] = { fg = cp.purple, bold = true },
+		-- ["@constructor"] = { fg = cp.pink, bold = true },
+		-- ["@label"] = { fg = cp.purple, bold = true },
+		-- -- Type
+		-- ["@type"] = { fg = cp.yellow },
+		-- ["@type.builtin"] = { fg = cp.yellow },
+		-- ["@type.qualifier"] = { fg = cp.yellow },
+		-- ["@type.definition"] = { fg = cp.red },
+		-- ["@storageclass"] = { fg = cp.yellow },
+		-- ["@namespace"] = { fg = cp.yellow },
+		-- ["@constant"] = { fg = cp.yellow, bold = true },
+		-- ["@constant.builtin"] = { fg = cp.yellow, bold = true },
+		-- ["@constant.macro"] = { fg = cp.magenta },
+		-- -- Lsp Type
+		-- ["@lsp.type.structure"] = { fg = cp.yellow, bold = true },
+		-- -- Literal
+		-- ["@null"] = { fg = cp.red },
+		-- ["@string"] = { fg = cp.green },
+		-- ["@string.regex"] = { fg = cp.magenta },
+		-- ["@string.escape"] = { fg = cp.magenta },
+		-- ["@string.special"] = { fg = cp.magenta },
+		-- ["@character"] = { fg = cp.green },
+		-- ["@character.special"] = { fg = cp.red },
+		-- ["@number"] = { fg = cp.red },
+		-- ["@boolean"] = { fg = cp.red },
+		-- ["@float"] = { fg = cp.red },
+		-- -- Punctuation
+		-- ["@punctuation.bracket"] = { fg = cp.violet }, -- Brackets, braces, parentheses
+		-- ["@punctuation.delimiter"] = { fg = cp.violet }, -- Delimiters (commas, colons, ...)
+		-- ["@punctuation.special"] = { fg = cp.violet }, -- Special punctuation
+		-- -- Operator
+		-- ["@operator"] = { fg = cp.magenta, bold = true }, --TODO: consider other color for operator
+		-- ----------------------
+		-- -- Treesitter (END) --
+		-- ----------------------
 		----------------------
 		---- syntax (END) ----
 		----------------------
@@ -273,7 +305,7 @@ return function(cp)
 		-------------------
 		---- which-key ----
 		-------------------
-		WhichKey = { fg = cp.magneta, bold = true },
+		WhichKey = { fg = cp.magenta, bold = true },
 		-- WhichKeyBorder = { bg = cp.red },
 		WhichKeyDesc = { fg = cp.purple },
 		WhichKeyGroup = { fg = cp.cyan },
@@ -291,10 +323,10 @@ return function(cp)
 		TelescopeBorder = { fg = cp.white_dark },
 		TelescopeTitle = { fg = cp.white },
 
-		TelescopePromptNormal = { fg = cp.purple},
-		TelescopePromptCounter = { fg = cp.purple},
+		TelescopePromptNormal = { fg = cp.purple },
+		TelescopePromptCounter = { fg = cp.purple },
 
-		TelescopeSelection = { fg = cp.magneta, bold = true },
+		TelescopeSelection = { fg = cp.magenta, bold = true },
 		TelescopeMatching = { bg = cp.selection, bold = true },
 		TelescopePreviewLine = { bg = cp.search, fg = cp.bg_solid, bold = true },
 		-------------------------

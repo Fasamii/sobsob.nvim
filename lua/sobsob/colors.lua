@@ -16,10 +16,10 @@ return {
 	blue          = "#569cd6",
 	violet        = "#875fff",
 	purple        = "#ff87ff",
-	magneta       = "#d600c8",
+	magenta	  = "#d600c8",
 	red           = "#ed3131",
 	pink          = "#ff5fa3",
-	yellow        = "#ffaf00",
+	yellow        = "#ffaf00", -- TODO: make that more like blank
 	orange        = "#f26c0c",
 
 	util_lv1      = "#f487b6",
@@ -44,10 +44,9 @@ return {
 	hint          = "#00d75f",
 
 	git_add       = "#1f6243",
-	git_del       = "#943d3d",
-	git_mod       = "#8a6a1e",
-
 	git_add_dimm  = "#162e1a",
+	git_del       = "#943d3d",
 	git_del_dimm  = "#3b1f1f",
+	git_mod       = "#8a6a1e",
 	git_mod_dimm  = "#3b2f18",
 };
