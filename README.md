@@ -39,7 +39,15 @@ use {
 }
 ```
 ## Configuration
-### You can override specific colors in the palette
+### specific highlight groups
+```lua
+opts = {
+    hi = {
+        Normal = { bg = "#ff00ff", fg = "#000000" }
+    }
+}
+```
+### Or you can override specific colors in the palette
 ```lua
 opts = {
     cp = {
@@ -47,14 +55,6 @@ opts = {
     }
 }
 
-```
-### Or specific highlight groups
-```lua
-opts = {
-    hi = {
-        Normal = { bg = "#ff00ff", fg = "#000000" }
-    }
-}
 ```
 if you don't like some specific colors in all highlights just change it via cp = { [color] =
 [your color] } and don't bother to change all highlight groups
