@@ -47,6 +47,7 @@ opts = {
     }
 }
 ```
+To check highlights read [highlights.lua](https://gitnub.com/Fasamii/sobsob.nvim/blob/main/lua/sobsob/highlights.lua) file
 ### Or you can override specific colors in the palette
 ```lua
 opts = {
@@ -58,6 +59,7 @@ opts = {
 ```
 if you don't like some specific colors in all highlights just change it via cp = { [color] =
 [your color] } and don't bother to change all highlight groups
+To check color palette and existing colors read [colors.lua](https://github.com/Fasamii/sobsob.nvim/blob/main/lua/sobsob/colors.lua) file
 # Supported plugins
 - [x] Treesitter
 - [x] Telescope
