@@ -16,7 +16,7 @@ return {
 	blue          = "#569cd6",
 	violet        = "#875fff",
 	purple        = "#ff87ff",
-	magenta	  = "#d600c8",
+	magenta       = "#d600c8",
 	red           = "#ed3131",
 	pink          = "#ff5fa3",
 	yellow        = "#ffaf00", -- TODO: make that more like blank

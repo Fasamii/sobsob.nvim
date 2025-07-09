@@ -7,14 +7,29 @@ function M.setup(opts)
 	saved_opts = opts;
 
 	local cp = require("sobsob.colors");
+	local lang_spec_cp = {};
 	if opts.cp ~= nil and type(opts.cp) == "table" then
 		for filed, value in pairs(opts.cp) do
-			if type(value) == "string" then
-				cp[filed] = value;
+			if filed:sub(1, 1) == "." then
+				for group, color in pairs(value) do
+					if type(color) == "string" then
+						if lang_spec_cp[filed] == nil then
+							lang_spec_cp[filed] = {};
+						end
+						lang_spec_cp[filed][group] = color;
+					else
+						-- TODO: the same as rest make error logging
+						print("wrong type");
+					end
+				end
 			else
-				-- TODO: make valid error messages and call nvim notify with to display errors or smth, make it work
-				print("what tf are you trying to do get <" ..
-					type(value) .. "> expected String in opts = { cp = { ... }} for sobsob.nvim");
+				if type(value) == "string" then
+					cp[filed] = value;
+				else
+					-- TODO: make valid error messages and call nvim notify with to display errors or smth, make it work
+					print("what tf are you trying to do, get <" ..
+						type(value) .. "> expected String in opts = { cp = { ... }} for sobsob.nvim");
+				end
 			end
 		end
 	end;
@@ -25,10 +40,15 @@ function M.setup(opts)
 		for filed, value in pairs(opts.hi) do
 			if filed:sub(1, 1) == "." then
 				for group, theme in pairs(value) do
-					if lang_spec_hl[filed] == nil then
-						lang_spec_hl[filed] = {};
+					if type(theme) == "table" then
+						if lang_spec_hl[filed] == nil then
+							lang_spec_hl[filed] = {};
+						end
+						lang_spec_hl[filed][group] = theme;
+					else
+						-- TODO: the same as rest make error logging
+						print("wrong type");
 					end
-					lang_spec_hl[filed][group] = theme;
 				end
 			else
 				hi[filed] = value;
@@ -41,6 +61,7 @@ function M.setup(opts)
 	for group, theme in pairs(hi) do
 		vim.api.nvim_set_hl(0, group, theme);
 	end
+
 	for lang, groups in pairs(lang_spec_hl) do
 		vim.api.nvim_create_autocmd("FileType", {
 			callback = function(args)
