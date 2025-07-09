@@ -47,19 +47,6 @@ opts = {
     }
 }
 ```
-you can also override highlight groups for specific languages
-so for example if you want to burn your eyes only while writing JavaScript you can write
-```lua
-opts = {
-    [".javascript"] = {
-        Normal = { fg = "#000000", bg = "#ffffff" }
-    }
-}
-```
-keep in mind that tables that contains overrides for specific languages have to be directly in opts table and start
-with dot prefix
-
-To check all defined highlight groups read [highlights.lua](https://github.com/Fasamii/sobsob.nvim/blob/main/lua/sobsob/highlights.lua) file
 ### Or you can override specific colors in the palette
 ```lua
 opts = {
