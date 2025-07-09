@@ -16,7 +16,7 @@ return function(cp)
 		IncSearch                                  = { bg = cp.search, fg = cp.bg_solid, bold = true },
 
 		Substitute                                 = { bg = cp.search, fg = cp.bg_solid }, -- TODO: check what is that for
-		MatchParen                                 = { fg = cp.yellow, bold = true },
+		MatchParen                                 = { fg = cp.yellow, bold = true }, -- TODO: make that standout more
 		-----------------
 		-- status line --
 		-----------------

@@ -82,6 +82,8 @@ To check color palette and existing colors read [colors.lua](https://github.com/
 - [x] Nvim-dap-view
 - [ ] Lualine (you have to set custom hl groups in lualine config(LL_I_A, LL_I_B etc...)) (but hi
 groups for lualine are defined)
+- [ ] Alpha
+- [ ] nvim-scrollbar 
 
 ---
 
