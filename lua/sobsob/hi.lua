@@ -307,7 +307,7 @@ return function(cp)
 		["@method.call"]                                 = { fg = cp.purple, bold = true },
 		["@method"]                                      = { fg = cp.purple, bold = true },
 		["@constructor"]                                 = { fg = cp.magenta, bold = true },
-		["@constructor.lua"]                                 = { fg = cp.violet },
+		["@constructor.lua"]                             = { fg = cp.violet },
 		["@label"]                                       = { fg = cp.cyan, bold = true },
 		-- Type
 		["@type"]                                        = { fg = cp.yellow },
@@ -342,7 +342,7 @@ return function(cp)
 		-- Operator
 		["@operator"]                                    = { fg = cp.magenta, bold = true },
 		-- css
-		["@attribute.css"] = { fg =cp.violet},
+		["@attribute.css"]                               = { fg = cp.violet },
 		----------------------
 		-- Treesitter (END) --
 		----------------------

@@ -3,6 +3,18 @@ local saved_opts = nil;
 
 local autocmd_group = nil;
 
+local function deep_copy(orig)
+	local copy = {}
+	for k, v in pairs(orig) do
+		if type(v) == "table" then
+			copy[k] = deep_copy(v)
+		else
+			copy[k] = v
+		end
+	end
+	return copy
+end
+
 local function rm_autocmds()
 	if autocmd_group ~= nil then
 		vim.api.nvim_del_augroup_by_id(autocmd_group);
@@ -10,13 +22,13 @@ local function rm_autocmds()
 	end
 end
 
-local function set_hl(hl)
-	for group, options in pairs(hl) do
+local function set_hl(hi)
+	for group, options in pairs(hi) do
 		vim.api.nvim_set_hl(0, group, options);
 	end
 end
 
-local function setup_listener(hl, custom_hl)
+local function setup_listener(hi, lang_spec_hi)
 	rm_autocmds();
 
 	autocmd_group = vim.api.nvim_create_augroup("Sobsob handler", { clear = true });
@@ -30,8 +42,7 @@ local function setup_listener(hl, custom_hl)
 	})
 
 
-	for lang, highlights in pairs(custom_hl) do
-		lang = lang:sub(2);
+	for lang, highlights in pairs(lang_spec_hi) do
 		vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "VimEnter" }, {
 			group = autocmd_group,
 			callback = function(args)
@@ -42,7 +53,7 @@ local function setup_listener(hl, custom_hl)
 						set_hl(highlights);
 					end);
 				else
-					set_hl(hl)
+					set_hl(hi)
 				end
 			end
 		});
@@ -53,52 +64,67 @@ function M.setup(opts, palette)
 	palette = palette or "sobsob";
 	opts = opts or {};
 	saved_opts = opts;
+	local lang_spec_hl = {};
 
-	local cp = require("sobsob.palettes." .. palette);
-	local custom_cp = {};
-
+	-- Generate base color palette and highlights
+	local cp = deep_copy(require("sobsob.palettes." .. palette));
 	if opts.cp ~= nil then
-		for variable, value in pairs(opts.cp) do
-			if variable:sub(1, 1) == "." then
-				if custom_cp[variable] == nil then
-					custom_cp[variable] = {};
-				end
-				for color, hex in pairs(value) do
-					custom_cp[variable][color] = hex;
-				end
-			else
-				cp[variable] = value;
-			end
+		for color, hex in pairs(opts.cp) do
+			cp[color] = hex;
 		end
 	end
+	local base_hl = require("sobsob.hi")(cp);
 
-	local custom_hl = {};
-	local hl = require("sobsob.hl")(cp);
-
+	-- Apply global highlight overrides to base
 	if opts.hi ~= nil then
-		for variable, value in pairs(opts.hi) do
-			if variable:sub(1, 1) == "." then
-				if custom_hl[variable] == nil then
-					custom_hl[variable] = {};
-				end
-				if custom_cp[variable] ~= nil then
-					custom_hl[variable] = require("sobsob.hl")(vim.tbl_deep_extend("force", cp,
-						custom_cp[variable]));
-				else
-					custom_hl[variable] = require("sobsob.hl")(cp);
-				end
-			else
-				hl[variable] = value;
-			end
-		end
-	else
-		for variable, value in pairs(custom_cp) do
-			custom_hl[variable] = require("sobsob.hl")(vim.tbl_deep_extend("force", cp, value));
+		for group, options in pairs(opts.hi) do
+			base_hl[group] = options;
 		end
 	end
 
-	set_hl(hl);
-	setup_listener(hl, custom_hl);
+	-- Process language-specific configurations
+	for variable, value in pairs(opts) do
+		if variable:sub(1, 1) == "." then
+			local lang = variable:sub(2)
+			local colors = deep_copy(require("sobsob.palettes." .. palette));
+
+			-- Apply global color palette overrides first
+			if opts.cp ~= nil then
+				for color, hex in pairs(opts.cp) do
+					colors[color] = hex;
+				end
+			end
+
+			-- Apply language-specific color palette overrides
+			if value.cp ~= nil then
+				for color, hex in pairs(value.cp) do
+					colors[color] = hex;
+				end
+			end
+
+			-- Generate highlights with modified colors
+			local lang_hl = require("sobsob.hi")(colors);
+
+			-- Apply global highlight overrides
+			if opts.hi ~= nil then
+				for group, options in pairs(opts.hi) do
+					lang_hl[group] = options;
+				end
+			end
+
+			-- Apply language-specific highlight overrides (these take precedence)
+			if value.hi ~= nil then
+				for group, options in pairs(value.hi) do
+					lang_hl[group] = options;
+				end
+			end
+
+			lang_spec_hl[lang] = lang_hl;
+		end
+	end
+
+	set_hl(base_hl);
+	setup_listener(base_hl, lang_spec_hl);
 end
 
 function M.reload(palette)
