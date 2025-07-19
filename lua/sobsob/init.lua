@@ -28,7 +28,7 @@ local function set_hl(hi)
 	end
 end
 
-local function setup_listener(hi, lang_spec_hi)
+local function setup_listener(hi, lang_spec_hi, lang_spec_misc)
 	rm_autocmds();
 
 	autocmd_group = vim.api.nvim_create_augroup("Sobsob handler", { clear = true });
@@ -47,13 +47,21 @@ local function setup_listener(hi, lang_spec_hi)
 			group = autocmd_group,
 			callback = function(args)
 				local ft = vim.bo[args.buf].filetype
-				-- vim.print(args, ft);
 				if ft == lang then
 					vim.schedule(function()
 						set_hl(highlights);
 					end);
 				else
 					set_hl(hi)
+				end
+
+				-- FIX: treesitter enabling if not disabled for theat language
+				if lang_spec_misc[lang] then
+					if lang_spec_misc[lang].disable_treesitter ~= nil then
+						if lang_spec_misc[lang].disable_treesitter then
+							vim.treesitter.stop(args.buf);
+						end
+					end
 				end
 			end
 		});
@@ -65,8 +73,8 @@ function M.setup(opts, palette)
 	opts = opts or {};
 	saved_opts = opts;
 	local lang_spec_hl = {};
+	local lang_misc = {};
 
-	-- Generate base color palette and highlights
 	local cp = deep_copy(require("sobsob.palettes." .. palette));
 	if opts.cp ~= nil then
 		for color, hex in pairs(opts.cp) do
@@ -75,48 +83,48 @@ function M.setup(opts, palette)
 	end
 	local base_hl = require("sobsob.hi")(cp);
 
-	-- Apply global highlight overrides to base
 	if opts.hi ~= nil then
 		for group, options in pairs(opts.hi) do
 			base_hl[group] = options;
 		end
 	end
 
-	-- Process language-specific configurations
 	for variable, value in pairs(opts) do
 		if variable:sub(1, 1) == "." then
 			local lang = variable:sub(2)
 			local colors = deep_copy(require("sobsob.palettes." .. palette));
 
-			-- Apply global color palette overrides first
 			if opts.cp ~= nil then
 				for color, hex in pairs(opts.cp) do
 					colors[color] = hex;
 				end
 			end
 
-			-- Apply language-specific color palette overrides
 			if value.cp ~= nil then
 				for color, hex in pairs(value.cp) do
 					colors[color] = hex;
 				end
 			end
 
-			-- Generate highlights with modified colors
 			local lang_hl = require("sobsob.hi")(colors);
 
-			-- Apply global highlight overrides
 			if opts.hi ~= nil then
 				for group, options in pairs(opts.hi) do
 					lang_hl[group] = options;
 				end
 			end
 
-			-- Apply language-specific highlight overrides (these take precedence)
 			if value.hi ~= nil then
 				for group, options in pairs(value.hi) do
 					lang_hl[group] = options;
 				end
+			end
+
+			if value.disable_treesitter ~= nil then
+				if lang_misc[lang] == nil then
+					lang_misc[lang] = {};
+				end
+				lang_misc[lang].disable_treesitter = value.disable_treesitter;
 			end
 
 			lang_spec_hl[lang] = lang_hl;
@@ -124,7 +132,7 @@ function M.setup(opts, palette)
 	end
 
 	set_hl(base_hl);
-	setup_listener(base_hl, lang_spec_hl);
+	setup_listener(base_hl, lang_spec_hl, lang_misc);
 end
 
 function M.reload(palette)

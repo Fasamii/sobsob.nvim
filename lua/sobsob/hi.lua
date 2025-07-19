@@ -372,6 +372,9 @@ return function(cp)
 
 		DiagnosticInfo                                   = { fg = cp.info },
 		Info                                             = { fg = cp.info },
+
+		DiagnosticOk                                     = { fg = cp.hint },
+		Ok                                               = { fg = cp.hint },
 		-----------------------------
 		----- Diagnostics (END) -----
 		-----------------------------
