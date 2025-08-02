@@ -72,6 +72,14 @@ groups for lualine are defined)
 - [ ] Alpha
 - [ ] nvim-scrollbar 
 
+# Languages to which I paid special attention
+- [x] XML
+- [x] HTML
+- [x] CSS
+- [X] JavaScript
+- [X] Rust 
+- [X] Haskell
+- [X] Lua
 ---
 
 <div align="center">

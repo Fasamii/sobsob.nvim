@@ -280,6 +280,10 @@ return function(cp)
 		["@tag.builtin"]                                 = { fg = cp.magenta },
 		["@tag.css"]                                     = { fg = cp.yellow },
 		["@constant.css"]                                = { fg = cp.yellow },
+		-- XML
+		["@tag.attribute.xml"]                           = { fg = cp.violet },
+		["@tag.xml"]                                     = { fg = cp.yellow },
+		["@punctuation.delimiter.xml"]                   = { fg = cp.green },
 		-- Statement
 		["@debug"]                                       = { fg = cp.orange },
 		["@statment"]                                    = { fg = cp.cyan },
