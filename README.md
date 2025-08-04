@@ -73,6 +73,7 @@ groups for lualine are defined)
 - [ ] nvim-scrollbar 
 
 # Languages to which I paid special attention
+- [X] Plain text
 - [x] XML
 - [x] HTML
 - [x] CSS
@@ -84,7 +85,7 @@ groups for lualine are defined)
 
 <div align="center">
 
-⭐ Star this repo if you like SobSob❗ ⭐
+⭐ Star this repo if you like SobSob ⭐
 [Report Bug](https://github.com/Fasamii/sobsob.nvim/issues) • [Request Feature](https://github.com/Fasamii/sobsob.nvim/issues)
 
 </div>
