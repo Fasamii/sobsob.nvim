@@ -35,7 +35,7 @@ return function(cp)
 		netrwTreeBar = { fg = cp.violet },
 		netrwPlain = { fg = cp.purple },
 		-- TODO: link to Directory
-		netrwDir = { fg = cp.pink },
+		netrwDir = { fg = cp.cyan },
 		netrwClassify = { fg = cp.violet },
 		netrwExe = { fg = cp.yellow },
 		-- lualine
