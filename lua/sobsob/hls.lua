@@ -29,6 +29,15 @@ return function(cp)
 		TabLineFill                                      = { bg = cp.black_dark },
 		TabLineSel                                       = { bg = cp.black_dimm, fg = cp.magenta, bold = true },
 		TabLine                                          = { bg = cp.black_dark, fg = cp.violet },
+		-----------
+		-- netrw --
+		-----------
+		netrwTreeBar = { fg = cp.violet },
+		netrwPlain = { fg = cp.purple },
+		-- TODO: link to Directory
+		netrwDir = { fg = cp.magenta },
+		netrwClassify = { fg = cp.violet },
+		netrwExe = { fg = cp.yellow },
 		-- lualine
 		-- TODO: make lualine work without overwriting it groups
 		-- For a reference:
