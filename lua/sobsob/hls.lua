@@ -306,7 +306,7 @@ return function(cp)
 		["@variable"]                                    = { fg = cp.purple },
 		["@variable.builtin"]                            = { fg = cp.purple, bold = true },
 		["@variable.property"]                           = { fg = cp.purple },
-		["@variable.parameter"]                          = { fg = cp.red },
+		["@variable.parameter"]                          = { fg = cp.purple },
 		["@variable.function"]                           = { fg = cp.purple, bg = cp.red, bold = true },
 		["@variable.member.query"]                       = { fg = cp.red, bold = true },
 		-- Function
