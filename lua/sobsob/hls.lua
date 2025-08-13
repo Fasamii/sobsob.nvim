@@ -32,12 +32,12 @@ return function(cp)
 		-----------
 		-- netrw --
 		-----------
-		netrwTreeBar = { fg = cp.violet },
-		netrwPlain = { fg = cp.purple },
+		netrwTreeBar                                     = { fg = cp.violet },
+		netrwPlain                                       = { fg = cp.purple },
 		-- TODO: link to Directory
-		netrwDir = { fg = cp.cyan },
-		netrwClassify = { fg = cp.violet },
-		netrwExe = { fg = cp.yellow },
+		netrwDir                                         = { fg = cp.cyan },
+		netrwClassify                                    = { fg = cp.violet },
+		netrwExe                                         = { fg = cp.yellow },
 		-- lualine
 		-- TODO: make lualine work without overwriting it groups
 		-- For a reference:
@@ -306,7 +306,7 @@ return function(cp)
 		["@variable"]                                    = { fg = cp.purple },
 		["@variable.builtin"]                            = { fg = cp.purple, bold = true },
 		["@variable.property"]                           = { fg = cp.purple },
-		["@variable.parameter"]                          = { fg = cp.purple },
+		["@variable.parameter"]                          = { fg = cp.red },
 		["@variable.function"]                           = { fg = cp.purple, bg = cp.red, bold = true },
 		["@variable.member.query"]                       = { fg = cp.red, bold = true },
 		-- Function
