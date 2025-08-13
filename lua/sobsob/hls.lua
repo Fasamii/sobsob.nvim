@@ -329,7 +329,7 @@ return function(cp)
 		["@type.definition"]                             = { fg = cp.yellow, bold = true },
 		["@storageclass"]                                = { fg = cp.yellow },
 		["@namespace"]                                   = { fg = cp.yellow },
-		["@constant"]                                    = { fg = cp.magenta, bold = true },
+		["@constant"]                                    = { fg = cp.yellow, bold = true },
 		["@constant.builtin"]                            = { fg = cp.magenta, bold = true },
 		["@constant.macro"]                              = { fg = cp.violet, bold = true },
 		-- Lsp Type
