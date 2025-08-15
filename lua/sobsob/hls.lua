@@ -270,7 +270,7 @@ return function(cp)
 		["@text.diff.add"]                               = { fg = cp.hint },
 		["@text.diff.delete"]                            = { fg = cp.error },
 		["@comment"]                                     = { fg = cp.white_dark, italic = true },
-		["@comment.documentation"]                       = { fg = cp.white_dimm, italic = true },
+		["@comment.documentation"]                       = { fg = cp.white_dark, bold = true, italic = true },
 		["@special.comment"]                             = { fg = cp.white_dark, bold = true },
 		["@comment.error"]                               = { fg = cp.error },
 		["@preproc"]                                     = { fg = cp.orange },
