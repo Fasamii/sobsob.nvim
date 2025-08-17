@@ -141,6 +141,7 @@ return function(cp)
 		["@lsp.type.attributeBracket.rust"]              = { fg = cp.violet },
 		["@lsp.type.builtinAttribute.rust"]              = { fg = cp.yellow, bold = true },
 		["@lsp.typemod.lifetime.declaration.rust"]       = { fg = cp.magenta },
+		["@lsp.type.lifetime.rust"]                      = { fg = cp.magenta },
 		-- TODO: segregate that a little: above
 		hsPragma                                         = { fg = cp.cyan },
 		hsImportModuleName                               = { fg = cp.green },
