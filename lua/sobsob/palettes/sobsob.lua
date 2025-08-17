@@ -18,7 +18,7 @@ return {
 	magenta       = "#d600c8",
 	red           = "#ed3131",
 	pink          = "#ff5fa3",
-	yellow        = "#ffaf00", -- TODO: make that more like blank
+	yellow        = "#ffaf00",
 	orange        = "#f26c0c",
 
 	util_lv1      = "#f487b6",
@@ -34,8 +34,8 @@ return {
 	util_lv6      = "#3a6de3",
 	util_lv6_dimm = "#2d56a8",
 
-	selection     = "#2d1a3d",
-	search        = "#b3e6e6",
+	selection     = "#543172",
+	search        = "#66CCCC",
 
 	error         = "#ff4081",
 	warning       = "#ffaf00",

@@ -35,7 +35,7 @@ return {
 	util_lv6_dimm = "#2d56a8",
 
 	selection     = "#2d1a3d",
-	search        = "#b3e6e6",
+	search        = "#38A8A8",
 
 	error         = "#ff4081",
 	warning       = "#ffaf00",
