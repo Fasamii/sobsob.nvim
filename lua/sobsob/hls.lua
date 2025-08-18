@@ -137,6 +137,7 @@ return function(cp)
 		["@lsp.mod.attribute.rust"]                      = { fg = cp.pink },
 		["@lsp.mod.defaultLibrary.rust"]                 = { fg = cp.purple, bold = true },
 		["@lsp.typemod.attributeBracket.attribute.rust"] = { fg = cp.violet },
+		["@lsp.typemod.selfKeyword.declaration.rust"]    = { fg = cp.yellow, bold = true },
 		["@lsp.typemod.builtinAttribute.attribute.rust"] = { fg = cp.purple },
 		["@lsp.typemod.namespace.attribute.rust"]        = { fg = cp.purple },
 		["@lsp.type.attributeBracket.rust"]              = { fg = cp.violet },
