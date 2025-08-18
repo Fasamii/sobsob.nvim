@@ -132,7 +132,7 @@ return function(cp)
 		Include                                          = { fg = cp.cyan },
 		PreProc                                          = { fg = cp.purple },
 		-- TODO: segregate that a little: below
-		IlluminatedWordText                              = { underdottet = true, sp = cp.pink },
+		IlluminatedWordText                              = { underdotted = true, sp = cp.pink },
 		rustSelf                                         = { fg = cp.purple, bold = true },
 		rustModPath                                      = { fg = cp.yellow },
 		rustAttribute                                    = { fg = cp.violet },
