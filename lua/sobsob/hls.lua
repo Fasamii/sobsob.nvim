@@ -132,8 +132,12 @@ return function(cp)
 		Include                                          = { fg = cp.cyan },
 		PreProc                                          = { fg = cp.purple },
 		-- TODO: segregate that a little: below
+		IlluminatedWordText                              = { fg = cp.purple },
+		rustSelf                                         = { fg = cp.purple, bold = true },
+		rustModPath                                      = { fg = cp.yellow },
 		rustAttribute                                    = { fg = cp.violet },
 		rustAttributeParenthesizedParens                 = { fg = cp.purple },
+		rustIdentifier                                   = { fg = cp.yellow },
 		["@lsp.typemod.generic.attribute.rust"]          = { fg = cp.pink },
 		["@lsp.typemod.derive.attribute.rust"]           = { fg = cp.pink },
 		["@lsp.typemod.attributeBracket.attribute.rust"] = { fg = cp.violet },
