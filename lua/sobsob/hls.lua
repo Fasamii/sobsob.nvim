@@ -135,6 +135,7 @@ return function(cp)
 		rustAttribute                                    = { fg = cp.violet },
 		rustAttributeParenthesizedParens                 = { fg = cp.purple },
 		["@lsp.mod.attribute.rust"]                      = { fg = cp.pink },
+		["@lsp.mod.defaultLibrary.rust"]                 = { fg = cp.purple, bold = true },
 		["@lsp.typemod.attributeBracket.attribute.rust"] = { fg = cp.violet },
 		["@lsp.typemod.builtinAttribute.attribute.rust"] = { fg = cp.purple },
 		["@lsp.typemod.namespace.attribute.rust"]        = { fg = cp.purple },
