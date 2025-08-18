@@ -14,8 +14,9 @@ return {
 	green         = "#00d75f",
 	cyan          = "#00b3e5",
 	violet        = "#875fff",
-	purple        = "#ff87ff",
-	magenta       = "#d600c8",
+	-- purple        = "#ff87ff",
+	purple        = "#e27eff",
+	magenta       = "#c4009b",
 	red           = "#ed3131",
 	pink          = "#FF3388",
 	yellow        = "#ffaf00",
@@ -48,4 +49,5 @@ return {
 	git_del_dimm  = "#3b1f1f",
 	git_mod       = "#8a6a1e",
 	git_mod_dimm  = "#3b2f18",
+
 };
