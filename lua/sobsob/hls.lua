@@ -278,7 +278,7 @@ return function(cp)
 		["@preproc"]                                     = { fg = cp.orange },
 		-- Keyword
 		["@keyword"]                                     = { fg = cp.cyan },
-		["@keyword.function"]                            = { fg = cp.magenta, bold = true },
+		["@keyword.function"]                            = { fg = cp.cyan, bold = true },
 		["@keyword.operator"]                            = { fg = cp.cyan },
 		["@keyword.return"]                              = { fg = cp.cyan },
 		["@conditional"]                                 = { fg = cp.cyan },
@@ -333,7 +333,7 @@ return function(cp)
 		["@namespace"]                                   = { fg = cp.yellow },
 		["@constant"]                                    = { fg = cp.magenta, bold = true },
 		["@constant.builtin"]                            = { fg = cp.magenta, bold = true },
-		["@constant.macro"]                              = { fg = cp.violet, bold = true },
+		["@constant.macro"]                              = { fg = cp.magenta, bold = true },
 		-- Lsp Type
 		["@lsp.type.structure"]                          = { fg = cp.yellow, bold = true },
 		-- Literal
