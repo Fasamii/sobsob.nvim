@@ -11,16 +11,23 @@ return {
 	black_dark    = "#0f0f12",
 	black_shadow  = "#080809",
 
-	green         = "#00d75f",
-	cyan          = "#00b3e5",
+	selection     = "#543172",
+	search        = "#66CCCC",
+
 	violet        = "#875fff",
-	-- purple        = "#ff87ff",
-	purple        = "#e27eff",
-	magenta       = "#c4009b",
-	red           = "#ed3131",
+	cyan          = "#00b3e5",
+	purple        = "#ff87ff",
+	magenta       = "#FF0ACA",
 	pink          = "#FF3388",
-	yellow        = "#ffaf00",
+	red           = "#ed3131",
 	orange        = "#f26c0c",
+	yellow        = "#ffaf00",
+	green         = "#00d75f",
+
+	error         = "#ff4081",
+	warning       = "#ff9900",
+	hint          = "#00d75f",
+	info          = "#00b3e5",
 
 	util_lv1      = "#f487b6",
 	util_lv1_dimm = "#c56c94",
@@ -34,14 +41,6 @@ return {
 	util_lv5_dimm = "#3947a8",
 	util_lv6      = "#3a6de3",
 	util_lv6_dimm = "#2d56a8",
-
-	selection     = "#543172",
-	search        = "#66CCCC",
-
-	error         = "#ff4081",
-	warning       = "#ffaf00",
-	info          = "#00b3e5",
-	hint          = "#00d75f",
 
 	git_add       = "#1f6243",
 	git_add_dimm  = "#162e1a",
