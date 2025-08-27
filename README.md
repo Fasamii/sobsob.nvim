@@ -30,7 +30,7 @@ vim.pack.add({
     { src = "https://github.com/Fasamii/sobsob.nvim" },
     --  ...,
 });
-vim.cmd.colorscheme("sobsob");
+vim.cmd.colorscheme("sobsob"); -- or "hliphlip"
 ```
 ### Vim-plug
 ```lua
