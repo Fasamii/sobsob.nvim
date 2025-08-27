@@ -290,7 +290,7 @@ return function(cp)
 		["@conditional"]                                 = { fg = cp.cyan },
 		["@repeat"]                                      = { fg = cp.cyan },
 		-- Html
-		["@tag"]                                         = { fg = cp.violet },
+		["@tag"]                                         = { fg = cp.yellow },
 		["@tag.delimiter"]                               = { fg = cp.violet },
 		["@tag.html"]                                    = { fg = cp.yellow },
 		["@tag.name"]                                    = { fg = cp.yellow },
