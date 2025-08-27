@@ -23,6 +23,14 @@ require("lazy").setup({
     opts = {},
 })
 ```
+### vim.pack
+```lua (Only neovim 0.12.0+)
+vim.pack.add({
+    -- ...,
+    { src = "https://github.com/Fasamii/sobsob.nvim" },
+    --  ...,
+});
+```
 ### Vim-plug
 ```lua
 Plug 'Fasamii/sobsob.nvim'
