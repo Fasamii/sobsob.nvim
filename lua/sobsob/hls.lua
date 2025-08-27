@@ -237,6 +237,7 @@ return function(cp)
 		cSpecialCharacter                                = { fg = cp.red },
 		javaScriptBraces                                 = { fg = cp.violet },
 		rustFoldBraces                                   = { fg = cp.violet },
+		rustLifetime                                     = { fg = cp.pink },
 		VarId                                            = { fg = cp.purple },
 		ConId                                            = { fg = cp.pink },
 		rustSigil                                        = { fg = cp.magenta },
