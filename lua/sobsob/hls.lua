@@ -294,7 +294,7 @@ return function(cp)
 		["@tag.delimiter"]                               = { fg = cp.violet },
 		["@tag.html"]                                    = { fg = cp.yellow },
 		["@tag.name"]                                    = { fg = cp.yellow },
-		["@tag.builtin"]                                 = { fg = cp.magenta },
+		["@tag.builtin"]                                 = { fg = cp.yellow },
 		["@tag.css"]                                     = { fg = cp.yellow },
 		["@constant.css"]                                = { fg = cp.yellow },
 		-- XML
@@ -357,6 +357,7 @@ return function(cp)
 		-- Punctuation
 		["@attribute"]                                   = { fg = cp.purple, bold = true },
 		["@attribute.value"]                             = { fg = cp.red },
+		["@tag.attribute.javascript"]                    = { fg = cp.purple },
 		["@punctuation.bracket"]                         = { fg = cp.violet },
 		["@punctuation.delimiter"]                       = { fg = cp.violet },
 		["@punctuation.special"]                         = { fg = cp.violet },
