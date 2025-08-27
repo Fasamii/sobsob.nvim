@@ -3,8 +3,8 @@
 # SobSob
 A wildcharm inspired color scheme for vim and nvim
 ## Examples
-![sobsob example](examples/sobsob.png)
-![hliphlip example](examples/hliphlip.png)
+![sobsob example](examples/sobsob-light.png)
+![hliphlip example](examples/hliphlip-dark.png)
 
 <details>
 <summary>more examples</summary>
