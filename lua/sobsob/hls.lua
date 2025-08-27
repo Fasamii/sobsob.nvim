@@ -150,6 +150,7 @@ return function(cp)
 		["@lsp.typemod.namespace.attribute.rust"]        = { fg = cp.purple },
 		["@lsp.typemod.namespace.macro.rust"]            = { fg = cp.cyan },
 		["@lsp.typemod.namespace.procMacro.rust"]        = { fg = cp.cyan },
+		["@lsp.type.const.rust"]                         = { fg = cp.magenta, bold = true },
 		hsPragma                                         = { fg = cp.cyan },
 		hsImportModuleName                               = { fg = cp.green },
 		hsImportGroup                                    = { fg = cp.green },
@@ -344,6 +345,7 @@ return function(cp)
 		["@constant.macro"]                              = { fg = cp.magenta, bold = true },
 		-- Lsp Type
 		["@lsp.type.structure"]                          = { fg = cp.yellow, bold = true },
+
 		-- Literal
 		["@null"]                                        = { fg = cp.yellow },
 		["@string"]                                      = { fg = cp.green },
