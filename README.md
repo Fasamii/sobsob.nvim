@@ -3,14 +3,12 @@
 # SobSob
 A wildcharm inspired color scheme for vim and nvim
 ## Examples
-![Rust Example](examples/Rust.png)
+![sobsob example](examples/sobsob.png)
+![hliphlip example](examples/hliphlip.png)
 
 <details>
 <summary>more examples</summary>
 
-![Js-Ts Example](examples/Js.png)
-![C Example](examples/C.png)
-![Hypr Example](examples/Hypr.png)
 ![Telescope](examples/Telescope.png)
 
 </details>
