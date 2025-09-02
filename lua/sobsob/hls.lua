@@ -407,6 +407,17 @@ return function(cp)
 		-----------------------------
 		----- Diagnostics (END) -----
 		-----------------------------
+		-----------------------
+		---- Tags / Labels ----
+		-----------------------
+		TagOk                                            = { fg = cp.bg_solid, bg = cp.ok },
+		TagError                                         = { fg = cp.bg_solid, bg = cp.error },
+		TagWarn                                          = { fg = cp.bg_solid, bg = cp.warn },
+		TagInfo                                          = { fg = cp.bg_solid, bg = cp.info },
+		TagDef                                           = { fg = cp.bg_solid, bg = cp.hint },
+		-----------------------------
+		---- Tags / Labels (END) ----
+		-----------------------------
 		-------------
 		---- git ----
 		-------------
