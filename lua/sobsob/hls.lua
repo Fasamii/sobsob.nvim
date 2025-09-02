@@ -410,11 +410,11 @@ return function(cp)
 		-----------------------
 		---- Tags / Labels ----
 		-----------------------
-		TagOk                                            = { fg = cp.bg_solid, bg = cp.ok },
-		TagError                                         = { fg = cp.bg_solid, bg = cp.error },
-		TagWarn                                          = { fg = cp.bg_solid, bg = cp.warn },
-		TagInfo                                          = { fg = cp.bg_solid, bg = cp.info },
-		TagDef                                           = { fg = cp.bg_solid, bg = cp.hint },
+		TagOk                                            = { fg = cp.ok },
+		TagError                                         = { fg = cp.error },
+		TagWarn                                          = { fg = cp.warn },
+		TagInfo                                          = { fg = cp.info },
+		TagDef                                           = { fg = cp.hint },
 		-----------------------------
 		---- Tags / Labels (END) ----
 		-----------------------------
