@@ -278,7 +278,7 @@ return function(cp)
 		["@text.note"]                                   = { fg = cp.white_dimm },
 		["@text.warning"]                                = { fg = cp.warning },
 		["@text.danger"]                                 = { fg = cp.error },
-		["@text.diff.add"]                               = { fg = cp.hint },
+		["@text.diff.add"]                               = { fg = cp.ok },
 		["@text.diff.delete"]                            = { fg = cp.error },
 		["@comment"]                                     = { fg = cp.white_dark, italic = true },
 		["@comment.documentation"]                       = { fg = cp.white_dark, bold = true, italic = true },
@@ -399,8 +399,11 @@ return function(cp)
 		DiagnosticInfo                                   = { fg = cp.info },
 		Info                                             = { fg = cp.info },
 
-		DiagnosticOk                                     = { fg = cp.hint },
-		Ok                                               = { fg = cp.hint },
+		DiagnosticHint                                   = { fg = cp.hint },
+		Hint                                             = { fg = cp.hint },
+
+		DiagnosticOk                                     = { fg = cp.ok },
+		Ok                                               = { fg = cp.ok },
 		-----------------------------
 		----- Diagnostics (END) -----
 		-----------------------------
