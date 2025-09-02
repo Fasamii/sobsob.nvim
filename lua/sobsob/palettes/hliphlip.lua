@@ -37,10 +37,11 @@ return {
 	selection     = "#2d1a3d",
 	search        = "#38A8A8",
 
-	error         = "#ff4081",
-	warning       = "#ffaf00",
-	info          = "#00b3e5",
-	hint          = "#00d75f",
+	info          = "#003342",
+	hint          = "#261238",
+	error         = "#4d1426",
+	warn          = "#4d2e00",
+	ok            = "#00331c",
 
 	git_add       = "#1f6243",
 	git_add_dimm  = "#162e1a",
