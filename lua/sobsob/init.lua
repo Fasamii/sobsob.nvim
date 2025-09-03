@@ -2,10 +2,27 @@ local M = {};
 local saved_opts;
 local last_palette;
 
+local function merge(...)
+	local result <const> = {}
+	for _, t in ipairs { ... } do
+		for k, v in pairs(t) do
+			result[k] = v
+		end
+	end
+	return result
+end
+
 local function set_hls(highlights)
 	for group, style in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, style);
 	end
+end
+
+function get_highlights(cp)
+	return merge(
+		require("sobsob.highlights.gui")(cp),
+		require("sobsob.highlights.syntax")(cp)
+	);
 end
 
 function M.setup(opts, palette)
@@ -34,7 +51,7 @@ function M.setup(opts, palette)
 		end
 	end
 
-	local hls = require("sobsob.hls")(cp);
+	local hls = get_highlights(cp);
 	if opts.hl ~= nil then
 		if (type(opts.hl) ~= "table") then
 			-- TODO: handle error

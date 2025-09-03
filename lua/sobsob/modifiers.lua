@@ -1,3 +1,5 @@
+-- NOTE: For now all below code is unused
+
 local M = {};
 
 local function to_hex(r, g, b)
