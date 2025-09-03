@@ -38,7 +38,7 @@ return {
 	search        = "#38A8A8",
 
 	info          = "#003342",
-	hint          = "#261238",
+	hint          = "#532747",
 	error         = "#4d1426",
 	warn          = "#4d2e00",
 	ok            = "#00331c",
