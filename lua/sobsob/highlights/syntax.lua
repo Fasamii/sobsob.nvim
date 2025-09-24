@@ -1,3 +1,6 @@
+-- IMPORTANT: fix that mess:
+--	- make more top level highlights and link to them
+--	- segregate this
 return function(cp)
 	return {
 		-- Text
@@ -21,6 +24,9 @@ return function(cp)
 		Define                                           = { fg = cp.cyan },
 		Include                                          = { fg = cp.cyan },
 		PreProc                                          = { fg = cp.purple },
+		-- for bc calculator
+		bcIdentifier                                     = { fg = cp.purple },
+		bcList                                           = { fg = cp.magenta },
 		-- TODO: segregate that a little: below
 		rustSelf                                         = { fg = cp.purple, bold = true },
 		rustModPath                                      = { fg = cp.yellow },
