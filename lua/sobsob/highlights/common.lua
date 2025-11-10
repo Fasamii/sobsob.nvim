@@ -8,9 +8,8 @@ return function(cp)
 		-- CURSOR&LINES
 		Cursor          = { fg = cp.red },
 		CursorLine      = {},
-		-- FIXME: CursorColumn = { bg = cp.red },
 		LineNr          = { fg = cp.white_dark, bg = cp.bg },
-		-- FIXME: CursorLineNr = { fg = cp.magneta },
+		CursorLineNr    = { fg = cp.white },
 		ColorColumn     = { bg = cp.black_shadow },
 
 		-- SELECTION&SEARCH
