@@ -4,7 +4,7 @@
 return function(cp)
 	return {
 		-- Text
-		Comment                                          = { fg = cp.white_dark, italic = true },
+		Comment                                          = { fg = cp.white_dark, italic = true }, -- base
 		PreCondit                                        = { fg = cp.orange },
 		SpecialChar                                      = { fg = cp.magenta },
 		-- Function

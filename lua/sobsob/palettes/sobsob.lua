@@ -19,7 +19,7 @@ return {
 	red           = "#ed3131",
 	orange        = "#f26c0c",
 	yellow        = "#ffaf00",
-	green         = "#00d75f",
+	green         = "#00d85f",
 
 	util_lv1      = "#f487b6",
 	util_lv1_dimm = "#c56c94",

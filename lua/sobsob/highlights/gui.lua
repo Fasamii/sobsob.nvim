@@ -1,9 +1,9 @@
 return function(cp)
 	return {
-		Normal                                     = { fg = cp.white, bg = cp.bg }, -- TODO: Override everything that should be white including: Alpha colors, wild menu colors, every standard text
-		ColorColumn                                = { bg = cp.black_shadow },
-		CursorLine                                 = { bg = cp.black },
-		CursorLineNr                               = { fg = cp.purple, bg = cp.bg, bold = true },
+		Normal                                     = { fg = cp.white, bg = cp.bg }, -- base
+		ColorColumn                                = { bg = cp.black_shadow }, -- vertical column
+		CursorLine                                 = { bg = cp.black }, -- Current cursor line
+		CursorLineNr                               = { fg = cp.purple, bg = cp.bg, bold = true }, -- Line number of the current cursor line
 		LineNr                                     = { fg = cp.white_dark, bg = cp.bg },
 
 		Visual                                     = { bg = cp.selection, bold = true }, -- FIX: when using with Search functionality the part of visual selection that is also Search selection has visual bg and search fg which makes it a little unreadable
