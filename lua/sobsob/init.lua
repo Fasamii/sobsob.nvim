@@ -20,6 +20,7 @@ end
 
 function get_highlights(cp)
 	return merge(
+		require("sobsob.highlights.common")(cp),
 		require("sobsob.highlights.gui")(cp),
 		require("sobsob.highlights.syntax")(cp)
 	);
