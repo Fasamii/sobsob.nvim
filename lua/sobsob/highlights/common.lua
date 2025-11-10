@@ -47,21 +47,19 @@ return function(cp)
 		SpellLocal      = {},
 
 		-- DIAGNOSTICS
-		Error           = { fg = cp.error },
-		ErrorMsg        = { fg = cp.error },
+		DiagnosticOk    = { fg = cp.ok },
+		DiagnosticHint  = { fg = cp.hint },
+		DiagnosticInfo  = { fg = cp.info },
+		DiagnosticWarn  = { fg = cp.warn },
 		DiagnosticError = { fg = cp.error },
 
+		-- STATUS
+		Ok              = { fg = cp.ok },
+		Hint            = { fg = cp.hint },
+		Info            = { fg = cp.info },
 		Warn            = { fg = cp.warn },
 		WarningMsg      = { fg = cp.warn },
-		DiagnosticWarn  = { fg = cp.warn },
-
-		Info            = { fg = cp.info },
-		DiagnosticInfo  = { fg = cp.info },
-
-		Hint            = { fg = cp.hint },
-		DiagnosticHint  = { fg = cp.hint },
-
-		Ok              = { fg = cp.ok },
-		DiagnosticOk    = { fg = cp.ok },
+		Error           = { fg = cp.error },
+		ErrorMsg        = { fg = cp.error },
 	}
 end

@@ -18,11 +18,20 @@ local function set_hls(highlights)
 	end
 end
 
-function get_highlights(cp)
+local function get_highlights(cp)
 	return merge(
 		require("sobsob.highlights.common")(cp),
 		require("sobsob.highlights.gui")(cp),
-		require("sobsob.highlights.syntax")(cp)
+		require("sobsob.highlights.syntax")(cp),
+		require("sobsob.highlights.treesitter")(cp),
+		require("sobsob.highlights.patch.c")(cp),
+		require("sobsob.highlights.patch.css")(cp),
+		require("sobsob.highlights.patch.haskell")(cp),
+		require("sobsob.highlights.patch.html")(cp),
+		require("sobsob.highlights.patch.hyprlang")(cp),
+		require("sobsob.highlights.patch.js")(cp),
+		require("sobsob.highlights.patch.python")(cp),
+		require("sobsob.highlights.patch.html")(cp)
 	);
 end
 
