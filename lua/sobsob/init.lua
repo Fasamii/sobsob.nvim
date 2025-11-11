@@ -2,47 +2,60 @@ local M = {};
 local saved_opts;
 local last_palette;
 
-local function merge(...)
-	local result = {}
+local function merge(target, ...)
 	for _, t in ipairs { ... } do
-		for k, v in pairs(t) do
-			result[k] = v
+		if type(t) == "table" then
+			for k, v in pairs(t) do
+				target[k] = v
+			end
 		end
 	end
-	return result
+	return target
 end
 
-local function set_hls(highlights)
-	for group, style in pairs(highlights) do
-		vim.api.nvim_set_hl(0, group, style);
+local function set_hl(hl)
+	for group, style in pairs(hl) do
+		if type(group) ~= "string" then
+			-- TODO: handle error
+		elseif type(style) ~= "table" then
+			-- TODO: handle error
+		else
+			vim.api.nvim_set_hl(0, group, style);
+		end
 	end
 end
 
-local function get_highlights(cp)
-	return merge(
-		require("sobsob.highlights.common")(cp),
-		require("sobsob.highlights.gui")(cp),
-		require("sobsob.highlights.syntax")(cp),
-		require("sobsob.highlights.treesitter")(cp),
-		require("sobsob.highlights.patch.c")(cp),
-		require("sobsob.highlights.patch.css")(cp),
-		require("sobsob.highlights.patch.haskell")(cp),
-		require("sobsob.highlights.patch.html")(cp),
-		require("sobsob.highlights.patch.hyprlang")(cp),
-		require("sobsob.highlights.patch.js")(cp),
-		require("sobsob.highlights.patch.python")(cp),
-		require("sobsob.highlights.patch.html")(cp)
-	);
+local function get_cp(palette)
+	local path = "sobsob.palettes." .. palette;
+	local ok, res = pcall(require, path);
+	if not ok then
+		-- TODO: handle error;
+	end
+	return res;
 end
 
-function M.setup(opts, palette)
-	opts = opts or {};
-	saved_opts = opts;
+local function get_hl(modules, cp)
+	local hl = {};
+	for _, module_name in ipairs(modules) do
+		local ok, module = pcall(require, module_name);
+		if not ok then
+			-- TODO: handle error
+		else
+			if type(module) == "function" then
+				local ok_cp_call, result = pcall(module, cp);
+				if not ok_cp_call then
+					-- TODO: handle error
+				end
+				merge(hl, result);
+			elseif type(module) == "table" then
+				merge(hl, module);
+			end
+		end
+	end
+	return hl;
+end
 
-	palette = palette or last_palette or "sobsob";
-	last_palette = palette;
-
-	local cp = require("sobsob.palettes." .. palette);
+local function override_cp(cp, opts)
 	if opts.cp ~= nil then
 		if type(opts.cp) ~= "table" then
 			-- TODO: handle error here
@@ -60,8 +73,21 @@ function M.setup(opts, palette)
 			end
 		end
 	end
+end
 
-	local hls = get_highlights(cp);
+local function override_modules(modules, opts)
+	if opts.modules ~= nil then
+		for module, path in pairs(opts.modules) do
+			if type(module) ~= "string" or type(path) ~= "string" then
+				-- TODO: eror
+			else
+				modules[module] = path;
+			end
+		end
+	end
+end
+
+local function override_hl(hl, opts)
 	if opts.hl ~= nil then
 		if (type(opts.hl) ~= "table") then
 			-- TODO: handle error
@@ -70,13 +96,43 @@ function M.setup(opts, palette)
 				if type(group) ~= "string" or type(style) ~= "table" then
 					-- TODO: handle error
 				else
-					hls[group] = style;
+					hl[group] = style;
 				end
 			end
 		end
 	end
+end
 
-	set_hls(hls);
+function M.setup(opts, palette)
+	opts = opts or {};
+	saved_opts = opts;
+
+	palette = palette or last_palette or "sobsob";
+	last_palette = palette;
+
+	local cp = get_cp(palette);
+	override_cp(cp, opts);
+
+	local modules = {
+		"sobsob.highlights.common",
+		"sobsob.highlights.gui",
+		"sobsob.highlights.syntax",
+		"sobsob.highlights.treesitter",
+		"sobsob.highlights.patch.c",
+		"sobsob.highlights.patch.css",
+		"sobsob.highlights.patch.haskell",
+		"sobsob.highlights.patch.html",
+		"sobsob.highlights.patch.hyprlang",
+		"sobsob.highlights.patch.js",
+		"sobsob.highlights.patch.python",
+		"sobsob.highlights.patch.rust"
+	};
+	override_modules(modules, opts)
+
+	local hl = get_hl(modules, cp);
+	override_hl(hl, opts);
+
+	set_hl(hl);
 end
 
 function M.reload(palette, opts)
@@ -87,5 +143,6 @@ function M.reload(palette, opts)
 		M.setup(opts, palette);
 	end
 end
+
 
 return M;
