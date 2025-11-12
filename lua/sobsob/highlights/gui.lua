@@ -33,17 +33,17 @@ return function(cp)
 		LL_X_B                                     = { fg = cp.violet, bold = true },
 		LL_X_C                                     = { fg = cp.violet, bold = true },
 
-		-- GIT 
+		-- GIT
 		GitAdd                                     = { fg = cp.git_add, bold = true },
 		GitDel                                     = { fg = cp.git_del, bold = true },
 		GitMod                                     = { fg = cp.git_mod, bold = true },
 		GitSignsCurrentLineBlame                   = { fg = cp.black },
-		GitSignsAdd                                = { bg = cp.git_add_dimm, fg = cp.bg_solid, bold = true },
-		GitSignsDelete                             = { bg = cp.git_del_dimm, fg = cp.bg_solid, bold = true },
-		GitSignsChange                             = { bg = cp.git_mod_dimm, fg = cp.bg_solid, bold = true },
-		GitSignsStagedAdd                          = { bg = cp.black_shadow, fg = cp.white_dark },
-		GitSignsStagedChange                       = { bg = cp.black_shadow, fg = cp.white_dark },
-		GitSignsStagedDelete                       = { bg = cp.black_shadow, fg = cp.white_dark },
+		GitSignsAdd                                = { bg = cp.git_add_dimm, bold = true },
+		GitSignsDelete                             = { bg = cp.git_del_dimm, bold = true },
+		GitSignsChange                             = { bg = cp.git_mod_dimm, bold = true },
+		GitSignsStagedAdd                          = { bg = cp.black_dark },
+		GitSignsStagedChange                       = { bg = cp.black_dark },
+		GitSignsStagedDelete                       = { bg = cp.black_dark },
 
 		-- WHICH-KEY
 		WhichKeyNormal                             = { bg = cp.black_dark },
@@ -51,7 +51,7 @@ return function(cp)
 		WhichKeyDesc                               = { fg = cp.purple },
 		WhichKeyGroup                              = { fg = cp.cyan },
 
-		-- TELESCOPE 
+		-- TELESCOPE
 		TelescopeNormal                            = { bg = nil },
 		TelescopeBorder                            = { fg = cp.white_dark },
 		TelescopeTitle                             = { fg = cp.white },
@@ -63,7 +63,7 @@ return function(cp)
 		TelescopeMatching                          = { bg = cp.selection, bold = true },
 		TelescopePreviewLine                       = { bg = cp.search, fg = cp.bg_solid, bold = true },
 
-		-- MARKDOWN 
+		-- MARKDOWN
 		--- Heading
 		RenderMarkdownH1                           = { fg = cp.white, bold = true },
 		RenderMarkdownH1Bg                         = { bg = cp.util_lv1_dimm, fg = cp.bg_solid, bold = true },
