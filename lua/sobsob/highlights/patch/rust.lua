@@ -19,6 +19,7 @@ return function(cp)
 		["@lsp.typemod.namespace.macro.rust"]            = { fg = cp.cyan },
 		["@lsp.typemod.namespace.procMacro.rust"]        = { fg = cp.cyan },
 		["@lsp.type.const.rust"]                         = { fg = cp.magenta, bold = true },
+		["@lsp.type.namespace.rust"]                     = { fg = cp.yellow, bold = false },
 
 		rustFoldBraces                                   = { fg = cp.violet },
 		rustLifetime                                     = { fg = cp.pink },
