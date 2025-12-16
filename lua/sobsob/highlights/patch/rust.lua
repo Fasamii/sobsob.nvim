@@ -22,6 +22,8 @@ return function(cp)
 		["@lsp.type.namespace.rust"]                     = { fg = cp.yellow },
 		["@module.rust"]                                 = { fg = cp.yellow },
 
+		["@lsp.mod.intraDocLink.rust"]                   = { fg = "#C38C23" },
+
 		rustFoldBraces                                   = { fg = cp.violet },
 		rustLifetime                                     = { fg = cp.pink },
 		rustSigil                                        = { fg = cp.magenta },
