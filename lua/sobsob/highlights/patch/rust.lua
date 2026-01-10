@@ -16,7 +16,6 @@ return function(cp)
 		["@lsp.typemod.lifetime.declaration.rust"]       = { fg = cp.pink },
 		["@lsp.type.lifetime.rust"]                      = { fg = cp.pink },
 		["@lsp.typemod.namespace.attribute.rust"]        = { fg = cp.purple },
-		["@lsp.typemod.namespace.macro.rust"]            = { fg = cp.cyan },
 		["@lsp.typemod.namespace.procMacro.rust"]        = { fg = cp.cyan },
 		["@lsp.type.const.rust"]                         = { fg = cp.magenta, bold = true },
 		["@lsp.type.namespace.rust"]                     = { fg = cp.yellow },
