@@ -5,5 +5,7 @@ return function(cp)
 
 		zshParentheses = { fg = cp.violet },
 		zshBrackets = { fg = cp.violet },
+
+		zshTypes = { fg = cp.cyan },
 	}
 end
