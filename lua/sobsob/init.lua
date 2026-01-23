@@ -118,6 +118,7 @@ function M.setup(opts, palette)
 		"sobsob.highlights.gui",
 		"sobsob.highlights.syntax",
 		"sobsob.highlights.treesitter",
+		"sobsob.highlights.patch.bash",
 		"sobsob.highlights.patch.c",
 		"sobsob.highlights.patch.css",
 		"sobsob.highlights.patch.haskell",
@@ -125,7 +126,8 @@ function M.setup(opts, palette)
 		"sobsob.highlights.patch.hyprlang",
 		"sobsob.highlights.patch.js",
 		"sobsob.highlights.patch.python",
-		"sobsob.highlights.patch.rust"
+		"sobsob.highlights.patch.rust",
+		"sobsob.highlights.patch.zsh",
 	};
 	override_modules(modules, opts)
 
