@@ -1,8 +1,8 @@
 return function(cp)
 	return {
 		-- BASE
-		Normal          = { fg = cp.white, bg = cp.bg },
-		NormalFloat     = { fg = cp.white, bg = cp.black_dark },
+		Normal          = { fg = cp.violet, bg = cp.bg },
+		NormalFloat     = { fg = cp.violet, bg = cp.black_dark },
 		NormalNC        = { link = "Normal" },
 
 		-- CURSOR&LINES
