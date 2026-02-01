@@ -125,6 +125,7 @@ function M.setup(opts, palette)
 		"sobsob.highlights.patch.html",
 		"sobsob.highlights.patch.hyprlang",
 		"sobsob.highlights.patch.js",
+		"sobsob.highlights.patch.lua",
 		"sobsob.highlights.patch.python",
 		"sobsob.highlights.patch.rust",
 		"sobsob.highlights.patch.zsh",
