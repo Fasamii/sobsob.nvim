@@ -7,6 +7,7 @@ return function(cp)
 		Comment      = { fg = cp.white_dimm, italic = true }, -- base
 		PreCondit    = { fg = cp.orange },
 		SpecialChar  = { fg = cp.magenta },
+		Special      = { fg = cp.magenta },
 		-- Function
 		Function     = { fg = cp.purple, bold = true },
 		Label        = { fg = cp.purple, bold = true },

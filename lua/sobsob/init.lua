@@ -146,5 +146,4 @@ function M.reload(palette, opts)
 	end
 end
 
-
 return M;

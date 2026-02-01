@@ -52,7 +52,7 @@ return function(cp)
 		WhichKeyGroup                              = { fg = cp.cyan },
 
 		-- TELESCOPE
-		TelescopeNormal                            = { bg = nil },
+		TelescopeNormal                            = { fg = cp.white, bg = nil },
 		TelescopeBorder                            = { fg = cp.white_dark },
 		TelescopeTitle                             = { fg = cp.white },
 
