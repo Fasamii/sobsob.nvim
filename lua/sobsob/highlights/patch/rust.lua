@@ -1,10 +1,12 @@
 return function(cp)
 	return {
+		rustStorage                                      = { fg = cp.cyan },
 		rustSelf                                         = { fg = cp.purple, bold = true },
 		rustModPath                                      = { fg = cp.yellow },
 		rustAttribute                                    = { fg = cp.violet },
 		rustAttributeParenthesizedParens                 = { fg = cp.purple },
 		rustIdentifier                                   = { fg = cp.yellow },
+		["@lsp.type.static.rust"]                        = { fg = cp.magenta, bold = true },
 		["@lsp.typemod.generic.attribute.rust"]          = { fg = cp.pink },
 		["@lsp.typemod.operator.macro.rust"]             = { fg = cp.violet },
 		["@lsp.typemod.derive.attribute.rust"]           = { fg = cp.pink },
@@ -21,6 +23,8 @@ return function(cp)
 		["@lsp.type.namespace.rust"]                     = { fg = cp.yellow },
 		["@module.rust"]                                 = { fg = cp.yellow },
 		['@lsp.typemod.namespace.macro.rust']            = { fg = cp.yellow },
+
+		rustCommentLineDoc                               = { fg = cp.white_dimm },
 		["@lsp.mod.intraDocLink.rust"]                   = { fg = "#C38C23" },
 
 		rustFoldBraces                                   = { fg = cp.violet },

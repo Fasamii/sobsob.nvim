@@ -4,7 +4,7 @@ return {
 
 	white         = "#d0d0d0",
 	white_dimm    = "#b3b3b3",
-	white_dark    = "#585858",
+	white_dark    = "#686868",
 
 	black         = "#1a1a1a",
 	black_dimm    = "#161618",

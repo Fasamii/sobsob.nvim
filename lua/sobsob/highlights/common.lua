@@ -13,7 +13,8 @@ return function(cp)
 		ColorColumn     = { bg = cp.black_shadow },
 
 		-- SELECTION&SEARCH
-		Visual          = { bg = cp.selection, bold = true },
+		-- Visual          = { bg = cp.selection, bold = true },
+		Visual          = { reverse = true, bold = true },
 		VisualNOS       = { bg = cp.selection },
 		Search          = { fg = cp.search, bg = cp.selection, bold = true },
 		CurSearch       = { fg = cp.bg_solid, bg = cp.search, bold = true },
@@ -21,7 +22,7 @@ return function(cp)
 		Substitute      = { fg = cp.bg_solid, bg = cp.search },
 
 		-- UI
-		MatchParen      = { fg = cp.search, bold = true },
+		MatchParen      = { fg = cp.black, bg = cp.magenta, bold = true },
 		WinSeparator    = { fg = cp.black_dimm, bg = cp.black_dimm },
 
 		-- BARS

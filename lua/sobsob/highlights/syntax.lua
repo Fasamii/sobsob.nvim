@@ -4,7 +4,7 @@
 return function(cp)
 	return {
 		-- Text
-		Comment      = { fg = cp.white_dark, italic = true },         -- base
+		Comment      = { fg = cp.white_dimm, italic = true }, -- base
 		PreCondit    = { fg = cp.orange },
 		SpecialChar  = { fg = cp.magenta },
 		-- Function
@@ -23,14 +23,11 @@ return function(cp)
 		Macro        = { fg = cp.magenta },
 		Define       = { fg = cp.cyan },
 		Include      = { fg = cp.cyan },
-		PreProc      = { fg = cp.purple },
-		-- for bc calculator
-		bcIdentifier = { fg = cp.purple },
-		bcList       = { fg = cp.magenta },
+		PreProc      = { fg = cp.cyan },
 		-- Type
+		Constant     = { fg = cp.magenta, bold = true },
 		Type         = { fg = cp.yellow },
-		Constant     = { fg = cp.violet, bold = true },
-		Structure    = { fg = cp.yellow, bold = true },
+		Structure    = { fg = cp.yellow },
 		-- Literal
 		Number       = { fg = cp.red },
 		Boolean      = { fg = cp.red },
@@ -43,5 +40,9 @@ return function(cp)
 		Delimiter    = { fg = cp.violet },
 		VarId        = { fg = cp.purple },
 		ConId        = { fg = cp.pink },
+
+		-- for bc calculator
+		bcIdentifier = { fg = cp.purple },
+		bcList       = { fg = cp.magenta },
 	}
 end
