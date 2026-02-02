@@ -1,52 +1,115 @@
-return {
-	bg_solid      = "#000000",
-	bg            = "none",
+return function()
+	local gray = {
+		white_100   = "#ffffff",
+		white_90    = "#e6e6e6",
+		white_75    = "#d0d0d0",
+		white_50    = "#b3b3b3",
+		white_25    = "#686868",
+		white_10    = "#333333",
 
-	white         = "#d0d0d0",
-	white_dimm    = "#b3b3b3",
-	white_dark    = "#686868",
+		black_25    = "#1a1a1a",
+		black_50    = "#161618",
+		black_75    = "#0f0f12",
+		black_100   = "#000000",
 
-	black         = "#1a1a1a",
-	black_dimm    = "#161618",
-	black_dark    = "#0f0f12",
-	black_shadow  = "#080809",
+		transparent = "none",
+	};
 
-	violet        = "#875fff",
-	cyan          = "#00b3e5",
-	purple        = "#ff87ff",
-	magenta       = "#FF0ACA",
-	pink          = "#FF3388",
-	red           = "#ed3131",
-	orange        = "#f26c0c",
-	yellow        = "#ffaf00",
-	green         = "#00d85f",
+	local colors = {
+		teal       = "#00d9ba",
+		cyan       = "#00d4ff",
+		blue       = "#4d9fff",
+		violet     = "#875fff",
 
-	util_lv1      = "#f487b6",
-	util_lv1_dimm = "#c56c94",
-	util_lv2      = "#cc59d2",
-	util_lv2_dimm = "#a44aa8",
-	util_lv3      = "#9046cf",
-	util_lv3_dimm = "#6f3a9f",
-	util_lv4      = "#6b4edb",
-	util_lv4_dimm = "#553daa",
-	util_lv5      = "#4a5be0",
-	util_lv5_dimm = "#3947a8",
-	util_lv6      = "#3a6de3",
-	util_lv6_dimm = "#2d56a8",
+		purple     = "#ff87ff",
+		fuchsia    = "#ff66dd",
+		magenta    = "#ff0ac4",
+		pink       = "#FF3388",
 
-	selection     = "#543172",
-	search        = "#66CCCC",
+		red        = "#ff4757",
+		orange     = "#ff6b35",
+		yellow_old = "#ffaf00",
+		yellow     = "#ffd000",
 
-	info          = "#004d63",
-	hint          = "#783867",
-	error         = "#802040",
-	warn          = "#804700",
-	ok            = "#005a2e",
+		lime       = "#7fff00",
+		green      = "#00d85f",
 
-	git_add       = "#1f6243",
-	git_add_dimm  = "#162e1a",
-	git_del       = "#943d3d",
-	git_del_dimm  = "#3b1f1f",
-	git_mod       = "#8a6a1e",
-	git_mod_dimm  = "#3b2f18",
-};
+	};
+
+	local gradient = {
+		util_lv1      = "#f487b6",
+		util_lv1_dimm = "#c56c94",
+		util_lv2      = "#cc59d2",
+		util_lv2_dimm = "#a44aa8",
+		util_lv3      = "#9046cf",
+		util_lv3_dimm = "#6f3a9f",
+		util_lv4      = "#6b4edb",
+		util_lv4_dimm = "#553daa",
+		util_lv5      = "#4a5be0",
+		util_lv5_dimm = "#3947a8",
+		util_lv6      = "#3a6de3",
+		util_lv6_dimm = "#2d56a8",
+	};
+
+	local syntax = {
+		comments = gray.white_50,
+
+		variables = colors.purple,
+		constants = colors.orange,
+
+		keywords = colors.cyan,
+		types = colors.yellow,
+		functions = colors.fuchsia,
+
+		operators = colors.magenta,
+		punctuation = colors.violet,
+
+		special = colors.lime,
+
+		strings = colors.green,
+		character = colors.lime,
+		booleans = colors.red,
+		numbers = colors.blue,
+		floats = colors.red,
+
+		preprocs = colors.teal,
+
+		delimiters = colors.violet,
+	};
+
+	local diagnostic = {
+		info         = "#004d63",
+		hint         = "#783867",
+		error        = "#802040",
+		warn         = "#804700",
+		ok           = "#005a2e",
+
+		git_add      = "#1f6243",
+		git_add_dimm = "#162e1a",
+		git_del      = "#943d3d",
+		git_del_dimm = "#3b1f1f",
+		git_mod      = "#8a6a1e",
+		git_mod_dimm = "#3b2f18",
+	};
+
+	local ui = {
+		fg        = gray.white_100,
+		fg_float  = gray.white_75,
+		bg        = gray.transparent,
+		bg_solid  = gray.black_100,
+		bg_float  = gray.black_50,
+
+		selection = "#3d2554",
+		search    = "#2d5a66",
+	};
+
+
+	return {
+		gray = gray,
+		colors = colors,
+		gradient = gradient,
+		syntax = syntax,
+		diagnostic = diagnostic,
+		ui = ui,
+	};
+end

@@ -1,52 +1,77 @@
-return {
-	bg_solid      = "#000000",
-	bg            = "none",
+return function()
+	local colors = {
+		bg_solid     = "#000000",
+		bg           = "none",
 
-	white         = "#a0a0a0",
-	white_dimm    = "#939393",
-	white_dark    = "#484848",
+		white        = "#a0a0a0",
+		white_dimm   = "#939393",
+		white_dark   = "#484848",
 
-	black         = "#1a1a1a",
-	black_dimm    = "#161618",
-	black_dark    = "#0f0f12",
-	black_shadow  = "#080809",
+		black        = "#1a1a1a",
+		black_dimm   = "#161618",
+		black_dark   = "#0f0f12",
+		black_shadow = "#080809",
 
-	green         = "#2b704b",
-	cyan          = "#0f627d",
-	violet        = "#5b4f85",
-	purple        = "#ad5eb7",
-	magenta       = "#76076c",
-	red           = "#8c2931",
-	pink          = "#97566a",
-	yellow        = "#a58d4a",
-	orange        = "#785221",
+		green        = "#2b704b",
+		cyan         = "#0f627d",
+		violet       = "#5b4f85",
+		purple       = "#ad5eb7",
+		magenta      = "#76076c",
+		red          = "#8c2931",
+		pink         = "#97566a",
+		yellow       = "#a58d4a",
+		orange       = "#785221",
+	};
 
-	util_lv1      = "#f487b6",
-	util_lv1_dimm = "#c56c94",
-	util_lv2      = "#cc59d2",
-	util_lv2_dimm = "#a44aa8",
-	util_lv3      = "#9046cf",
-	util_lv3_dimm = "#6f3a9f",
-	util_lv4      = "#6b4edb",
-	util_lv4_dimm = "#553daa",
-	util_lv5      = "#4a5be0",
-	util_lv5_dimm = "#3947a8",
-	util_lv6      = "#3a6de3",
-	util_lv6_dimm = "#2d56a8",
+	local gradient = {
+		util_lv1      = "#f487b6",
+		util_lv1_dimm = "#c56c94",
+		util_lv2      = "#cc59d2",
+		util_lv2_dimm = "#a44aa8",
+		util_lv3      = "#9046cf",
+		util_lv3_dimm = "#6f3a9f",
+		util_lv4      = "#6b4edb",
+		util_lv4_dimm = "#553daa",
+		util_lv5      = "#4a5be0",
+		util_lv5_dimm = "#3947a8",
+		util_lv6      = "#3a6de3",
+		util_lv6_dimm = "#2d56a8",
+	};
 
-	selection     = "#2d1a3d",
-	search        = "#38A8A8",
+	local ui = {
+		bg        = "none",
+		bg_solid  = "#000000",
+		fg        = colors.white,
+		selection = "#2d1a3d",
+		search    = "#38A8A8",
+	};
 
-	info          = "#003342",
-	hint          = "#532747",
-	error         = "#4d1426",
-	warn          = "#4d2e00",
-	ok            = "#00331c",
+	local syntax = {
+		types = colors.yellow,
+		keywords = colors.cyan,
+	};
 
-	git_add       = "#1f6243",
-	git_add_dimm  = "#162e1a",
-	git_del       = "#943d3d",
-	git_del_dimm  = "#3b1f1f",
-	git_mod       = "#8a6a1e",
-	git_mod_dimm  = "#3b2f18",
-};
+
+	local diagnostic = {
+		info         = "#003342",
+		hint         = "#532747",
+		error        = "#4d1426",
+		warn         = "#4d2e00",
+		ok           = "#00331c",
+
+		git_add      = "#1f6243",
+		git_add_dimm = "#162e1a",
+		git_del      = "#943d3d",
+		git_del_dimm = "#3b1f1f",
+		git_mod      = "#8a6a1e",
+		git_mod_dimm = "#3b2f18",
+	};
+
+	return {
+		colors = colors,
+		ui = ui,
+		syntax = syntax,
+		diagnostic = diagnostic,
+		gradient = gradient,
+	};
+end
