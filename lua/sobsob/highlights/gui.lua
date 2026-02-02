@@ -1,49 +1,17 @@
 return function(cp)
 	return {
 		-- NETRW
-		netrwTreeBar                               = { fg = cp.violet },
-		netrwPlain                                 = { fg = cp.purple },
-		netrwDir                                   = { fg = cp.cyan },
-		netrwClassify                              = { fg = cp.violet },
-		netrwExe                                   = { fg = cp.yellow },
+		netrwTreeBar  = { fg = cp.violet },
+		netrwPlain    = { fg = cp.purple },
+		netrwDir      = { fg = cp.cyan },
+		netrwClassify = { fg = cp.violet },
+		netrwExe      = { fg = cp.yellow },
 
-		-- LUALINE
-		-- TODO: make lualine work without overwriting it groups
-		LL_N_A                                     = { bg = cp.cyan, fg = cp.bg_solid, bold = true },
-		LL_N_B                                     = { fg = cp.violet, bold = true },
-		LL_N_C                                     = { fg = cp.violet, bold = true },
-
-		LL_I_A                                     = { bg = cp.green, fg = cp.bg_solid, bold = true },
-		LL_I_B                                     = { fg = cp.violet, bold = true },
-		LL_I_C                                     = { fg = cp.violet, bold = true },
-
-		LL_V_A                                     = { bg = cp.yellow, fg = cp.bg_solid, bold = true },
-		LL_V_B                                     = { fg = cp.violet, bold = true },
-		LL_V_C                                     = { fg = cp.violet, bold = true },
-
-		LL_R_A                                     = { bg = cp.pink, fg = cp.bg_solid, bold = true },
-		LL_R_B                                     = { fg = cp.violet, bold = true },
-		LL_R_C                                     = { fg = cp.violet, bold = true },
-
-		LL_C_A                                     = { bg = cp.violet, fg = cp.bg_solid, bold = true },
-		LL_C_B                                     = { fg = cp.violet, bold = true },
-		LL_C_C                                     = { fg = cp.violet, bold = true },
-
-		LL_X_A                                     = { bg = cp.purple, fg = cp.bg_solid, bold = true },
-		LL_X_B                                     = { fg = cp.violet, bold = true },
-		LL_X_C                                     = { fg = cp.violet, bold = true },
 
 		-- GIT
 		GitAdd                                     = { fg = cp.git_add, bold = true },
 		GitDel                                     = { fg = cp.git_del, bold = true },
 		GitMod                                     = { fg = cp.git_mod, bold = true },
-		GitSignsCurrentLineBlame                   = { fg = cp.black },
-		GitSignsAdd                                = { bg = cp.git_add_dimm, bold = true },
-		GitSignsDelete                             = { bg = cp.git_del_dimm, bold = true },
-		GitSignsChange                             = { bg = cp.git_mod_dimm, bold = true },
-		GitSignsStagedAdd                          = { bg = cp.black_dark },
-		GitSignsStagedChange                       = { bg = cp.black_dark },
-		GitSignsStagedDelete                       = { bg = cp.black_dark },
 
 		-- WHICH-KEY
 		WhichKeyNormal                             = { bg = cp.black_dark },

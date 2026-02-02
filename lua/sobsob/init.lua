@@ -37,9 +37,10 @@ end
 local function get_hl(modules, cp)
 	local hl = {};
 	for _, module_name in ipairs(modules) do
-		local ok, module = pcall(require, module_name);
+		local module_path = "sobsob.highlights." .. module_name;
+		local ok, module = pcall(require, module_path);
 		if not ok then
-			-- TODO: handle error
+			error("Failed to load:" .. module_name);
 		else
 			if type(module) == "function" then
 				local ok_cp_call, result = pcall(module, cp);
@@ -114,22 +115,24 @@ function M.setup(opts, palette)
 	override_cp(cp, opts);
 
 	local modules = {
-		"sobsob.highlights.common",
-		-- "sobsob.highlights.gui",
-		"sobsob.highlights.syntax",
-		"sobsob.highlights.treesitter",
-		-- "sobsob.highlights.patch.bash",
-		"sobsob.highlights.patch.c",
-		-- "sobsob.highlights.patch.css",
-		-- "sobsob.highlights.patch.haskell",
-		-- "sobsob.highlights.patch.html",
-		-- "sobsob.highlights.patch.hyprlang",
-		"sobsob.highlights.patch.javascript",
-		"sobsob.highlights.patch.lua",
-		"sobsob.highlights.patch.python",
-		"sobsob.highlights.patch.rust",
-		"sobsob.highlights.patch.typescript",
+		"common",
+		-- "gui",
+		"syntax",
+		"treesitter",
+		-- "patch.bash",
+		"patch.c",
+		-- "patch.css",
+		-- "patch.haskell",
+		-- "patch.html",
+		-- "patch.hyprlang",
+		"patch.javascript",
+		"patch.lua",
+		"patch.python",
+		"patch.rust",
+		"patch.typescript",
 		-- "sobsob.highlights.patch.zsh",
+		"plugins.lualine",
+		"plugins.gitsigns",
 	};
 
 	override_modules(modules, opts)
