@@ -6,43 +6,43 @@ return function(cp)
 		Identifier     = { fg = cp.syntax.variables },
 		Constant       = { fg = cp.syntax.constants, bold = true },
 
-		Keyword        = { fg = cp.syntax.kyeword },
-		Statement      = { fg = cp.syntax.kyeword },
-		Conditional    = { fg = cp.syntax.kyeword },
-		Repeat         = { fg = cp.syntax.kyeword },
-		Exception      = { fg = cp.syntax.kyeword }, -- TODO: Maybe orange or sum
-
-		Type           = { fg = cp.syntax.types },
-		StorageClass   = { fg = cp.syntax.kyeword },
-		Structure      = { fg = cp.syntax.kyeword },
-		Typedef        = { fg = cp.syntax.kyeword }, -- TODO: Check how that behaves
-
-		Function       = { fg = cp.syntax.functions },
-		Label          = { fg = cp.syntax.functions },
-
-		Operator       = { fg = cp.syntax.ooperators },
-
-		Special        = { fg = cp.syntax.special },
-		SpecialChar    = { fg = cp.syntax.lime }, -- TODO: Maybe magenta or sum
-
 		String         = { fg = cp.syntax.strings },
 		Character      = { fg = cp.syntax.character },
 		Boolean        = { fg = cp.syntax.booleans },
 		Number         = { fg = cp.syntax.numbers },
 		Float          = { fg = cp.syntax.floats },
 
+		Keyword        = { fg = cp.syntax.keywords },
+		Statement      = { fg = cp.syntax.keywords },
+		Conditional    = { fg = cp.syntax.keywords },
+		Repeat         = { fg = cp.syntax.keywords },
+		Exception      = { fg = cp.syntax.keywords }, -- TODO: Maybe orange or sum
+
+		Type           = { fg = cp.syntax.types },
+		StorageClass   = { fg = cp.syntax.keywords },
+		Structure      = { fg = cp.syntax.keywords },
+		Typedef        = { fg = cp.syntax.keywords }, -- TODO: Check how that behaves
+
+		Function       = { fg = cp.syntax.functions },
+		Label          = { fg = cp.syntax.functions },
+
+		Operator       = { fg = cp.syntax.operators },
+
+		Special        = { fg = cp.syntax.special },
+		SpecialChar    = { fg = cp.syntax.special }, -- TODO: Maybe magenta or sum
+
 		PreProc        = { fg = cp.syntax.preprocs },
 		PreCondit      = { fg = cp.syntax.preprocs },
-		Include        = { fg = cp.syntax.preprocs },
+		Include        = { fg = cp.syntax.keywords },
 		Define         = { fg = cp.syntax.preprocs },
-		Macro          = { fg = cp.syntax.preprocs }, -- TODO: Find color for things like macro make it similar to functions color
+		Macro          = { fg = cp.syntax.functions, bold = true, italic = true },
 
 		Delimiter      = { fg = cp.syntax.delimiters },
 		Tag            = { fg = cp.syntax.delimiters },
 
 		Underlined     = { fg = cp.colors.blue, underline = true }, -- TODO: check how to style underline
-		Ignore         = { fg = cp.ui.bg_solid },
+		Ignore         = { fg = cp.gray.white_10 },
 		Error          = { fg = cp.diagnostics.error, bold = true },
-		-- Todo = { fg = cp. } -- TODO: Make some diagnostics marks section
+		Todo           = { fg = cp.diagnostics.warn, bold = true } -- TODO: Make some diagnostics marks section
 	}
 end

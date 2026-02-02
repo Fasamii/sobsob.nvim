@@ -20,7 +20,6 @@ local function set_hl(hl)
 		elseif type(style) ~= "table" then
 			-- TODO: handle error
 		else
-			vim.print("Her");
 			vim.api.nvim_set_hl(0, group, style);
 		end
 	end
@@ -111,30 +110,28 @@ function M.setup(opts, palette)
 	palette = palette or last_palette or "sobsob";
 	last_palette = palette;
 
-	print("=== SETUP START ===")
-	print("Palette:", palette)
-
 	local cp = get_cp(palette);
-	print("Got pallete:" .. vim.inspect(cp.colors));
 	override_cp(cp, opts);
 
 	local modules = {
 		"sobsob.highlights.common",
 		-- "sobsob.highlights.gui",
 		"sobsob.highlights.syntax",
-		-- "sobsob.highlights.treesitter",
+		"sobsob.highlights.treesitter",
 		-- "sobsob.highlights.patch.bash",
-		-- "sobsob.highlights.patch.c",
+		"sobsob.highlights.patch.c",
 		-- "sobsob.highlights.patch.css",
 		-- "sobsob.highlights.patch.haskell",
 		-- "sobsob.highlights.patch.html",
 		-- "sobsob.highlights.patch.hyprlang",
-		-- "sobsob.highlights.patch.js",
-		-- "sobsob.highlights.patch.lua",
-		-- "sobsob.highlights.patch.python",
-		-- "sobsob.highlights.patch.rust",
+		"sobsob.highlights.patch.javascript",
+		"sobsob.highlights.patch.lua",
+		"sobsob.highlights.patch.python",
+		"sobsob.highlights.patch.rust",
+		"sobsob.highlights.patch.typescript",
 		-- "sobsob.highlights.patch.zsh",
 	};
+
 	override_modules(modules, opts)
 
 	local hl = get_hl(modules, cp);

@@ -1,10 +1,19 @@
 return function(cp)
 	return {
-		-- TODO: check if you have to override these
-		-- TODO: link these instead 
-		cParen            = { fg = cp.violet },
-		cBlock            = { fg = cp.violet },
-		cBracket          = { fg = cp.violet },
-		cSpecialCharacter = { fg = cp.red },
+		cBlock = { link = "Identifier" },
+
+		cUserCont = { link = "Label" },
+
+		cInclude = { link = "PreProc" },
+		cDefine = { link = "PreProc" },
+
+		cParen = { link = "Delimiter" },
+		cBracket = { link = "Delimiter" },
+
+		["@type.builtin.c"] = { link = "Type" },
+
+		["@keyword.import.c"] = { link = "PreProc" },
+		["@keyword.directive.c"] = { link = "PreProc" },
+		["@keyword.directive.define.c"] = { link = "PreProc" },
 	}
 end

@@ -1,7 +1,12 @@
 return function(cp)
 	return {
-		["@variable.builtin.python"] = { fg = cp.violet },
-		pythonAttribute              = { fg = cp.purple },
-		pythonEscape                 = { fg = cp.red },
+		["@keyword.directive.python"] = { link = "PreProc", bold = true },
+
+		pythonClass = { fg = cp.syntax.types },
+
+
+
+		-- ["@variable.builtin.python"] = { fg = cp.violet },
+		-- pythonAttribute              = { fg = cp.purple },
 	}
 end

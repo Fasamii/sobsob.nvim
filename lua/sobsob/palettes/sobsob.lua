@@ -3,37 +3,33 @@ return function()
 		white_100   = "#ffffff",
 		white_90    = "#e6e6e6",
 		white_75    = "#d0d0d0",
-		white_50    = "#b3b3b3",
-		white_25    = "#686868",
+		white_50    = "#999999",
+		white_25    = "#666666",
 		white_10    = "#333333",
 
-		black_25    = "#1a1a1a",
-		black_50    = "#161618",
-		black_75    = "#0f0f12",
+		black_25    = "#1c1c1c",
+		black_50    = "#121212",
+		black_75    = "#0a0a0f",
 		black_100   = "#000000",
 
-		transparent = "none",
+		transparent = "NONE",
 	};
 
 	local colors = {
-		teal       = "#00d9ba",
-		cyan       = "#00d4ff",
-		blue       = "#4d9fff",
-		violet     = "#875fff",
-
-		purple     = "#ff87ff",
-		fuchsia    = "#ff66dd",
-		magenta    = "#ff0ac4",
-		pink       = "#FF3388",
-
-		red        = "#ff4757",
-		orange     = "#ff6b35",
-		yellow_old = "#ffaf00",
-		yellow     = "#ffd000",
-
-		lime       = "#7fff00",
-		green      = "#00d85f",
-
+		teal    = "#00d9ba",
+		cyan    = "#00d4ff",
+		blue    = "#4d9fff",
+		indigo  = "#6A7BFF",
+		violet  = "#875fff",
+		purple  = "#ff87ff",
+		fuchsia = "#ff55d9",
+		magenta = "#ff0ac4",
+		pink    = "#FF3388",
+		red     = "#ff001a",
+		orange  = "#ff6b35",
+		yellow  = "#ffd000",
+		lime    = "#7fff00",
+		green   = "#00d85f",
 	};
 
 	local gradient = {
@@ -55,7 +51,15 @@ return function()
 		comments = gray.white_50,
 
 		variables = colors.purple,
-		constants = colors.orange,
+		constants = colors.magenta,
+
+		strings = colors.green,
+		character = colors.lime,
+		booleans = colors.red,
+		["false"] = colors.red,
+		["true"] = colors.lime,
+		numbers = colors.blue,
+		floats = colors.indigo,
 
 		keywords = colors.cyan,
 		types = colors.yellow,
@@ -64,25 +68,19 @@ return function()
 		operators = colors.magenta,
 		punctuation = colors.violet,
 
-		special = colors.lime,
-
-		strings = colors.green,
-		character = colors.lime,
-		booleans = colors.red,
-		numbers = colors.blue,
-		floats = colors.red,
+		special = colors.pink,
 
 		preprocs = colors.teal,
 
 		delimiters = colors.violet,
 	};
 
-	local diagnostic = {
+	local diagnostics = {
+		ok           = "#005a2e",
 		info         = "#004d63",
 		hint         = "#783867",
-		error        = "#802040",
 		warn         = "#804700",
-		ok           = "#005a2e",
+		error        = "#802040",
 
 		git_add      = "#1f6243",
 		git_add_dimm = "#162e1a",
@@ -109,7 +107,7 @@ return function()
 		colors = colors,
 		gradient = gradient,
 		syntax = syntax,
-		diagnostic = diagnostic,
+		diagnostics = diagnostics,
 		ui = ui,
 	};
 end

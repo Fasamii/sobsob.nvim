@@ -19,8 +19,7 @@ return function(cp)
 
 		-- TODO:
 		-- SELECTION&SEARCH
-		-- Visual          = { bg = cp.selection, bold = true },
-		-- Visual          = { reverse = true, bold = true },
+		Visual      = { reverse = true, bold = true },
 		-- VisualNOS       = { bg = cp.selection },
 		-- Search          = { fg = cp.search, bg = cp.selection, bold = true },
 		-- CurSearch       = { fg = cp.bg_solid, bg = cp.search, bold = true },
@@ -29,7 +28,7 @@ return function(cp)
 
 		-- TODO:
 		-- UI
-		MatchParen  = { fg = cp.gray.black_100, bg = cp.color.magenta, bold = true },
+		MatchParen  = { fg = cp.gray.black_100, bg = cp.colors.magenta, bold = true },
 		-- WinSeparator    = { fg = cp.black_dimm, bg = cp.black_dimm },
 
 		-- TODO:
@@ -64,14 +63,12 @@ return function(cp)
 		-- DiagnosticWarn  = { fg = cp.warn },
 		-- DiagnosticError = { fg = cp.error },
 
-		-- TODO:
-		-- STATUS
-		-- Ok              = { fg = cp.ok },
-		-- Hint            = { fg = cp.hint },
-		-- Info            = { fg = cp.info },
-		-- Warn            = { fg = cp.warn },
+		Ok          = { fg = cp.diagnostics.ok },
+		Info        = { fg = cp.diagnostics.info },
+		Hint        = { fg = cp.diagnostics.hint },
+		Warn        = { fg = cp.diagnostics.warn },
+		Error       = { fg = cp.diagnostics.error },
 		-- WarningMsg      = { fg = cp.warn },
-		-- Error           = { fg = cp.error },
 		-- ErrorMsg        = { fg = cp.error },
 	}
 end

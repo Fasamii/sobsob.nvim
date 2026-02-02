@@ -1,6 +1,7 @@
 return function(cp)
 	return {
-		["@lsp.mod.defaultLibrary.lua"] = { fg = cp.magneta },
+		["@keyword.directive.lua"]                   = { link = "PreProc", bold = true },
 		["@lsp.typemod.variable.defaultLibrary.lua"] = { fg = cp.magneta },
+		["@lsp.mod.defaultLibrary.lua"]              = { link = "Special" },
 	}
 end
