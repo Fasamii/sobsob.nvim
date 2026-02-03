@@ -1,9 +1,7 @@
 return function(cp)
 	return {
-		javaScriptBraces = { fg = cp.syntax.delimiters },
+		javaScriptParens                  = { link = "Delimiter" },
+		javaScriptBraces                  = { link = "Delimiter" },
 		["@keyword.directive.javascript"] = { link = "PreProc", bold = true },
-
-		-- javaScript                     = { fg = cp.purple },
-		-- javaScriptParens               = { fg = cp.violet },
 	}
 end

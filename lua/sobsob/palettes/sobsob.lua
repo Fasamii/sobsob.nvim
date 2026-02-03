@@ -33,18 +33,18 @@ return function()
 	};
 
 	local gradient = {
-		util_lv1      = "#f487b6",
-		util_lv1_dimm = "#c56c94",
-		util_lv2      = "#cc59d2",
-		util_lv2_dimm = "#a44aa8",
-		util_lv3      = "#9046cf",
-		util_lv3_dimm = "#6f3a9f",
-		util_lv4      = "#6b4edb",
-		util_lv4_dimm = "#553daa",
-		util_lv5      = "#4a5be0",
-		util_lv5_dimm = "#3947a8",
-		util_lv6      = "#3a6de3",
-		util_lv6_dimm = "#2d56a8",
+		lv1      = "#f487b6",
+		lv1_dimm = "#c56c94",
+		lv2      = "#cc59d2",
+		lv2_dimm = "#a44aa8",
+		lv3      = "#9046cf",
+		lv3_dimm = "#6f3a9f",
+		lv4      = "#6b4edb",
+		lv4_dimm = "#553daa",
+		lv5      = "#4a5be0",
+		lv5_dimm = "#3947a8",
+		lv6      = "#3a6de3",
+		lv6_dimm = "#2d56a8",
 	};
 
 	local syntax = {
@@ -91,16 +91,26 @@ return function()
 	};
 
 	local ui = {
-		fg        = gray.white_100,
-		fg_float  = gray.white_75,
-		bg        = gray.transparent,
-		bg_solid  = gray.black_100,
-		bg_float  = gray.black_50,
+		fg           = gray.white_100,
+		fg_float     = gray.white_75,
+		bg           = gray.transparent,
+		bg_solid     = gray.black_100,
+		bg_float     = gray.black_50,
 
-		selection = "#3d2554",
-		search    = "#2d5a66",
+		text_colored = colors.violet,
+
+		selection    = "#3d2554",
+		search       = "#2d5a66",
 	};
 
+	local modes = {
+		normal = colors.cyan,
+		insert = colors.green,
+		visual = colors.yellow,
+		repleace = colors.pink,
+		command = colors.violet,
+		inactive = gray.white_50,
+	};
 
 	return {
 		gray = gray,
@@ -109,5 +119,6 @@ return function()
 		syntax = syntax,
 		diagnostics = diagnostics,
 		ui = ui,
+		modes = modes,
 	};
 end

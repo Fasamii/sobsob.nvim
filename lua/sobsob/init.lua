@@ -40,17 +40,19 @@ local function get_hl(modules, cp)
 		local module_path = "sobsob.highlights." .. module_name;
 		local ok, module = pcall(require, module_path);
 		if not ok then
-			error("Failed to load:" .. module_name);
-		else
-			if type(module) == "function" then
-				local ok_cp_call, result = pcall(module, cp);
-				if not ok_cp_call then
-					-- TODO: handle error
-				end
-				merge(hl, result);
-			elseif type(module) == "table" then
-				merge(hl, module);
+			error("Failed to find: " .. module_name);
+			return;
+		end
+
+		if type(module) == "function" then
+			local ok_cp_call, result = pcall(module, cp);
+			if not ok_cp_call then
+				error("Failed to load: " .. module_name);
+				return;
 			end
+			merge(hl, result);
+		elseif type(module) == "table" then
+			merge(hl, module);
 		end
 	end
 	return hl;
@@ -121,18 +123,19 @@ function M.setup(opts, palette)
 		"treesitter",
 		-- "patch.bash",
 		"patch.c",
-		-- "patch.css",
+		"patch.css",
 		-- "patch.haskell",
-		-- "patch.html",
+		"patch.html",
 		-- "patch.hyprlang",
 		"patch.javascript",
 		"patch.lua",
+		"patch.markdown",
 		"patch.python",
 		"patch.rust",
 		"patch.typescript",
 		-- "sobsob.highlights.patch.zsh",
-		"plugins.lualine",
 		"plugins.gitsigns",
+		"plugins.render_markdown",
 	};
 
 	override_modules(modules, opts)
