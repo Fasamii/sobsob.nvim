@@ -9,75 +9,27 @@ return function(cp)
 
 
 		-- GIT
-		GitAdd                                     = { fg = cp.git_add, bold = true },
-		GitDel                                     = { fg = cp.git_del, bold = true },
-		GitMod                                     = { fg = cp.git_mod, bold = true },
+		GitAdd                 = { fg = cp.git_add, bold = true },
+		GitDel                 = { fg = cp.git_del, bold = true },
+		GitMod                 = { fg = cp.git_mod, bold = true },
 
 		-- WHICH-KEY
-		WhichKeyNormal                             = { bg = cp.black_dark },
-		WhichKey                                   = { fg = cp.magenta, bold = true },
-		WhichKeyDesc                               = { fg = cp.purple },
-		WhichKeyGroup                              = { fg = cp.cyan },
+		WhichKeyNormal         = { bg = cp.black_dark },
+		WhichKey               = { fg = cp.magenta, bold = true },
+		WhichKeyDesc           = { fg = cp.purple },
+		WhichKeyGroup          = { fg = cp.cyan },
 
 		-- TELESCOPE
-		TelescopeNormal                            = { fg = cp.white, bg = "none" },
-		TelescopeBorder                            = { fg = cp.white_dark },
-		TelescopeTitle                             = { fg = cp.white },
+		TelescopeNormal        = { fg = cp.white, bg = "none" },
+		TelescopeBorder        = { fg = cp.white_dark },
+		TelescopeTitle         = { fg = cp.white },
 
-		TelescopePromptNormal                      = { fg = cp.purple },
-		TelescopePromptCounter                     = { fg = cp.purple },
+		TelescopePromptNormal  = { fg = cp.purple },
+		TelescopePromptCounter = { fg = cp.purple },
 
-		TelescopeSelection                         = { fg = cp.magenta, bold = true },
-		TelescopeMatching                          = { bg = cp.selection, bold = true },
-		TelescopePreviewLine                       = { bg = cp.search, fg = cp.bg_solid, bold = true },
-
-		-- MARKDOWN
-		--- Heading
-		RenderMarkdownH1                           = { fg = cp.white, bold = true },
-		RenderMarkdownH1Bg                         = { bg = cp.util_lv1_dimm, fg = cp.bg_solid, bold = true },
-		RenderMarkdownH2                           = { fg = cp.white, bold = true },
-		RenderMarkdownH2Bg                         = { bg = cp.util_lv2_dimm, fg = cp.bg_solid, bold = true },
-		RenderMarkdownH3                           = { fg = cp.white, bold = true },
-		RenderMarkdownH3Bg                         = { bg = cp.util_lv3_dimm, fg = cp.bg_solid, bold = true },
-		RenderMarkdownH4                           = { fg = cp.white, bold = true },
-		RenderMarkdownH4Bg                         = { bg = cp.util_lv4_dimm, fg = cp.bg_solid, bold = true },
-		RenderMarkdownH5                           = { fg = cp.white, bold = true },
-		RenderMarkdownH5Bg                         = { bg = cp.util_lv5_dimm, fg = cp.bg_solid, bold = true },
-		RenderMarkdownH6                           = { fg = cp.white, bold = true },
-		RenderMarkdownH6Bg                         = { bg = cp.util_lv6_dimm, fg = cp.bg_solid, bold = true },
-		--- Code
-		RenderMarkdownCode                         = { bg = cp.black_dark },
-		RenderMarkdownCodeInline                   = { link = "RenderMarkdownCode" },
-		--- List
-		RenderMarkdownBullet                       = { fg = cp.purple },
-		RenderMarkdownChecked                      = { fg = cp.green },
-		RenderMarkdownTodo                         = { fg = cp.yellow },
-		RenderMarkdownUnchecked                    = { fg = cp.red },
-		RenderMarkdownConsider                     = { fg = cp.violet },
-		--- Quote
-		RenderMarkdownQuote                        = { fg = cp.util_lv1_dimm },
-		RenderMarkdownQuote1                       = { fg = cp.util_lv1_dimm },
-		RenderMarkdownQuote2                       = { fg = cp.util_lv2_dimm },
-		RenderMarkdownQuote3                       = { fg = cp.util_lv3_dimm },
-		RenderMarkdownQuote4                       = { fg = cp.util_lv4_dimm },
-		RenderMarkdownQuote5                       = { fg = cp.util_lv5_dimm },
-		RenderMarkdownQuote6                       = { fg = cp.util_lv6_dimm },
-		--- Table
-		RenderMarkdownTableHead                    = { fg = cp.yellow },
-		RenderMarkdownTableRow                     = { fg = cp.purple },
-		RenderMarkdownTableFill                    = {},
-		--- Link
-		RenderMarkdownLink                         = { fg = cp.cyan },
-		RenderMarkdownWikiLink                     = { fg = cp.cyan },
-		["@markup.link.markdown"]                  = { fg = cp.cyan },
-		["@markup.link.label.markdown_inline"]     = { fg = cp.cyan },
-		["@markup.link.url.markdown_inline"]       = { fg = cp.violet },
-		["@markup.wikilink.label.markdown_inline"] = { fg = cp.cyan },
-		["@markup.wikilink.url.markdown_inline"]   = { fg = cp.violet },
-		--- Math
-		RenderMarkdownMath                         = { fg = cp.cyan },
-		--- Callouts
-		RenderMarkdownSuccess                      = { fg = cp.green },
+		TelescopeSelection     = { fg = cp.magenta, bold = true },
+		TelescopeMatching      = { bg = cp.selection, bold = true },
+		TelescopePreviewLine   = { bg = cp.search, fg = cp.bg_solid, bold = true },
 
 		---------------------
 		---- NvimDapView ----
