@@ -1,8 +1,0 @@
-return function(cp)
-	return {
-		htmlTag     = { link = "Delimiter", bold = true },
-		htmlEndTag  = { link = "Delimiter", bold = true },
-		htmlTagName = { link = "Keyword", bold = true },
-		htmlArg     = { link = "Type" },
-	}
-end

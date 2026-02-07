@@ -1,13 +1,13 @@
 return function(cp)
 	return {
 		-- BASE
-		Normal      = { fg = cp.ui.fg, bg = cp.ui.bg },
-		NormalFloat = { fg = cp.ui.fg_float, bg = cp.ui.bg_float },
-		NormalNC    = { link = "Normal" },
+		Normal          = { fg = cp.ui.fg, bg = cp.ui.bg },
+		NormalFloat     = { fg = cp.ui.fg_float, bg = cp.ui.bg_float },
+		NormalNC        = { link = "Normal" },
 
-		Bold        = { bold = true },
-		Italic      = { italic = true },
-		Underline   = { underline = true },
+		Bold            = { bold = true },
+		Italic          = { italic = true },
+		Underline       = { underline = true },
 
 		-- TODO:
 		-- CURSOR&LINES
@@ -19,7 +19,7 @@ return function(cp)
 
 		-- TODO:
 		-- SELECTION&SEARCH
-		Visual      = { reverse = true, bold = true },
+		Visual          = { reverse = true, bold = true },
 		-- VisualNOS       = { bg = cp.selection },
 		-- Search          = { fg = cp.search, bg = cp.selection, bold = true },
 		-- CurSearch       = { fg = cp.bg_solid, bg = cp.search, bold = true },
@@ -28,7 +28,7 @@ return function(cp)
 
 		-- TODO:
 		-- UI
-		MatchParen  = { fg = cp.gray.black_100, bg = cp.colors.magenta, bold = true },
+		MatchParen      = { fg = cp.gray.black_100, bg = cp.colors.magenta, bold = true },
 		-- WinSeparator    = { fg = cp.black_dimm, bg = cp.black_dimm },
 
 		-- TODO:
@@ -63,11 +63,25 @@ return function(cp)
 		-- DiagnosticWarn  = { fg = cp.warn },
 		-- DiagnosticError = { fg = cp.error },
 
-		Ok          = { fg = cp.diagnostics.ok },
-		Info        = { fg = cp.diagnostics.info },
-		Hint        = { fg = cp.diagnostics.hint },
-		Warn        = { fg = cp.diagnostics.warn },
-		Error       = { fg = cp.diagnostics.error },
+		Ok              = { fg = cp.diagnostics.ok },
+		Info            = { fg = cp.diagnostics.info },
+		Hint            = { fg = cp.diagnostics.hint },
+		Warn            = { fg = cp.diagnostics.warn },
+		Error           = { fg = cp.diagnostics.error },
+
+		DiagnosticInfo  = { fg = cp.diagnostics.info },
+		DiagnosticHint  = { fg = cp.diagnostics.hint },
+		DiagnosticWarn  = { fg = cp.diagnostics.warn },
+		DiagnosticError = { fg = cp.diagnostics.error },
+
+		DiffAdd         = { fg = cp.diagnostics.git_add, bold = true },
+		DiffChange      = { fg = cp.diagnostics.git_mod, bold = true },
+		DiffDelete      = { fg = cp.diagnostics.git_del, bold = true },
+
+		Directory       = { link = "Keyword" },
+		Question        = { link = "Special" },
+		-- netrwPlain      = { link = "Function" }, -- Leave default
+
 		-- WarningMsg      = { fg = cp.warn },
 		-- ErrorMsg        = { fg = cp.error },
 	}

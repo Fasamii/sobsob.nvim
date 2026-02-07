@@ -34,18 +34,27 @@ return function()
 
 	local gradient = {
 		lv1      = "#f487b6",
-		lv1_dimm = "#c56c94",
+		lv1_dimm = "#4e2b36",
+
 		lv2      = "#cc59d2",
-		lv2_dimm = "#a44aa8",
+		lv2_dimm = "#432847",
+
 		lv3      = "#9046cf",
-		lv3_dimm = "#6f3a9f",
+		lv3_dimm = "#342040",
+
 		lv4      = "#6b4edb",
-		lv4_dimm = "#553daa",
+		lv4_dimm = "#2a2342",
+
 		lv5      = "#4a5be0",
-		lv5_dimm = "#3947a8",
+		lv5_dimm = "#202a44",
+
 		lv6      = "#3a6de3",
-		lv6_dimm = "#2d56a8",
-	};
+		lv6_dimm = "#1c2f46",
+
+		-- TODO: make 7 (try going into teal)
+		lv7      = "#3a6de3",
+		lv7_dimm = "#1c2f46",
+	}
 
 	local syntax = {
 		comments = gray.white_50,
@@ -84,10 +93,10 @@ return function()
 
 		git_add      = "#1f6243",
 		git_add_dimm = "#162e1a",
-		git_del      = "#943d3d",
-		git_del_dimm = "#3b1f1f",
 		git_mod      = "#8a6a1e",
 		git_mod_dimm = "#3b2f18",
+		git_del      = "#943d3d",
+		git_del_dimm = "#3b1f1f",
 	};
 
 	local ui = {

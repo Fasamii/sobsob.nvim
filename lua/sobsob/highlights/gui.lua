@@ -8,28 +8,13 @@ return function(cp)
 		netrwExe      = { fg = cp.yellow },
 
 
-		-- GIT
-		GitAdd                 = { fg = cp.git_add, bold = true },
-		GitDel                 = { fg = cp.git_del, bold = true },
-		GitMod                 = { fg = cp.git_mod, bold = true },
 
 		-- WHICH-KEY
-		WhichKeyNormal         = { bg = cp.black_dark },
-		WhichKey               = { fg = cp.magenta, bold = true },
-		WhichKeyDesc           = { fg = cp.purple },
-		WhichKeyGroup          = { fg = cp.cyan },
+		WhichKeyNormal = { bg = cp.black_dark },
+		WhichKey       = { fg = cp.magenta, bold = true },
+		WhichKeyDesc   = { fg = cp.purple },
+		WhichKeyGroup  = { fg = cp.cyan },
 
-		-- TELESCOPE
-		TelescopeNormal        = { fg = cp.white, bg = "none" },
-		TelescopeBorder        = { fg = cp.white_dark },
-		TelescopeTitle         = { fg = cp.white },
-
-		TelescopePromptNormal  = { fg = cp.purple },
-		TelescopePromptCounter = { fg = cp.purple },
-
-		TelescopeSelection     = { fg = cp.magenta, bold = true },
-		TelescopeMatching      = { bg = cp.selection, bold = true },
-		TelescopePreviewLine   = { bg = cp.search, fg = cp.bg_solid, bold = true },
 
 		---------------------
 		---- NvimDapView ----
