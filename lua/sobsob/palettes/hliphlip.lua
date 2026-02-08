@@ -1,77 +1,118 @@
 return function()
+	local gray = {
+		white_100   = "#a0a0a0",
+		white_90    = "#939393",
+		white_75    = "#808080",
+		white_50    = "#606060",
+		white_25    = "#484848",
+		white_10    = "#303030",
+		black_10    = "#1a1a1a",
+		black_25    = "#161618",
+		black_50    = "#0f0f12",
+		black_75    = "#080809",
+		black_100   = "#000000",
+		transparent = "NONE",
+	};
 	local colors = {
-		bg_solid     = "#000000",
-		bg           = "none",
-
-		white        = "#a0a0a0",
-		white_dimm   = "#939393",
-		white_dark   = "#484848",
-
-		black        = "#1a1a1a",
-		black_dimm   = "#161618",
-		black_dark   = "#0f0f12",
-		black_shadow = "#080809",
-
-		green        = "#2b704b",
-		cyan         = "#0f627d",
-		violet       = "#5b4f85",
-		purple       = "#ad5eb7",
-		magenta      = "#76076c",
-		red          = "#8c2931",
-		pink         = "#97566a",
-		yellow       = "#a58d4a",
-		orange       = "#785221",
+		teal    = "#008a7a",
+		cyan    = "#0f627d",
+		blue    = "#2d5a99",
+		indigo  = "#3a4a99",
+		violet  = "#5b4f85",
+		purple  = "#ad5eb7",
+		fuchsia = "#9d4a82",
+		magenta = "#76076c",
+		pink    = "#97566a",
+		red     = "#8c2931",
+		orange  = "#785221",
+		yellow  = "#a58d4a",
+		lime    = "#4a7a1a",
+		green   = "#2b704b",
 	};
-
 	local gradient = {
-		util_lv1      = "#f487b6",
-		util_lv1_dimm = "#c56c94",
-		util_lv2      = "#cc59d2",
-		util_lv2_dimm = "#a44aa8",
-		util_lv3      = "#9046cf",
-		util_lv3_dimm = "#6f3a9f",
-		util_lv4      = "#6b4edb",
-		util_lv4_dimm = "#553daa",
-		util_lv5      = "#4a5be0",
-		util_lv5_dimm = "#3947a8",
-		util_lv6      = "#3a6de3",
-		util_lv6_dimm = "#2d56a8",
-	};
-
-	local ui = {
-		bg        = "none",
-		bg_solid  = "#000000",
-		fg        = colors.white,
-		selection = "#2d1a3d",
-		search    = "#38A8A8",
-	};
-
+		lv1      = "#ad5eb7",
+		lv1_dimm = "#2d1a35",
+		lv2      = "#9d4a82",
+		lv2_dimm = "#33152f",
+		lv3      = "#8a3a9f",
+		lv3_dimm = "#381a3f",
+		lv4      = "#7a3a9f",
+		lv4_dimm = "#3d1a48",
+		lv5      = "#6a3f99",
+		lv5_dimm = "#421a52",
+		lv6      = "#5b4f85",
+		lv6_dimm = "#461a5b",
+		lv7      = "#9f5a8a",
+		lv7_dimm = "#341a44",
+	}
 	local syntax = {
-		types = colors.yellow,
+		comments = gray.white_50,
+
+		variables = colors.purple,
+		constants = colors.magenta,
+
+		strings = colors.green,
+		character = colors.lime,
+		booleans = colors.red,
+		["false"] = colors.red,
+		["true"] = colors.lime,
+		numbers = colors.blue,
+		floats = colors.indigo,
+
 		keywords = colors.cyan,
+		types = colors.yellow,
+		functions = colors.fuchsia,
+
+		operators = colors.magenta,
+		punctuation = colors.violet,
+
+		special = colors.pink,
+
+		preprocs = colors.teal,
+
+		delimiters = colors.violet,
 	};
-
-
-	local diagnostic = {
+	local diagnostics = {
+		ok           = "#00331c",
 		info         = "#003342",
 		hint         = "#532747",
-		error        = "#4d1426",
 		warn         = "#4d2e00",
-		ok           = "#00331c",
+		error        = "#4d1426",
 
 		git_add      = "#1f6243",
-		git_add_dimm = "#162e1a",
-		git_del      = "#943d3d",
-		git_del_dimm = "#3b1f1f",
+		git_add_dimm = "#102113",
 		git_mod      = "#8a6a1e",
-		git_mod_dimm = "#3b2f18",
+		git_mod_dimm = "#2a2111",
+		git_del      = "#943d3d",
+		git_del_dimm = "#2a1616",
 	};
-
+	local ui = {
+		fg           = gray.white_100,
+		fg_float     = gray.white_75,
+		fg_popup     = gray.white_25,
+		bg           = gray.transparent,
+		bg_solid     = gray.black_100,
+		bg_shadow    = gray.black_50,
+		bg_float     = gray.black_25,
+		bg_popup     = gray.black_10,
+		text_colored = colors.violet,
+		selection    = "#2d1a3d",
+	};
+	local modes = {
+		normal = colors.cyan,
+		insert = colors.green,
+		visual = colors.yellow,
+		replace = colors.pink,
+		command = colors.violet,
+		inactive = gray.white_50,
+	};
 	return {
+		gray = gray,
 		colors = colors,
-		ui = ui,
-		syntax = syntax,
-		diagnostic = diagnostic,
 		gradient = gradient,
+		syntax = syntax,
+		diagnostics = diagnostics,
+		ui = ui,
+		modes = modes,
 	};
 end
