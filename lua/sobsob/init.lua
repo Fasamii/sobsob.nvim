@@ -10,11 +10,9 @@ local function notify(msg, lvl)
 end
 
 local function merge(target, ...)
-	for _, t in ipairs { ... } do
-		if type(t) == "table" then
-			for k, v in pairs(t) do
-				target[k] = v
-			end
+	for _, tbl in ipairs({ ... }) do
+		if type(tbl) == "table" then
+			vim.tbl_extend("force", target, tbl);
 		end
 	end
 	return target
