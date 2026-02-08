@@ -14,4 +14,6 @@ return function(cp)
 			vim.api.nvim_set_hl(0, "RainbowCyan", { fg = cp.gradient.lv6_dimm })
 		end)
 	end
+
+	return {};
 end

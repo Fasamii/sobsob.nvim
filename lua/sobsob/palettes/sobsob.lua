@@ -105,6 +105,7 @@ return function()
 		bg           = gray.transparent,
 		bg_solid     = gray.black_100,
 		bg_float     = gray.black_50,
+		bg_popup     = gray.black_25,
 
 		text_colored = colors.violet,
 

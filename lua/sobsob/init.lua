@@ -169,6 +169,7 @@ function M.setup(opts, palette)
 		"plugins.gitsigns",
 		"plugins.indent-blankline",
 		"plugins.render_markdown",
+		"plugins.sniprun",
 		"plugins.telescope",
 	};
 
