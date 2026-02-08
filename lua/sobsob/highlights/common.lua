@@ -1,7 +1,6 @@
 return function(cp)
 	return {
-		-- BASE
-		Normal          = { fg = cp.ui.fg, bg = cp.ui.bg_solid },
+		Normal          = { fg = cp.ui.fg, bg = cp.ui.bg },
 		NormalFloat     = { fg = cp.ui.fg_float, bg = cp.ui.bg_float },
 		NormalNC        = { fg = cp.ui.fg, bg = cp.ui.bg },
 

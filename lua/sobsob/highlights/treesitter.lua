@@ -1,37 +1,37 @@
 return function(cp)
 	return {
-		["@comment"]            = { link = "Comment" },
+		["@comment"]           = { link = "Comment" },
 		-- ["@comment.documentation"]     = { fg = cp.white_dark, bold = true, italic = true },
 		-- ["@special.comment"]           = { fg = cp.white_dark, bold = true },
 
-		["@variable"]           = { link = "Identifier" },
+		["@variable"]          = { link = "Identifier" },
 
-		["@string"]             = { link = "String" },
-		["@character"]          = { link = "Character" },
-		["@boolean"]            = { link = "Boolean" },
-		["@boolean.false"]            = { fg = cp.syntax["false"] },
-		["@boolean.true"]            = { fg = cp.syntax["true"] },
-		["@number"]				= { link = "Number" },
-		["@number.float"]		= { link = "Float" },
+		["@string"]            = { link = "String" },
+		["@character"]         = { link = "Character" },
+		["@boolean"]           = { link = "Boolean" },
+		["@boolean.false"]     = { fg = cp.syntax["false"] },
+		["@boolean.true"]      = { fg = cp.syntax["true"] },
+		["@number"]            = { link = "Number" },
+		["@number.float"]      = { link = "Float" },
 
 		["@keyword"]           = { link = "Keyword" },
-		["@statement"]                  = { link = "Statement" },
-		["@conditional"]               = { link = "Conditional" },
-		["@repeat"]                    = { link = "Repeat" },
+		["@statement"]         = { link = "Statement" },
+		["@conditional"]       = { link = "Conditional" },
+		["@repeat"]            = { link = "Repeat" },
 		-- TODO: Exception
 
 		["@type"]              = { link = "Type" },
-		["@storageclass"]              = { link = "StorageClass" }, --TODO: Check if you typed that correctly
+		["@storageclass"]      = { link = "StorageClass" },   --TODO: Check if you typed that correctly
 
 		["@function"]          = { link = "Function" },
-		["@label"]                     = { link = "Label" },
+		["@label"]             = { link = "Label" },
 
-		["@operator"]                  = { link = "Operator" },
+		["@operator"]          = { link = "Operator" },
 
-		["@string.special"]            = { link = "Special" },
-		["@character.special"]         = { link = "SpecialChar" },
+		["@string.special"]    = { link = "Special" },
+		["@character.special"] = { link = "SpecialChar" },
 
-		["@preproc"]                   = { link = "PreProc" },
+		["@preproc"]           = { link = "PreProc" },
 
 		-- COMMON: Module/namespace paths
 		-- ["@module"]            = { fg = cp.syntax.types },           -- module names → yellow
@@ -41,7 +41,7 @@ return function(cp)
 		-- -- Special characters in strings
 		-- ["@string.escape"]     = { fg = cp.colors.magenta },         -- \n, \t → magenta
 		-- ["@character.special"] = { fg = cp.colors.magenta },
-		
+
 		-- ["@keyword.directive"]     = { fg = cp.syntax.preprocs },      -- #define, #include → teal
 		-- ["@keyword.directive.define"] = { fg = cp.syntax.preprocs },   -- #define → teal
 		-- ["@constant.macro"]        = { fg = cp.syntax.functions, bold = true }, -- BUFFSIZE → fuchsia
