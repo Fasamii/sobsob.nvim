@@ -7,6 +7,7 @@ return function()
 		white_25    = "#666666",
 		white_10    = "#333333",
 
+		black_10    = "#242424",
 		black_25    = "#1c1c1c",
 		black_50    = "#121212",
 		black_75    = "#0a0a0f",
@@ -33,29 +34,21 @@ return function()
 	};
 
 	local gradient = {
-		lv1      = "#f487b6",
-		lv1_dimm = "#4e2b36",
-
-		lv2      = "#cc59d2",
-		lv2_dimm = "#432847",
-
-		lv3      = "#9046cf",
-		lv3_dimm = "#342040",
-
-		lv4      = "#6b4edb",
-		lv4_dimm = "#2a2342",
-
-		lv5      = "#4a5be0",
-		lv5_dimm = "#202a44",
-
-		lv6      = "#3a6de3",
-		lv6_dimm = "#1c2f46",
-
-		-- TODO: make 7 (try going into teal)
-		lv7      = "#3a6de3",
-		lv7_dimm = "#1c2f46",
+		lv1      = "#ff87ff",
+		lv1_dimm = "#2f1a35",
+		lv2      = "#ff55d9",
+		lv2_dimm = "#3a152f",
+		lv3      = "#e040ff",
+		lv3_dimm = "#401a3f",
+		lv4      = "#c040ff",
+		lv4_dimm = "#451a48",
+		lv5      = "#a050ff",
+		lv5_dimm = "#4a1a52",
+		lv6      = "#875fff",
+		lv6_dimm = "#4e1a5b",
+		lv7      = "#ff70e0",
+		lv7_dimm = "#361a44",
 	}
-
 	local syntax = {
 		comments = gray.white_50,
 
@@ -102,22 +95,25 @@ return function()
 	local ui = {
 		fg           = gray.white_100,
 		fg_float     = gray.white_75,
+		fg_popup     = gray.white_25,
+
 		bg           = gray.transparent,
+
 		bg_solid     = gray.black_100,
-		bg_float     = gray.black_50,
-		bg_popup     = gray.black_25,
+		bg_shadow    = gray.black_50,
+		bg_float     = gray.black_25,
+		bg_popup     = gray.black_10,
 
 		text_colored = colors.violet,
 
-		selection    = "#3d2554",
-		search       = "#2d5a66",
+		selection    = "#5a4ab6",
 	};
 
 	local modes = {
 		normal = colors.cyan,
 		insert = colors.green,
 		visual = colors.yellow,
-		repleace = colors.pink,
+		replace = colors.pink,
 		command = colors.violet,
 		inactive = gray.white_50,
 	};

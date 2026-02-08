@@ -20,7 +20,7 @@ theme.visual = {
 }
 
 theme.replace = {
-	a = { bg = cp.modes.repleace, fg = cp.ui.bg_solid, bold = true },
+	a = { bg = cp.modes.replace, fg = cp.ui.bg_solid, bold = true },
 	b = { bg = cp.ui.bg_float, fg = cp.ui.text_colored, bold = true },
 	c = { bg = cp.ui.bg_float, fg = cp.ui.text_colored },
 }

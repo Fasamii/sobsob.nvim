@@ -1,67 +1,44 @@
 return function(cp)
 	return {
 		-- BASE
-		Normal          = { fg = cp.ui.fg, bg = cp.ui.bg },
+		Normal          = { fg = cp.ui.fg, bg = cp.ui.bg_solid },
 		NormalFloat     = { fg = cp.ui.fg_float, bg = cp.ui.bg_float },
-		NormalNC        = { link = "Normal" },
+		NormalNC        = { fg = cp.ui.fg, bg = cp.ui.bg },
+
+		Question        = { link = "Keyword" },
 
 		Bold            = { bold = true },
 		Italic          = { italic = true },
 		Underline       = { underline = true },
 
-		-- TODO:
-		-- CURSOR&LINES
-		-- Cursor          = { fg = cp.red },
-		-- CursorLine      = {},
-		-- LineNr          = { fg = cp.white_dark, bg = cp.bg },
-		-- CursorLineNr    = { fg = cp.white },
-		-- ColorColumn     = { bg = cp.black_shadow },
+		CursorLine      = { bg = cp.ui.bg_shadow },
+		ColorColumn     = { bg = cp.ui.bg_shadow },
 
-		-- TODO:
-		-- SELECTION&SEARCH
-		Visual          = { reverse = true, bold = true },
-		-- VisualNOS       = { bg = cp.selection },
-		-- Search          = { fg = cp.search, bg = cp.selection, bold = true },
-		-- CurSearch       = { fg = cp.bg_solid, bg = cp.search, bold = true },
-		-- IncSearch       = { fg = cp.bg_solid, bg = cp.search, bold = true },
-		-- Substitute      = { fg = cp.bg_solid, bg = cp.search },
-
-		-- TODO:
-		-- UI
 		MatchParen      = { fg = cp.gray.black_100, bg = cp.colors.magenta, bold = true },
-		-- WinSeparator    = { fg = cp.black_dimm, bg = cp.black_dimm },
 
-		-- TODO:
-		-- BARS
-		-- WinBar          = { fg = cp.white, bg = cp.black_dark },
-		-- WinBarNC        = { fg = cp.white, bg = cp.black_dimm },
-		-- StatusLine      = { fg = cp.white, bg = cp.black_dark },
-		-- StatusLineNc    = { fg = cp.white, bg = cp.black_dimm },
-		-- TabLine         = { fg = cp.violet, bg = cp.black_dark, },
-		-- TabLineSel      = { fg = cp.magenta, bg = cp.black_dimm, bold = true },
-		-- TabLineFill     = { bg = cp.black_dark },
+		LineNr          = { fg = cp.ui.fg_popup },
+		CursorLineNr    = { fg = cp.ui.fg },
 
-		-- TODO:
-		-- POPUP
-		-- Pmenu           = { fg = cp.white, bg = cp.black_dark },
-		-- PmenuSel        = { fg = cp.magenta, bold = true },
-		-- PmenuSbar       = { bg = cp.black },
-		-- PmenuThumb      = { bg = cp.violet },
+		Visual          = { reverse = true, bold = true },
+		Search          = { bg = cp.ui.selection, bold = true },
+		CurSearch       = { reverse = true, bold = true },
+		IncSearch       = { link = "Visual" },
+		Substitute      = { link = "Visual" },
 
-		-- TODO:
-		-- SPELLING
-		-- SpellBad        = { undercurl = true, sp = cp.error, bold = true },
-		-- SpellCap        = { undercurl = true, sp = cp.warning },
-		-- SpellRare       = { bold = true },
-		-- SpellLocal      = {},
+		WinBar          = { fg = cp.ui.fg, bg = cp.ui.bg_float },
+		WinBarNC        = { fg = cp.ui.fg, bg = cp.ui.bg_float },
 
-		-- TODO:
-		-- DIAGNOSTICS
-		-- DiagnosticOk    = { fg = cp.ok },
-		-- DiagnosticHint  = { fg = cp.hint },
-		-- DiagnosticInfo  = { fg = cp.info },
-		-- DiagnosticWarn  = { fg = cp.warn },
-		-- DiagnosticError = { fg = cp.error },
+		TabLine         = { fg = cp.ui.fg_float, bg = cp.ui.bg_float, },
+		TabLineSel      = { fg = cp.ui.text_colored, bg = cp.ui.bg, bold = true },
+		TabLineFill     = { bg = cp.ui.bg_float },
+
+		VertSplit       = { fg = cp.gray.white_100, bg = cp.ui.bg, bold = false, italic = false },
+		WinSeparator    = { fg = cp.gray.white_100, bg = cp.ui.bg, bold = false, italic = false },
+
+		Pmenu           = { bg = cp.ui.bg_popup },
+		PmenuSel        = { reverse = true },
+		PmenuSbar       = { bg = cp.ui.fg_popup },
+		PmenuThumb      = { bg = cp.ui.fg_float },
 
 		Ok              = { fg = cp.diagnostics.ok },
 		Info            = { fg = cp.diagnostics.info },
@@ -69,20 +46,22 @@ return function(cp)
 		Warn            = { fg = cp.diagnostics.warn },
 		Error           = { fg = cp.diagnostics.error },
 
-		DiagnosticInfo  = { fg = cp.diagnostics.info },
-		DiagnosticHint  = { fg = cp.diagnostics.hint },
-		DiagnosticWarn  = { fg = cp.diagnostics.warn },
-		DiagnosticError = { fg = cp.diagnostics.error },
+		DiagnosticInfo  = { link = "Info" },
+		DiagnosticHint  = { link = "Hint" },
+		DiagnosticWarn  = { link = "Warn" },
+		DiagnosticError = { link = "Error" },
 
 		DiffAdd         = { fg = cp.diagnostics.git_add, bold = true },
 		DiffChange      = { fg = cp.diagnostics.git_mod, bold = true },
 		DiffDelete      = { fg = cp.diagnostics.git_del, bold = true },
 
-		Directory       = { link = "Keyword" },
-		Question        = { link = "Special" },
-		-- netrwPlain      = { link = "Function" }, -- Leave default
+		SpellBad        = { undercurl = true, sp = cp.diagnostics.error, bold = true },
+		SpellCap        = { undercurl = true, sp = cp.diagnostics.warn },
+		SpellRare       = { bold = true },
+		SpellLocal      = {},
 
-		-- WarningMsg      = { fg = cp.warn },
-		-- ErrorMsg        = { fg = cp.error },
+		Directory       = { link = "Keyword" },
+		-- netrwPlain      = { link = "Function" }, -- Leave default
+		-- TODO: Change netrw symlink to special
 	}
 end

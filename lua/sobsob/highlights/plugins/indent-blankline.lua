@@ -11,7 +11,7 @@ return function(cp)
 			vim.api.nvim_set_hl(0, "RainbowOrange", { fg = cp.gradient.lv4_dimm });
 			vim.api.nvim_set_hl(0, "RainbowGreen", { fg = cp.gradient.lv5_dimm });
 			vim.api.nvim_set_hl(0, "RainbowViolet", { fg = cp.gradient.lv6_dimm });
-			vim.api.nvim_set_hl(0, "RainbowCyan", { fg = cp.gradient.lv6_dimm })
+			vim.api.nvim_set_hl(0, "RainbowCyan", { fg = cp.gradient.lv7_dimm })
 		end)
 	end
 
