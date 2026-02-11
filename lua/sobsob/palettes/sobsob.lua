@@ -36,18 +36,24 @@ return function()
 	local gradient = {
 		lv1      = "#ff9dff",
 		lv1_dimm = "#2a1430",
+
 		lv2      = "#ff4fd8",
 		lv2_dimm = "#33122a",
+
 		lv3      = "#d43bff",
 		lv3_dimm = "#361540",
-		lv4      = "#a73cff",
-		lv4_dimm = "#311645",
-		lv5      = "#7f46ff",
-		lv5_dimm = "#26194a",
-		lv6      = "#5c52ff",
-		lv6_dimm = "#1f1c4a",
-		lv7      = "#4a5be8",
-		lv7_dimm = "#181b3f",
+
+		lv4      = "#8826ff",
+		lv4_dimm = "#2a1145",
+
+		lv5      = "#5e2fff",
+		lv5_dimm = "#1f1048",
+
+		lv6      = "#3a2bff",
+		lv6_dimm = "#160f45",
+
+		lv7      = "#3f39d8",
+		lv7_dimm = "#141735",
 	}
 
 	local syntax = {
