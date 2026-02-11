@@ -34,21 +34,22 @@ return function()
 	};
 
 	local gradient = {
-		lv1      = "#ff87ff",
-		lv1_dimm = "#2f1a35",
-		lv2      = "#ff55d9",
-		lv2_dimm = "#3a152f",
-		lv3      = "#e040ff",
-		lv3_dimm = "#401a3f",
-		lv4      = "#c040ff",
-		lv4_dimm = "#451a48",
-		lv5      = "#a050ff",
-		lv5_dimm = "#4a1a52",
-		lv6      = "#875fff",
-		lv6_dimm = "#4e1a5b",
-		lv7      = "#ff70e0",
-		lv7_dimm = "#361a44",
+		lv1      = "#ff9dff",
+		lv1_dimm = "#2a1430",
+		lv2      = "#ff4fd8",
+		lv2_dimm = "#33122a",
+		lv3      = "#d43bff",
+		lv3_dimm = "#361540",
+		lv4      = "#a73cff",
+		lv4_dimm = "#311645",
+		lv5      = "#7f46ff",
+		lv5_dimm = "#26194a",
+		lv6      = "#5c52ff",
+		lv6_dimm = "#1f1c4a",
+		lv7      = "#4a5be8",
+		lv7_dimm = "#181b3f",
 	}
+
 	local syntax = {
 		comments = gray.white_50,
 
