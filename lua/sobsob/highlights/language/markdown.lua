@@ -1,6 +1,6 @@
 return function(cp)
 	return {
-		["@markup.list.markdown"]                  = { fg = cp.ui.colored_text },
+		["@markup.list.markdown"]                  = { fg = cp.ui.text_colored },
 		["@markup.link.markdown"]                  = { fg = cp.colors.cyan },
 		["@markup.link.label.markdown_inline"]     = { fg = cp.colors.cyan },
 		["@markup.link.url.markdown_inline"]       = { fg = cp.colors.violet },

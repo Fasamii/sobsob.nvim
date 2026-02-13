@@ -3,7 +3,7 @@ local theme = {};
 
 theme.normal = {
 	a = { bg = cp.modes.normal, fg = cp.ui.bg_solid, bold = true },
-	b = { bg = cp.ui.bg_float, fg = cp.ui.text_colored, bold = "bold" },
+	b = { bg = cp.ui.bg_float, fg = cp.ui.text_colored, bold = true },
 	c = { bg = cp.ui.bg_float, fg = cp.ui.text_colored },
 }
 
