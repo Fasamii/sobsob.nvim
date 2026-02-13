@@ -9,6 +9,6 @@ return function(cp)
 
 		TelescopeSelection     = { reverse = true, bold = true },
 		TelescopeMatching      = { fg = cp.colors.magenta, bold = true },
-		TelescopePreviewLine   = { bg = cp.ui.search, fg = cp.ui.bg_solid, bold = true }, -- TODO: remove that cp.ui.search
+		TelescopePreviewLine   = { reverse = true, bold = true },
 	}
 end
