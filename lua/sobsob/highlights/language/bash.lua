@@ -1,5 +1,6 @@
 return function(cp)
 	return {
-		["@variable.parameter.bash"] = { fg = cp.pink },
+		["@variable.parameter.bash"] = { link = "Identifier" },
+		["@constant.bash"] = { link = "Identifier" },
 	}
 end

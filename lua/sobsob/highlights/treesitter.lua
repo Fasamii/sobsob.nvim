@@ -1,51 +1,49 @@
 return function(cp)
 	return {
-		["@comment"]           = { link = "Comment" },
-		-- ["@comment.documentation"]     = { fg = cp.white_dark, bold = true, italic = true },
-		-- ["@special.comment"]           = { fg = cp.white_dark, bold = true },
+		["@comment"]             = { link = "Comment" },
 
-		["@variable"]          = { link = "Identifier" },
+		["@variable"]            = { link = "Identifier" },
 
-		["@string"]            = { link = "String" },
-		["@character"]         = { link = "Character" },
-		["@boolean"]           = { link = "Boolean" },
-		["@boolean.false"]     = { fg = cp.syntax["false"] },
-		["@boolean.true"]      = { fg = cp.syntax["true"] },
-		["@number"]            = { link = "Number" },
-		["@number.float"]      = { link = "Float" },
+		["@string"]              = { link = "String" },
+		["@character"]           = { link = "Character" },
+		["@boolean"]             = { link = "Boolean" },
+		["@boolean.false"]       = { fg = cp.syntax["false"] },
+		["@boolean.true"]        = { fg = cp.syntax["true"] },
+		["@number"]              = { link = "Number" },
+		["@number.float"]        = { link = "Float" },
 
-		["@keyword"]           = { link = "Keyword" },
-		["@statement"]         = { link = "Statement" },
-		["@conditional"]       = { link = "Conditional" },
-		["@repeat"]            = { link = "Repeat" },
-		-- TODO: Exception
+		["@keyword"]             = { link = "Keyword" },
+		["@statement"]           = { link = "Statement" },
+		["@conditional"]         = { link = "Conditional" },
+		["@repeat"]              = { link = "Repeat" },
 
-		["@type"]              = { link = "Type" },
-		["@storageclass"]      = { link = "StorageClass" },   --TODO: Check if you typed that correctly
+		["@type"]                = { link = "Type" },
+		["@storageclass"]        = { link = "StorageClass" }, --TODO: Check if you typed that correctly
 
-		["@function"]          = { link = "Function" },
-		["@label"]             = { link = "Label" },
+		["@function"]            = { link = "Function" },
+		-- for bass and zsh
+		["@function.flag.short"] = { link = "Function" },
+		["@function.flag.long"]  = { link = "Function" },
 
-		["@operator"]          = { link = "Operator" },
+		["@label"]               = { link = "Label" },
 
-		["@string.special"]    = { link = "Special" },
-		["@character.special"] = { link = "SpecialChar" },
+		["@operator"]            = { link = "Operator" },
 
-		["@preproc"]           = { link = "PreProc" },
+		["@string.special"]      = { link = "Special" },
+		["@character.special"]   = { link = "SpecialChar" },
 
-		-- COMMON: Module/namespace paths
-		-- ["@module"]            = { fg = cp.syntax.types },           -- module names → yellow
-		-- ["@namespace"]         = { fg = cp.syntax.types },
+		["@preproc"]             = { link = "PreProc" },
+
+		["@macro"]               = { link = "Macro" },
+
 		-- ["@variable.member"]   = { fg = cp.syntax.variables },       -- obj.property → purple
-		--
+
 		-- -- Special characters in strings
 		-- ["@string.escape"]     = { fg = cp.colors.magenta },         -- \n, \t → magenta
 		-- ["@character.special"] = { fg = cp.colors.magenta },
 
 		-- ["@keyword.directive"]     = { fg = cp.syntax.preprocs },      -- #define, #include → teal
 		-- ["@keyword.directive.define"] = { fg = cp.syntax.preprocs },   -- #define → teal
-		-- ["@constant.macro"]        = { fg = cp.syntax.functions, bold = true }, -- BUFFSIZE → fuchsia
-		-- ["@function.macro"]        = { fg = cp.syntax.functions, bold = true }, -- function-like macros
 		--
 		-- -- #include <stdio.h>
 		-- ["@string.special.path"]   = { fg = cp.syntax.strings },       -- <stdio.h> → green
@@ -91,7 +89,6 @@ return function(cp)
 		-- ["@debug"]                     = { fg = cp.orange },
 		-- ["@include"]                   = { fg = cp.cyan },
 		-- ["@define"]                    = { fg = cp.cyan },
-		-- ["@macro"]                     = { fg = cp.magenta },
 		-- -- Identifier
 		-- ["@identifier"]                = { fg = cp.purple },
 		-- ["@property"]                  = { fg = cp.purple },
@@ -106,8 +103,6 @@ return function(cp)
 		-- ["@function.call"]             = { fg = cp.purple, bold = true },
 		-- ["@function.builtin"]          = { fg = cp.purple, bold = true },
 		-- ["@function.macro"]            = { fg = cp.purple, bold = true },
-		-- ["@lsp.type.function"]         = { fg = cp.purple, bold = true },
-		-- ["@lsp.type.method"]           = { fg = cp.purple, bold = true },
 		-- ["@parameter"]                 = { fg = cp.cyan },
 		-- ["@method.call"]               = { fg = cp.purple, bold = true },
 		-- ["@method"]                    = { fg = cp.purple, bold = true },

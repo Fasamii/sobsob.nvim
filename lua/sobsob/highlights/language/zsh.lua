@@ -1,11 +1,17 @@
 return function(cp)
 	return {
-		zshVariableDef = { fg = cp.purple },
-		zshFunction = { fg = cp.purple },
+		zshVariableDef = { link = "Identifier" },
+		["@constant.zsh"] = { link = "Identifier" },
 
-		zshParentheses = { fg = cp.violet },
-		zshBrackets = { fg = cp.violet },
+		zshFunction = { link = "Function" },
 
-		zshTypes = { fg = cp.cyan },
+		zshParentheses = { link = "Punctuation" },
+		zshBrackets = { link = "Punctuation" },
+
+		zshTypes = { link = "Type" },
+
+		["@punctuation.special"] = { link = "Operator" },
+
+		["@function.sub.zsh"] = { link = "Function" },
 	}
 end
