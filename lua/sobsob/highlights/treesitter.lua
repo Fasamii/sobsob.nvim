@@ -18,7 +18,7 @@ return function(cp)
 		["@repeat"]              = { link = "Repeat" },
 
 		["@type"]                = { link = "Type" },
-		["@storageclass"]        = { link = "StorageClass" }, --TODO: Check if you typed that correctly
+		["@storageclass"]        = { link = "StorageClass" },
 
 		["@function"]            = { link = "Function" },
 		-- for bass and zsh

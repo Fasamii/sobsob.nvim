@@ -149,7 +149,6 @@ function M.setup(opts, palette)
 
 	local modules = {
 		"common",
-		-- "gui",
 		"syntax",
 		"treesitter",
 		"language.bash",
@@ -172,8 +171,10 @@ function M.setup(opts, palette)
 		"lsp.language.rust",
 		"plugins.gitsigns",
 		"plugins.indent-blankline",
+		"plugins.netrw",
 		"plugins.render_markdown",
 		"plugins.sniprun",
+		"plugins.which-key",
 		"plugins.telescope",
 	};
 
