@@ -165,6 +165,7 @@ function M.setup(opts, palette)
 		"language.rust",
 		"language.typescript",
 		"language.zsh",
+		"language.xml",
 		"lsp.common",
 		"lsp.language.c",
 		"lsp.language.lua",
