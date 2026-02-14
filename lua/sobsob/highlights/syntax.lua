@@ -1,7 +1,7 @@
 return function(cp)
 	return {
 		Comment        = { fg = cp.syntax.comments, italic = true, },
-		SpecialComment = { fg = cp.syntax.comments }, -- TODO: make sure you create hi group for docs comments
+		SpecialComment = { fg = cp.syntax.comments },
 
 		Identifier     = { fg = cp.syntax.variables },
 		Constant       = { fg = cp.syntax.constants, bold = true },
@@ -16,12 +16,11 @@ return function(cp)
 		Statement      = { fg = cp.syntax.keywords },
 		Conditional    = { fg = cp.syntax.keywords },
 		Repeat         = { fg = cp.syntax.keywords },
-		Exception      = { fg = cp.syntax.keywords }, -- TODO: Maybe orange or sum
+		Exception      = { fg = cp.syntax.keywords },
 
 		Type           = { fg = cp.syntax.types },
 		StorageClass   = { fg = cp.syntax.keywords },
 		Structure      = { fg = cp.syntax.keywords },
-		Typedef        = { fg = cp.syntax.keywords }, -- TODO: Check how that behaves
 
 		Function       = { fg = cp.syntax.functions },
 		Label          = { fg = cp.syntax.functions },
@@ -29,7 +28,7 @@ return function(cp)
 		Operator       = { fg = cp.syntax.operators },
 
 		Special        = { fg = cp.syntax.special },
-		SpecialChar    = { fg = cp.syntax.special }, -- TODO: Maybe magenta or sum
+		SpecialChar    = { fg = cp.syntax.special },
 
 		PreProc        = { fg = cp.syntax.preprocs },
 		PreCondit      = { fg = cp.syntax.preprocs },
@@ -40,9 +39,9 @@ return function(cp)
 		Delimiter      = { fg = cp.syntax.delimiters },
 		Tag            = { fg = cp.syntax.delimiters },
 
-		Underlined     = { fg = cp.colors.blue, underline = true }, -- TODO: check how to style underline
+		Underlined     = { fg = cp.colors.blue, underline = true },
 		Ignore         = { fg = cp.gray.white_10 },
 		Error          = { fg = cp.diagnostics.error, bold = true },
-		Todo           = { fg = cp.diagnostics.warn, bold = true } -- TODO: Make some diagnostics marks section
+		Todo           = { fg = cp.diagnostics.warn, bold = true }
 	}
 end

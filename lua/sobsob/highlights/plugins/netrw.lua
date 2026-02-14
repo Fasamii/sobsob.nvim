@@ -1,9 +1,9 @@
 return function(cp)
 	return {
-		netrwTreeBar  = { fg = cp.violet },
-		netrwPlain    = { fg = cp.purple },
-		netrwDir      = { fg = cp.cyan },
-		netrwClassify = { fg = cp.violet },
-		netrwExe      = { fg = cp.yellow },
+		netrwTreeBar  = { link = "Delimiter" },
+		netrwPlain    = { fg = cp.ui.fg },
+		netrwDir      = { link = "Directory" },
+		netrwClassify = { link = "Special" },
+		netrwExe      = { link = "Function" },
 	}
 end

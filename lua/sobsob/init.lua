@@ -156,7 +156,7 @@ function M.setup(opts, palette)
 		"language.css",
 		-- "language.haskell",
 		"language.html",
-		-- "language.hyprlang",
+		"language.hyprlang",
 		"language.javascript",
 		"language.lua",
 		"language.markdown",

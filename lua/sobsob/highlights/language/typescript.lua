@@ -1,4 +1,5 @@
 return function(cp)
+	-- TODO: Try to define correctly all built in functions
 	return {
 		typescriptBlock                  = { fg = cp.colors.purple },
 
@@ -19,7 +20,7 @@ return function(cp)
 		typescriptClassName              = { link = "Type" },
 		typescriptClassHeritage          = { link = "Type" },
 
-		typescriptArrayMethod            = { link = "Function" }, -- TODO: Maybe some builtin function
+		typescriptArrayMethod            = { link = "Function" },
 		typescriptConsoleMethod          = { link = "Function" },
 
 		typescriptAssign                 = { link = "Operator" },

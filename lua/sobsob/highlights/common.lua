@@ -60,7 +60,5 @@ return function(cp)
 		SpellLocal      = {},
 
 		Directory       = { link = "Keyword" },
-		-- netrwPlain      = { link = "Function" }, -- Leave default
-		-- TODO: Change netrw symlink to special
 	}
 end

@@ -1,13 +1,11 @@
 return function(cp)
 	return {
-		-- TODO: link these instead
-		hyprCategory  = { fg = cp.magenta, bold = true },
-		hyprCategory0 = { fg = cp.magenta, bold = true },
-		hyprCategoryD = { fg = cp.magenta, bold = true },
-		hyprCommand   = { fg = cp.cyan },
-		hyprVariable  = { fg = cp.purple },
-		hyprNumber    = { fg = cp.red },
-		hyprColor     = { fg = cp.red },
-		hyprValue     = { fg = cp.violet },
+		hyprCategory  = { link = "Identifier", bold = true },
+		hyprCategory0 = { link = "Identifier", bold = true },
+		hyprCategoryD = { link = "Identifier", bold = true },
+		hyprCommand   = { link = "Keyword" },
+		hyprVariable  = { link = "Identifier" },
+		hyprNumber    = { link = "Number" },
+		hyprValue     = { link = "Constant" },
 	}
 end

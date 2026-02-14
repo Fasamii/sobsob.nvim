@@ -1,5 +1,5 @@
 return function(cp)
 	return {
-		LspReferenceText = { underline = true }, -- sp = cp.colors.orange },
+		LspReferenceText = { underline = true },
 	}
 end
