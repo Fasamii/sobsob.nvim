@@ -22,7 +22,6 @@ return function(cp)
 		RenderMarkdownTodo       = { fg = cp.colors.yellow },
 		RenderMarkdownConsider   = { fg = cp.colors.violet },
 
-		RenderMarkdownQuote      = { fg = cp.gradient.lv1_dimm },
 		RenderMarkdownQuote1     = { fg = cp.gradient.lv1_dimm },
 		RenderMarkdownQuote2     = { fg = cp.gradient.lv2_dimm },
 		RenderMarkdownQuote3     = { fg = cp.gradient.lv3_dimm },

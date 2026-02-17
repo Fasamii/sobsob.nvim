@@ -5,8 +5,8 @@ return function(cp)
 
 		zshFunction = { link = "Function" },
 
-		zshParentheses = { link = "Punctuation" },
-		zshBrackets = { link = "Punctuation" },
+		zshParentheses = { link = "Delimiter" },
+		zshBrackets = { link = "Delimiter" },
 
 		zshTypes = { link = "Type" },
 

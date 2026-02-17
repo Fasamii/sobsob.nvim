@@ -1,40 +1,44 @@
 return function(cp)
 	return {
-		["@comment"]             = { link = "Comment" },
+		["@comment"]               = { link = "Comment" },
 
-		["@variable"]            = { link = "Identifier" },
+		["@variable"]              = { link = "Identifier" },
 
-		["@string"]              = { link = "String" },
-		["@character"]           = { link = "Character" },
-		["@boolean"]             = { link = "Boolean" },
-		["@boolean.false"]       = { fg = cp.syntax["false"] },
-		["@boolean.true"]        = { fg = cp.syntax["true"] },
-		["@number"]              = { link = "Number" },
-		["@number.float"]        = { link = "Float" },
+		["@string"]                = { link = "String" },
+		["@character"]             = { link = "Character" },
+		["@boolean"]               = { link = "Boolean" },
+		["@boolean.false"]         = { fg = cp.syntax["false"] },
+		["@boolean.true"]          = { fg = cp.syntax["true"] },
+		["@number"]                = { link = "Number" },
+		["@number.float"]          = { link = "Float" },
 
-		["@keyword"]             = { link = "Keyword" },
-		["@statement"]           = { link = "Statement" },
-		["@conditional"]         = { link = "Conditional" },
-		["@repeat"]              = { link = "Repeat" },
+		["@keyword"]               = { link = "Keyword" },
+		["@statement"]             = { link = "Statement" },
+		["@conditional"]           = { link = "Conditional" },
+		["@repeat"]                = { link = "Repeat" },
 
-		["@type"]                = { link = "Type" },
-		["@storageclass"]        = { link = "StorageClass" },
+		["@type"]                  = { link = "Type" },
+		["@storageclass"]          = { link = "StorageClass" },
 
-		["@function"]            = { link = "Function" },
+		["@function"]              = { link = "Function" },
 		-- for bass and zsh
-		["@function.flag.short"] = { link = "Function" },
-		["@function.flag.long"]  = { link = "Function" },
+		["@function.flag.short"]   = { link = "Function" },
+		["@function.flag.long"]    = { link = "Function" },
 
-		["@label"]               = { link = "Label" },
+		["@label"]                 = { link = "Label" },
 
-		["@operator"]            = { link = "Operator" },
+		["@operator"]              = { link = "Operator" },
 
-		["@string.special"]      = { link = "Special" },
-		["@character.special"]   = { link = "SpecialChar" },
+		["@string.special"]        = { link = "Special" },
+		["@character.special"]     = { link = "SpecialChar" },
 
-		["@preproc"]             = { link = "PreProc" },
+		["@preproc"]               = { link = "PreProc" },
 
-		["@macro"]               = { link = "Macro" },
+		["@macro"]                 = { link = "Macro" },
 
+		["@punctuation.delimiter"] = { link = "Delimiter" },
+		["@punctuation.bracket"]   = { link = "Delimiter" },
+
+		["@module"]                = { link = "Type" },
 	}
 end

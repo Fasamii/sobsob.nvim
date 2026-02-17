@@ -1,67 +1,73 @@
 return function(cp)
 	return {
-		Normal          = { fg = cp.ui.fg, bg = cp.ui.bg },
-		NormalFloat     = { fg = cp.ui.fg_float, bg = cp.ui.bg_float },
-		NormalNC        = { fg = cp.ui.fg, bg = cp.ui.bg },
+		Normal                   = { fg = cp.ui.fg, bg = cp.ui.bg },
+		NormalFloat              = { fg = cp.ui.fg_float, bg = cp.ui.bg_float },
+		NormalNC                 = { fg = cp.ui.fg, bg = cp.ui.bg },
 
-		FloatBorder     = { fg = cp.ui.fg }, -- TODO: Think about setting fg to selection
-		Question        = { link = "Keyword" },
+		-- FloatTitle               = { link = "NormalFloat" },
+		-- FloatBorder              = { fg = cp.ui.fg }, -- TODO: Think about setting fg to selection
 
-		Bold            = { bold = true },
-		Italic          = { italic = true },
-		Underline       = { underline = true },
+		Question                 = { link = "Keyword" },
 
-		CursorLine      = { bg = cp.ui.bg_shadow },
-		ColorColumn     = { bg = cp.ui.bg_shadow },
+		Bold                     = { bold = true },
+		Italic                   = { italic = true },
+		Underline                = { underline = true },
 
-		MatchParen      = { fg = cp.gray.black_100, bg = cp.colors.magenta, bold = true },
+		CursorLine               = { bg = cp.ui.bg_shadow },
+		ColorColumn              = { bg = cp.ui.bg_shadow },
 
-		LineNr          = { fg = cp.ui.fg_popup },
-		CursorLineNr    = { fg = cp.ui.fg },
+		MatchParen               = { fg = cp.gray.black_100, bg = cp.colors.magenta, bold = true },
 
-		Visual          = { reverse = true, bold = true },
-		Search          = { bg = cp.ui.selection, bold = true },
-		CurSearch       = { reverse = true, bold = true },
-		IncSearch       = { link = "Visual" },
-		Substitute      = { link = "Visual" },
+		LineNr                   = { fg = cp.ui.fg_popup },
+		CursorLineNr             = { fg = cp.ui.fg },
 
-		WinBar          = { fg = cp.ui.fg, bg = cp.ui.bg_float },
-		WinBarNC        = { fg = cp.ui.fg, bg = cp.ui.bg_float },
+		Visual                   = { reverse = true, bold = true },
+		Search                   = { bg = cp.ui.selection, bold = true },
+		CurSearch                = { reverse = true, bold = true },
+		IncSearch                = { link = "Visual" },
+		Substitute               = { link = "Visual" },
 
-		TabLine         = { fg = cp.ui.fg_float, bg = cp.ui.bg_float, },
-		TabLineSel      = { fg = cp.ui.text_colored, bg = cp.ui.bg, bold = true },
-		TabLineFill     = { bg = cp.ui.bg_float },
+		WinBar                   = { fg = cp.ui.fg, bg = cp.ui.bg_float },
+		WinBarNC                 = { fg = cp.ui.fg, bg = cp.ui.bg_float },
 
-		VertSplit       = { fg = cp.gray.white_100, bg = cp.ui.bg, bold = false, italic = false },
-		WinSeparator    = { fg = cp.gray.white_100, bg = cp.ui.bg, bold = false, italic = false },
+		TabLine                  = { fg = cp.ui.fg_float, bg = cp.ui.bg_float, },
+		TabLineSel               = { fg = cp.ui.text_colored, bg = cp.ui.bg, bold = true },
+		TabLineFill              = { bg = cp.ui.bg_float },
 
-		Folded          = { fg = cp.ui.fg, bg = cp.ui.bg_popup },
+		VertSplit                = { fg = cp.gray.white_100, bg = cp.ui.bg, bold = false, italic = false },
+		WinSeparator             = { fg = cp.gray.white_100, bg = cp.ui.bg, bold = false, italic = false },
 
-		Pmenu           = { bg = cp.ui.bg_popup },
-		PmenuSel        = { reverse = true },
-		PmenuSbar       = { bg = cp.ui.fg_popup },
-		PmenuThumb      = { bg = cp.ui.fg_float },
+		Folded                   = { fg = cp.ui.fg, bg = cp.ui.bg_popup },
 
-		Ok              = { fg = cp.diagnostics.ok },
-		Info            = { fg = cp.diagnostics.info },
-		Hint            = { fg = cp.diagnostics.hint },
-		Warn            = { fg = cp.diagnostics.warn },
-		Error           = { fg = cp.diagnostics.error },
+		Pmenu                    = { bg = cp.ui.bg_popup },
+		PmenuSel                 = { reverse = true },
+		PmenuSbar                = { bg = cp.ui.fg_popup },
+		PmenuThumb               = { bg = cp.ui.fg_float },
 
-		DiagnosticInfo  = { link = "Info" },
-		DiagnosticHint  = { link = "Hint" },
-		DiagnosticWarn  = { link = "Warn" },
-		DiagnosticError = { link = "Error" },
+		Ok                       = { fg = cp.diagnostics.ok },
+		Info                     = { fg = cp.diagnostics.info },
+		Hint                     = { fg = cp.diagnostics.hint },
+		Warn                     = { fg = cp.diagnostics.warn },
+		Error                    = { fg = cp.diagnostics.error },
 
-		DiffAdd         = { fg = cp.diagnostics.git_add, bold = true },
-		DiffChange      = { fg = cp.diagnostics.git_mod, bold = true },
-		DiffDelete      = { fg = cp.diagnostics.git_del, bold = true },
+		DiagnosticInfo           = { link = "Info" },
+		DiagnosticUnderlineInfo  = { underline = true, sp = cp.diagnostics.info, bold = true },
+		DiagnosticHint           = { link = "Hint" },
+		DiagnosticUnderlineHint  = { underline = true, sp = cp.diagnostics.hint, bold = true },
+		DiagnosticWarn           = { link = "Warn" },
+		DiagnosticUnderlineWarn  = { underline = true, sp = cp.diagnostics.warn, bold = true },
+		DiagnosticError          = { link = "Error" },
+		DiagnosticUnderlineError = { underline = true, sp = cp.diagnostics.error, bold = true },
 
-		SpellBad        = { undercurl = true, sp = cp.diagnostics.error, bold = true },
-		SpellCap        = { undercurl = true, sp = cp.diagnostics.warn },
-		SpellRare       = { bold = true },
-		SpellLocal      = {},
+		DiffAdd                  = { fg = cp.diagnostics.git_add, bg = cp.diagnostics.git_add_dimm, bold = true },
+		DiffChange               = { fg = cp.diagnostics.git_mod, bg = cp.diagnostics.git_mod_dimm, bold = true },
+		DiffDelete               = { fg = cp.diagnostics.git_del, bg = cp.diagnostics.git_del_dimm, bold = true },
 
-		Directory       = { link = "Keyword" },
+		SpellBad                 = { undercurl = true, sp = cp.diagnostics.error, bold = true },
+		SpellCap                 = { undercurl = true, sp = cp.diagnostics.warn },
+		SpellRare                = { bold = true },
+		SpellLocal               = {},
+
+		Directory                = { link = "Keyword" },
 	}
 end
