@@ -1,9 +1,18 @@
 return function(cp)
 	return {
-		-- WHICH-KEY
-		WhichKeyNormal = { bg = cp.black_dark },
-		WhichKey       = { fg = cp.magenta, bold = true },
-		WhichKeyDesc   = { fg = cp.purple },
-		WhichKeyGroup  = { fg = cp.cyan },
+		WhichKey           = { link = "Function", bold = true },
+		WhichKeyNormal     = { link = "NormalFloat" },
+		WhichKeyDesc       = { fg = cp.ui.text_colored },
+		WhichKeyGroup      = { link = "Identifier" },
+
+		WhichKeyIconAzure  = { fg = cp.colors.teal },
+		WhichKeyIconBlue   = { fg = cp.colors.blue },
+		WhichKeyIconCyan   = { fg = cp.colors.cyan },
+		WhichKeyIconGreen  = { fg = cp.colors.green },
+		WhichKeyIconGrey   = { fg = cp.gray.white_50 },
+		WhichKeyIconOrange = { fg = cp.colors.orange },
+		WhichKeyIconPurple = { fg = cp.colors.purple },
+		WhichKeyIconRed    = { fg = cp.colors.red },
+		WhichKeyIconYellow = { fg = cp.colors.yellow },
 	};
 end

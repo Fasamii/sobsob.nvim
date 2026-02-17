@@ -4,6 +4,7 @@ return function(cp)
 		NormalFloat     = { fg = cp.ui.fg_float, bg = cp.ui.bg_float },
 		NormalNC        = { fg = cp.ui.fg, bg = cp.ui.bg },
 
+		FloatBorder     = { fg = cp.ui.fg }, -- TODO: Think about setting fg to selection
 		Question        = { link = "Keyword" },
 
 		Bold            = { bold = true },
