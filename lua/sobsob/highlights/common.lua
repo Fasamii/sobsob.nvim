@@ -34,6 +34,8 @@ return function(cp)
 		VertSplit       = { fg = cp.gray.white_100, bg = cp.ui.bg, bold = false, italic = false },
 		WinSeparator    = { fg = cp.gray.white_100, bg = cp.ui.bg, bold = false, italic = false },
 
+		Folded          = { fg = cp.ui.fg, bg = cp.ui.bg_popup },
+
 		Pmenu           = { bg = cp.ui.bg_popup },
 		PmenuSel        = { reverse = true },
 		PmenuSbar       = { bg = cp.ui.fg_popup },
