@@ -9,6 +9,8 @@ return function(cp)
 		String         = { fg = cp.syntax.strings },
 		Character      = { fg = cp.syntax.character },
 		Boolean        = { fg = cp.syntax.booleans },
+		True           = { fg = cp.syntax["true"] },
+		False          = { fg = cp.syntax["false"] },
 		Number         = { fg = cp.syntax.numbers },
 		Float          = { fg = cp.syntax.floats },
 
